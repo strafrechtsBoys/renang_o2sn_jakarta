@@ -295,9 +295,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- NAVBAR                                                          -->
-    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NAVBAR -->
     <nav class="bg-white border-b border-line sticky top-0 z-40 no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer" onclick="UI.navigate('dashboard')">
@@ -336,10 +334,7 @@
             <div class="loader-ring"></div>
         </div>
 
-
-        <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- VIEW: DASHBOARD PUBLIK                                          -->
-        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW: DASHBOARD PUBLIK -->
         <section id="view-dashboard" class="fade-in">
 
             <!-- HERO -->
@@ -398,9 +393,7 @@
             </div>
 
             <!-- PODIUM JUARA -->
-            <div id="podium-section" class="mb-12">
-                <!-- Diisi oleh JS -->
-            </div>
+            <div id="podium-section" class="mb-12"></div>
 
             <!-- TABEL HASIL LENGKAP -->
             <div id="all-results-section" class="mb-12">
@@ -461,10 +454,7 @@
 
         </section>
 
-
-        <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- VIEW: LOGIN                                                     -->
-        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW: LOGIN -->
         <section id="view-login" class="hidden fade-in">
             <div class="max-w-md mx-auto">
                 <div class="card">
@@ -492,9 +482,7 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- VIEW: ADMIN / PETUGAS WORKSPACE                                 -->
-        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW: ADMIN / PETUGAS WORKSPACE -->
         <section id="view-admin" class="hidden fade-in">
 
             <!-- Header workspace -->
@@ -515,14 +503,12 @@
                 </div>
             </div>
 
-            <!-- Tabs (dinamis sesuai role) -->
+            <!-- Tabs -->
             <div class="card mb-6 p-3 overflow-x-auto">
-                <div id="admin-tabs" class="flex gap-2 min-w-max">
-                    <!-- Diisi JS sesuai role -->
-                </div>
+                <div id="admin-tabs" class="flex gap-2 min-w-max"></div>
             </div>
 
-            <!-- TAB: INPUT HASIL (untuk semua petugas) -->
+            <!-- TAB: INPUT HASIL -->
             <div id="tabpane-input" class="hidden">
                 <div class="card">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
@@ -530,8 +516,7 @@
                             <i class="fa-solid fa-stopwatch text-brand mr-1"></i> Catat Waktu
                         </h3>
                         <span class="text-xs text-ink-muted">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            Offline-safe: input tersimpan lokal lalu sync otomatis
+                            <i class="fa-solid fa-shield-halved"></i> Offline-safe
                         </span>
                     </div>
 
@@ -579,7 +564,7 @@
                 </div>
             </div>
 
-            <!-- TAB: DATABASE ATLET (admin only) -->
+            <!-- TAB: DATABASE ATLET -->
             <div id="tabpane-athletes" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="space-y-4">
@@ -640,7 +625,7 @@
                 </div>
             </div>
 
-            <!-- TAB: MANAJEMEN HASIL (admin only) -->
+            <!-- TAB: MANAJEMEN HASIL -->
             <div id="tabpane-manage" class="hidden">
                 <div class="card">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
@@ -674,16 +659,15 @@
                 </div>
             </div>
 
-            <!-- TAB: PETUGAS (admin only) -->
+            <!-- TAB: PETUGAS -->
             <div id="tabpane-petugas" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="card">
                         <h4 class="font-display font-bold text-sm text-ink mb-4">
                             <i class="fa-solid fa-user-plus text-brand"></i> Tambah Petugas
                         </h4>
-                        <p class="text-xs text-ink-muted mb-4">Maksimal 10 akun aktif. Petugas hanya bisa input hasil — tidak bisa hapus atau ubah pengaturan.</p>
                         <div class="space-y-3">
-                            <input type="text" id="pet-username" class="field" placeholder="Username (huruf kecil, tanpa spasi)">
+                            <input type="text" id="pet-username" class="field" placeholder="Username">
                             <input type="text" id="pet-nama" class="field" placeholder="Nama Lengkap">
                             <input type="text" id="pet-pin" class="field font-mono-num" maxlength="6" inputmode="numeric" placeholder="PIN 4-6 digit">
                             <select id="pet-role" class="field">
@@ -709,7 +693,7 @@
                 </div>
             </div>
 
-            <!-- TAB: PENGATURAN (admin only) -->
+            <!-- TAB: PENGATURAN -->
             <div id="tabpane-settings" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="card">
@@ -756,11 +740,6 @@
                         <h4 class="font-display font-bold text-sm text-ink mb-4">
                             <i class="fa-solid fa-file-export text-green-600"></i> Cadangan & Export
                         </h4>
-                        <p class="text-xs text-ink-muted mb-4">
-                            <strong>Strategi backup:</strong> Supabase adalah penyimpanan utama dengan audit log lengkap.
-                            Untuk arsip resmi, gunakan tombol Export Excel — disarankan setiap rehat (~1 jam sekali).
-                            Setiap input petugas juga tersimpan lokal di browser sebelum sync — aman dari putus internet.
-                        </p>
                         <div class="flex flex-wrap gap-3">
                             <button onclick="AppLogic.exportToExcel()" class="btn btn-primary">
                                 <i class="fa-solid fa-file-excel"></i> Export ke Excel
@@ -780,9 +759,7 @@
 
     </main>
 
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- FOOTER                                                          -->
-    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FOOTER -->
     <footer class="border-t border-line bg-white mt-auto no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
             <p class="text-sm text-ink-muted">
@@ -791,28 +768,30 @@
         </div>
     </footer>
 
-
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- JAVASCRIPT                                                      -->
-    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- JAVASCRIPT -->
     <script>
-        // ─────────────────────────────────────────────────────────────
-        // KONFIGURASI SUPABASE — GANTI dengan kredensial Anda
-        // ─────────────────────────────────────────────────────────────
         const CONFIG = {
             SUPABASE_URL: "https://imkquqsbbdicfeddtmgn.supabase.co",
             SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlta3F1cXNiYmRpY2ZlZGR0bWduIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTg3Mjc1MSwiZXhwIjoyMDk3NDQ4NzUxfQ.fmTejKe4vPtnCGnM-wR3ETUEyHjEg8awbX9ByhmHjgY"
         };
 
         const STYLES_ALL = ["Gaya Bebas", "Gaya Punggung", "Gaya Dada", "Gaya Kupu-kupu"];
+        
+        // UPDATE: Penyesuaian 11 Wilayah Kontingen DKI Jakarta
         const REGIONS_DKI = [
-            "Jakarta Pusat 1", "Jakarta Pusat 2", "Jakarta Utara 1", "Jakarta Utara 2", "Jakarta Selatan 1", "Jakarta Selatan 2",
-            "Jakarta Barat 1", "Jakarta Barat 2", "Jakarta Timur 1", "Jakarta Timur 2", "Kepulauan Seribu"
+            "Jakarta Barat 1",
+            "Jakarta Barat 2",
+            "Jakarta Selatan 1",
+            "Jakarta Selatan 2",
+            "Jakarta Timur 1",
+            "Jakarta Timur 2",
+            "Jakarta Pusat 1",
+            "Jakarta Pusat 2",
+            "Jakarta Utara 1",
+            "Jakarta Utara 2",
+            "Kepulauan 1000"
         ];
 
-        // ─────────────────────────────────────────────────────────────
-        // STATE
-        // ─────────────────────────────────────────────────────────────
         const State = {
             session: JSON.parse(localStorage.getItem('aquarace_session') || 'null'),
             athletes: [],
@@ -832,13 +811,10 @@
             realtimeChannel: null
         };
 
-        // ─────────────────────────────────────────────────────────────
-        // SUPABASE CLIENT
-        // ─────────────────────────────────────────────────────────────
         const DB = {
             init() {
                 if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY === "GANTI_DENGAN_ANON_KEY_ANDA") {
-                    console.warn("Supabase belum dikonfigurasi. Edit CONFIG.SUPABASE_ANON_KEY di file ini.");
+                    console.warn("Supabase belum dikonfigurasi.");
                     return false;
                 }
                 State.supabase = supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
@@ -883,7 +859,6 @@
                     .eq('is_active', true)
                     .maybeSingle();
                 if (error || !data) return null;
-                // Update last_login (best-effort, jangan blokir login)
                 State.supabase.from('petugas').update({ last_login: new Date().toISOString() }).eq('id', data.id).then(() => {});
                 return data;
             },
@@ -896,7 +871,6 @@
             },
 
             async upsertAthletes(rows) {
-                // Untuk import bulk: insert dengan ON CONFLICT pada nisn
                 const { data, error } = await State.supabase
                     .from('athletes')
                     .upsert(rows, { onConflict: 'nisn', ignoreDuplicates: false })
@@ -910,11 +884,6 @@
                 if (error) throw error;
             },
 
-            // ⭐ INTI ANTI-TABRAKAN + OFFLINE-SAFE: RPC conditional upsert
-            // Menggunakan upsert_result_if_newer untuk mencegah data lama menimpa data baru.
-            // Cocok untuk sync queue: kalau petugas A offline lalu pulih, datanya hanya tertulis
-            // jika client_ts-nya lebih baru daripada yang sudah ada.
-            // Return: 'inserted' | 'updated' | 'rejected'
             async upsertResultIfNewer(row, petugasUsername, clientTs) {
                 const { data, error } = await State.supabase.rpc('upsert_result_if_newer', {
                     p_athlete_id: row.athlete_id,
@@ -930,21 +899,7 @@
                     p_client_ts: clientTs
                 });
                 if (error) throw error;
-                return data; // 'inserted' | 'updated' | 'rejected'
-            },
-
-            // Legacy bulk upsert (untuk backward compat, dipakai sebagai fallback batch)
-            async upsertResults(rows, petugasUsername) {
-                const results = { inserted: 0, updated: 0, rejected: 0, errors: [] };
-                for (const r of rows) {
-                    try {
-                        const status = await this.upsertResultIfNewer(r, petugasUsername, r.client_ts || new Date().toISOString());
-                        results[status] = (results[status] || 0) + 1;
-                    } catch (e) {
-                        results.errors.push({ row: r, error: e.message });
-                    }
-                }
-                return results;
+                return data;
             },
 
             async deleteResult(id) {
@@ -969,13 +924,11 @@
             },
 
             async updateConfig(updates) {
-                // updates = { key1: val1, key2: val2 }
                 const rows = Object.entries(updates).map(([key, value]) => ({ key, value, updated_at: new Date().toISOString() }));
                 const { error } = await State.supabase.from('app_config').upsert(rows, { onConflict: 'key' });
                 if (error) throw error;
             },
 
-            // Realtime subscription: setiap perubahan di results langsung di-broadcast
             subscribeRealtime() {
                 if (State.realtimeChannel) State.supabase.removeChannel(State.realtimeChannel);
                 State.realtimeChannel = State.supabase
@@ -994,24 +947,6 @@
             }
         };
 
-        // ─────────────────────────────────────────────────────────────
-        // SYNC QUEUE — Offline-first dengan localStorage
-        // ─────────────────────────────────────────────────────────────
-        // Alur:
-        //   1. Petugas input → langsung tampil di UI (optimistic) + masuk queue
-        //   2. Queue di-flush ke Supabase via RPC upsert_result_if_newer
-        //   3. Jika sukses → hapus dari queue
-        //   4. Jika gagal (offline/error) → tetap di queue, retry tiap 10 detik
-        //
-        // Anti-tabrakan:
-        //   - Setiap entry punya client_ts (waktu input lokal)
-        //   - RPC server hanya menerima jika client_ts > existing.client_ts
-        //   - Data lama dari localStorage TIDAK akan menimpa data baru di server
-        //
-        // Scope:
-        //   - Queue per petugas (key di localStorage di-namespace dengan username)
-        //   - Tidak campur antar petugas di device yang sama (jika berbagi laptop)
-        // ─────────────────────────────────────────────────────────────
         const SyncQueue = {
             STORAGE_KEY: 'aquarace_sync_queue',
             FLUSH_INTERVAL_MS: 10000,
@@ -1032,11 +967,8 @@
                 localStorage.setItem(this._queueKey(), JSON.stringify(items));
             },
 
-            // Tambah entri ke queue. Entry berisi data hasil + client_ts.
             enqueue(row) {
                 const items = this.getAll();
-                // Dedup: jika sudah ada entry untuk (athlete_id, style, gender) di queue
-                // yang belum terkirim, replace dengan yang baru (input petugas terakhir menang)
                 const idx = items.findIndex(x =>
                     x.athlete_id === row.athlete_id && x.style === row.style && x.gender === row.gender
                 );
@@ -1052,13 +984,11 @@
                 this._updateBadge();
             },
 
-            // Hapus entry berdasarkan queue_id
             remove(queueId) {
                 this._save(this.getAll().filter(x => x.queue_id !== queueId));
                 this._updateBadge();
             },
 
-            // Tandai entry sebagai ditolak server (data lebih lama)
             markRejected(queueId) {
                 const items = this.getAll();
                 const entry = items.find(x => x.queue_id === queueId);
@@ -1069,9 +999,8 @@
                 }
             },
 
-            // Flush: coba kirim semua entry yang belum terkirim ke Supabase
             async flush() {
-                if (this.isFlushing) return; // prevent overlap
+                if (this.isFlushing) return;
                 if (!State.supabase || !State.session) return;
                 if (!navigator.onLine) return;
 
@@ -1097,14 +1026,7 @@
                             sentCount++;
                         }
                     } catch (e) {
-                        console.warn('SyncQueue flush failed for entry:', entry, e);
-                        // Biarkan di queue, akan retry lagi
-                        // Jika sudah >10x attempts, beri tanda warning tapi tetap retry
-                        if (entry.attempts > 10) {
-                            const all = this.getAll();
-                            const target = all.find(x => x.queue_id === entry.queue_id);
-                            if (target) { target.last_error = e.message; this._save(all); }
-                        }
+                        console.warn('SyncQueue flush failed:', entry, e);
                     }
                 }
 
@@ -1113,22 +1035,14 @@
 
                 if (sentCount > 0) UI.toast(`${sentCount} hasil ter-sinkron`, 'success');
                 if (rejectedCount > 0) {
-                    UI.toast(`${rejectedCount} input ditolak (sudah ada data lebih baru dari petugas lain)`, 'warning');
+                    UI.toast(`${rejectedCount} input ditolak server`, 'warning');
                 }
             },
 
-            // Mulai loop retry
             startAutoFlush() {
                 this.stopAutoFlush();
                 this.intervalId = setInterval(() => this.flush(), this.FLUSH_INTERVAL_MS);
-                // Coba flush juga saat online kembali
-                window.addEventListener('online', () => {
-                    UI.toast('Koneksi pulih, sinkronisasi data...', 'success');
-                    this.flush();
-                });
-                window.addEventListener('offline', () => {
-                    UI.toast('Koneksi terputus. Input Anda akan tersimpan lokal dan dikirim saat online.', 'warning');
-                });
+                window.addEventListener('online', () => this.flush());
             },
 
             stopAutoFlush() {
@@ -1161,39 +1075,21 @@
                         <td class="text-xs">${UI.escape(x.style)}</td>
                         <td class="text-center text-xs">${UI.escape(x.gender)}</td>
                         <td class="text-right font-mono-num">${UI.formatTime(x.mm, x.ss, x.ms)}</td>
-                        <td class="text-xs text-ink-muted">${new Date(x.client_ts).toLocaleString('id-ID')}</td>
                     </tr>
                 `).join('');
                 Swal.fire({
-                    title: 'Input yang Ditolak Server',
-                    html: `
-                        <p class="text-sm text-ink-muted mb-3">Input ini tidak disimpan karena ada data <strong>lebih baru</strong> dari petugas lain. Cek dengan TM/Wasit jika perlu.</p>
-                        <div class="overflow-x-auto">
-                            <table class="data-table text-sm">
-                                <thead><tr><th>Atlet</th><th>Nomor</th><th>Kategori</th><th>Waktu Anda</th><th>Saat Input</th></tr></thead>
-                                <tbody>${html}</tbody>
-                            </table>
-                        </div>
-                    `,
-                    width: 800,
-                    showCancelButton: true,
-                    confirmButtonText: 'Hapus dari Antrian',
-                    cancelButtonText: 'Biarkan',
+                    title: 'Input Ditolak Server',
+                    html: `<div class="overflow-x-auto"><table class="data-table text-sm"><thead><tr><th>Atlet</th><th>Nomor</th><th>Kategori</th><th>Waktu</th></tr></thead><tbody>${html}</tbody></table></div>`,
+                    width: 700,
+                    confirmButtonText: 'Bersihkan',
                     confirmButtonColor: '#EA580C'
-                }).then(r => {
-                    if (r.isConfirmed) {
-                        const all = this.getAll().filter(x => !x.rejected);
-                        this._save(all);
-                        this._updateBadge();
-                    }
+                }).then(() => {
+                    this._save(this.getAll().filter(x => !x.rejected));
+                    this._updateBadge();
                 });
             }
         };
 
-
-        // ─────────────────────────────────────────────────────────────
-        // UI MODULE — Render & navigasi
-        // ─────────────────────────────────────────────────────────────
         const UI = {
             showLoader(show) {
                 document.getElementById('loader').classList.toggle('hidden', !show);
@@ -1203,17 +1099,16 @@
                 Swal.fire({
                     toast: true, position: 'top-end',
                     icon: type, title: msg,
-                    showConfirmButton: false, timer: 3000,
-                    background: '#fff', color: '#0F172A'
+                    showConfirmButton: false, timer: 3000
                 });
             },
 
-            async confirm(title, text, confirmText = 'Ya, lanjutkan') {
+            async confirm(title, text, confirmText = 'Ya') {
                 const res = await Swal.fire({
                     title, text, icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonText: confirmText, cancelButtonText: 'Batal',
-                    confirmButtonColor: '#0369A1', cancelButtonColor: '#94A3B8'
+                    confirmButtonText, cancelButtonText: 'Batal',
+                    confirmButtonColor: '#0369A1'
                 });
                 return res.isConfirmed;
             },
@@ -1229,7 +1124,6 @@
                 if (view === 'admin' && State.session) this.renderAdminTabs();
             },
 
-            // ═══ PUBLIC DASHBOARD ═══
             populatePublicFilters() {
                 const sel = document.getElementById('public-filter-style');
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
@@ -1240,7 +1134,6 @@
                 regSel.innerHTML = '<option value="__ALL__">Semua Wilayah</option>' +
                     REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
 
-                // Populate region dropdown di form atlet juga (sekali init cukup)
                 const athRegSel = document.getElementById('ath-region');
                 if (athRegSel && athRegSel.options.length <= 1) {
                     athRegSel.innerHTML = '<option value="">-- Pilih Asal Wilayah --</option>' +
@@ -1263,12 +1156,9 @@
                     if (genderFilter !== '__ALL__' && r.gender !== genderFilter) return false;
                     if (regionFilter !== '__ALL__' && r.region !== regionFilter) return false;
                     if (search) {
-                        const ath = State.athletes.find(a => a.id === r.athlete_id);
-                        const nisn = ath?.nisn || '';
                         const nameMatch = r.name.toLowerCase().includes(search);
-                        const nisnMatch = nisn.toLowerCase().includes(search);
                         const schoolMatch = (r.school || '').toLowerCase().includes(search);
-                        if (!nameMatch && !nisnMatch && !schoolMatch) return false;
+                        if (!nameMatch && !schoolMatch) return false;
                     }
                     return true;
                 });
@@ -1278,12 +1168,10 @@
                 this.renderAccumulation();
             },
 
-            // ═══ PODIUM (3 besar dengan glassmorphism medal) ═══
             renderPodium(filtered, styleFilter, genderFilter) {
                 const cont = document.getElementById('podium-section');
                 cont.innerHTML = '';
 
-                // Group: per (style, gender)
                 const groups = {};
                 filtered.forEach(r => {
                     const k = `${r.style}__${r.gender}`;
@@ -1357,7 +1245,7 @@
                 document.getElementById('all-results-count').textContent = `${sorted.length} hasil`;
 
                 if (sorted.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada hasil</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-12 text-ink-muted">Belum ada hasil</td></tr>';
                     return;
                 }
 
@@ -1413,7 +1301,6 @@
                 }).join('');
             },
 
-            // ═══ ADMIN TABS ═══
             renderAdminTabs() {
                 const isAdmin = State.session?.role === 'admin';
                 document.getElementById('petugas-nama').textContent = State.session.nama;
@@ -1422,9 +1309,7 @@
                 badge.className = 'ml-2 px-2 py-0.5 rounded-md text-[10px] font-semibold ' +
                     (isAdmin ? 'bg-brand text-white' : 'bg-surface-mist text-ink');
 
-                const tabs = [
-                    { id: 'input', label: 'Input Hasil', icon: 'stopwatch', forAll: true }
-                ];
+                const tabs = [{ id: 'input', label: 'Input Hasil', icon: 'stopwatch', forAll: true }];
                 if (isAdmin) {
                     tabs.push(
                         { id: 'athletes', label: 'Database Atlet', icon: 'users' },
@@ -1457,7 +1342,6 @@
                 if (tabId === 'settings') this.populateSettingsForm();
             },
 
-            // ═══ INPUT TABLE ═══
             initInputTable() {
                 const gSel = document.getElementById('inp-gender');
                 const sSel = document.getElementById('inp-style');
@@ -1471,7 +1355,7 @@
 
                 const list = State.athletes.filter(a => a.gender === gender).sort((a, b) => a.name.localeCompare(b.name));
                 if (list.length === 0) {
-                    tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet ${gender}. Tambah di tab Database Atlet.</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet ${gender}.</td></tr>`;
                     return;
                 }
 
@@ -1480,7 +1364,6 @@
                     const mm = existing?.mm ?? 0;
                     const ss = existing?.ss ?? 0;
                     const ms = existing?.ms ?? 0;
-                    const inputBy = existing?.input_by ? `<div class="text-[10px] text-ink-muted mt-0.5"><i class="fa-solid fa-clock-rotate-left"></i> ${this.escape(existing.input_by)}</div>` : '';
                     const tr = document.createElement('tr');
                     tr.className = 'bulk-row';
                     tr.dataset.athleteId = a.id;
@@ -1488,13 +1371,12 @@
                         <td>
                             <div class="font-semibold">${this.escape(a.name)}</div>
                             <div class="text-xs text-ink-muted">${this.escape(a.school)} <span class="px-1.5 py-0.5 ml-1 rounded bg-brand-soft text-brand-ink text-[10px] font-semibold">${this.escape(a.region)}</span></div>
-                            ${inputBy}
                         </td>
                         <td><input type="number" min="0" max="59" value="${mm}" class="field font-mono-num text-center inp-mm"></td>
                         <td><input type="number" min="0" max="59" value="${ss}" class="field font-mono-num text-center inp-ss"></td>
                         <td><input type="number" min="0" max="99" value="${ms}" class="field font-mono-num text-center inp-ms"></td>
                         <td class="text-center">
-                            <button type="button" onclick="this.closest('tr').querySelectorAll('input').forEach(i=>i.value=0)" class="text-ink-muted hover:text-brand-accent" title="Reset">
+                            <button type="button" onclick="this.closest('tr').querySelectorAll('input').forEach(i=>i.value=0)" class="text-ink-muted hover:text-brand-accent">
                                 <i class="fa-solid fa-rotate-left"></i>
                             </button>
                         </td>
@@ -1503,7 +1385,6 @@
                 });
             },
 
-            // ═══ DATABASE ATLET ═══
             renderAthleteList() {
                 const tbody = document.getElementById('athlete-list-tbody');
                 const search = document.getElementById('athlete-search').value.trim().toLowerCase();
@@ -1512,8 +1393,7 @@
                     list = list.filter(a =>
                         a.name.toLowerCase().includes(search) ||
                         (a.school || '').toLowerCase().includes(search) ||
-                        (a.region || '').toLowerCase().includes(search) ||
-                        (a.nisn || '').includes(search)
+                        (a.region || '').toLowerCase().includes(search)
                     );
                 }
                 document.getElementById('athlete-count').textContent = `${list.length} atlet`;
@@ -1539,7 +1419,6 @@
                 `).join('');
             },
 
-            // ═══ MANAJEMEN HASIL ═══
             renderManageData() {
                 const sSel = document.getElementById('manage-filter-style');
                 if (!sSel.options.length) {
@@ -1575,7 +1454,7 @@
                             <div class="text-sm">${this.escape(r.school)}</div>
                             <div class="text-[10px] font-semibold uppercase tracking-wider text-brand">${this.escape(r.region)}</div>
                         </td>
-                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.style)}</span> <span class="text-[10px] text-ink-muted">${r.gender}</span></td>
+                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.style)}</span></td>
                         <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
                         <td class="text-xs text-ink-muted">${this.escape(r.input_by || '—')}</td>
                         <td class="text-xs text-ink-muted">${new Date(r.updated_at).toLocaleString('id-ID')}</td>
@@ -1588,7 +1467,6 @@
                 `).join('');
             },
 
-            // ═══ PETUGAS LIST ═══
             renderPetugasList() {
                 const tbody = document.getElementById('petugas-tbody');
                 if (State.petugas.length === 0) {
@@ -1614,7 +1492,6 @@
                 `).join('');
             },
 
-            // ═══ SETTINGS FORM ═══
             populateSettingsForm() {
                 document.getElementById('conf-title').value = State.config.APP_TITLE || '';
                 document.getElementById('conf-subtitle').value = State.config.APP_SUBTITLE || '';
@@ -1631,7 +1508,6 @@
                 `).join('');
             },
 
-            // ═══ HELPERS ═══
             formatTime(m, s, ms) {
                 return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(ms).padStart(2,'0')}`;
             },
@@ -1640,14 +1516,10 @@
             }
         };
 
-
-        // ─────────────────────────────────────────────────────────────
-        // APP LOGIC — Handlers
-        // ─────────────────────────────────────────────────────────────
         const AppLogic = {
             async init() {
                 if (!DB.init()) {
-                    UI.toast('Supabase belum dikonfigurasi. Lihat README_DEPLOY.md', 'warning');
+                    UI.toast('Supabase belum dikonfigurasi.', 'warning');
                     return;
                 }
                 await DB.fetchAll();
@@ -1656,7 +1528,6 @@
                 UI.renderPublicResults();
 
                 if (State.session) {
-                    // Verifikasi session masih valid
                     const fresh = await State.supabase
                         .from('petugas').select('*')
                         .eq('id', State.session.id)
@@ -1666,7 +1537,6 @@
                         State.session = fresh.data;
                         localStorage.setItem('aquarace_session', JSON.stringify(State.session));
                         SyncQueue.startAutoFlush();
-                        // Flush sekali saat masuk, untuk kirim data yang mungkin tertahan
                         setTimeout(() => SyncQueue.flush(), 1000);
                         UI.navigate('admin');
                     } else {
@@ -1683,7 +1553,7 @@
                 const result = await DB.login(username, pin);
                 UI.showLoader(false);
                 if (!result) {
-                    UI.toast('Username atau PIN salah, atau akun nonaktif', 'error');
+                    UI.toast('Username atau PIN salah', 'error');
                     return;
                 }
                 State.session = result;
@@ -1701,16 +1571,14 @@
                 UI.navigate('dashboard');
             },
 
-            // ═══ ATLET ═══
             async saveSingleAthlete() {
                 const name = document.getElementById('ath-name').value.trim();
                 const nisn = document.getElementById('ath-nisn').value.trim() || null;
                 const school = document.getElementById('ath-school').value.trim();
                 const region = document.getElementById('ath-region').value;
                 const gender = document.getElementById('ath-gender').value;
-                if (!name || !school) return UI.toast('Nama & asal sekolah wajib diisi', 'error');
-                if (!region || !REGIONS_DKI.includes(region)) return UI.toast('Pilih asal wilayah DKI', 'error');
-                if (nisn && !/^\d{10}$/.test(nisn)) return UI.toast('NISN harus 10 digit angka', 'error');
+                if (!name || !school) return UI.toast('Nama & sekolah wajib diisi', 'error');
+                if (!region || !REGIONS_DKI.includes(region)) return UI.toast('Pilih wilayah yang valid', 'error');
 
                 try {
                     await DB.saveAthlete({ name, nisn, school, region, gender });
@@ -1720,12 +1588,12 @@
                     await DB.fetchAll();
                     UI.renderAthleteList();
                 } catch (e) {
-                    UI.toast('Gagal: ' + (e.message.includes('duplicate') ? 'NISN sudah terdaftar' : e.message), 'error');
+                    UI.toast('Gagal: ' + e.message, 'error');
                 }
             },
 
             async deleteAthlete(id) {
-                if (!await UI.confirm('Hapus atlet?', 'Hasil yang terkait juga ikut terhapus.', 'Hapus')) return;
+                if (!await UI.confirm('Hapus atlet?', 'Data hasil terkait juga akan terhapus.')) return;
                 try {
                     await DB.deleteAthlete(id);
                     UI.toast('Atlet dihapus');
@@ -1737,14 +1605,12 @@
             downloadAthleteTemplate() {
                 const data = [
                     ['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'],
-                    ['Contoh: Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat 1', 'Putra'],
-                    ['Contoh: Siti Aminah', '0987654321', 'SDN Cipinang 02', 'Jakarta Timur 1', 'Putri']
+                    ['Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat 1', 'Putra']
                 ];
                 const ws = XLSX.utils.aoa_to_sheet(data);
                 const wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, 'Atlet');
 
-                // Tambah sheet referensi wilayah agar admin tahu opsi valid
                 const refData = [['Daftar Wilayah DKI yang Valid'], ...REGIONS_DKI.map(r => [r])];
                 const wsRef = XLSX.utils.aoa_to_sheet(refData);
                 XLSX.utils.book_append_sheet(wb, wsRef, 'Ref Wilayah');
@@ -1766,44 +1632,20 @@
 
             async processAthleteExcel() {
                 if (!State.excelBuffer) return;
-                const skipped = [];
-                const rows = State.excelBuffer.map((r, idx) => {
+                const rows = State.excelBuffer.map(r => {
                     const name = String(r['Nama Lengkap'] || '').trim();
-                    const school = String(r['Asal Sekolah'] || r['Kontingen'] || '').trim();
+                    const school = String(r['Asal Sekolah'] || '').trim();
                     const region = String(r['Asal Wilayah'] || '').trim();
                     const gender = ['Putra', 'Putri'].includes(r['Gender']) ? r['Gender'] : null;
                     const nisn = String(r['NISN'] || '').trim() || null;
 
-                    if (!name || !school || !gender) {
-                        skipped.push(`Baris ${idx + 2}: data tidak lengkap`);
-                        return null;
-                    }
-                    if (!REGIONS_DKI.includes(region)) {
-                        skipped.push(`Baris ${idx + 2} (${name}): wilayah "${region}" tidak valid`);
-                        return null;
-                    }
+                    if (!name || !school || !gender || !REGIONS_DKI.includes(region)) return null;
                     return { name, nisn, school, region, gender };
                 }).filter(Boolean);
 
-                if (rows.length === 0) {
-                    return UI.toast('Tidak ada baris valid. Cek format & nama wilayah.', 'error');
-                }
-
                 try {
                     await DB.upsertAthletes(rows);
-                    let msg = `${rows.length} atlet diimpor/diperbarui`;
-                    if (skipped.length > 0) msg += ` (${skipped.length} dilewati)`;
-                    UI.toast(msg);
-
-                    if (skipped.length > 0) {
-                        Swal.fire({
-                            title: 'Beberapa Baris Dilewati',
-                            html: '<div class="text-left text-xs">' + skipped.slice(0, 10).map(s => `• ${UI.escape(s)}`).join('<br>') +
-                                  (skipped.length > 10 ? `<br>... dan ${skipped.length - 10} lainnya` : '') + '</div>',
-                            icon: 'warning'
-                        });
-                    }
-
+                    UI.toast(`${rows.length} atlet diimpor`);
                     State.excelBuffer = null;
                     document.getElementById('btn-process-excel').classList.add('hidden');
                     document.getElementById('file-name-display').textContent = '';
@@ -1812,12 +1654,6 @@
                 } catch (e) { UI.toast('Gagal import: ' + e.message, 'error'); }
             },
 
-            // ═══ HASIL (offline-safe via SyncQueue + RPC conditional upsert) ═══
-            // Alur baru:
-            //   1. Validasi & masukkan ke SyncQueue (localStorage)
-            //   2. Optimistic UI update (anggap berhasil)
-            //   3. Trigger flush queue → kirim ke Supabase via RPC
-            //   4. Server menerima jika client_ts > existing, tolak jika lebih lama
             async handleSaveBulkResult(e) {
                 e.preventDefault();
                 const gender = document.getElementById('inp-gender').value;
@@ -1831,8 +1667,7 @@
                     const mm = parseInt(tr.querySelector('.inp-mm').value || 0);
                     const ss = parseInt(tr.querySelector('.inp-ss').value || 0);
                     const ms = parseInt(tr.querySelector('.inp-ms').value || 0);
-                    if (mm + ss + ms === 0) return; // skip yang kosong
-                    if (ss > 59 || ms > 99) return; // validasi
+                    if (mm + ss + ms === 0) return;
                     rows.push({
                         athlete_id: ath.id,
                         name: ath.name, school: ath.school, region: ath.region,
@@ -1842,21 +1677,17 @@
 
                 if (rows.length === 0) return UI.toast('Tidak ada waktu untuk disimpan', 'warning');
 
-                // 1. Masukkan ke queue (semua atomic, di localStorage dulu)
                 rows.forEach(r => SyncQueue.enqueue(r));
-                UI.toast(`${rows.length} hasil masuk antrian sinkron`, 'success');
+                UI.toast(`${rows.length} hasil masuk antrian`, 'success');
 
-                // 2. Flush queue ke server (async, tidak block UI)
                 await SyncQueue.flush();
-
-                // 3. Refresh tampilan
                 await DB.fetchAll();
                 UI.initInputTable();
                 UI.renderPublicResults();
             },
 
             async deleteResult(id) {
-                if (!await UI.confirm('Hapus hasil?', 'Tindakan ini tidak bisa dibatalkan.', 'Hapus')) return;
+                if (!await UI.confirm('Hapus hasil?', 'Tindakan ini tidak bisa dibatalkan.')) return;
                 try {
                     await DB.deleteResult(id);
                     UI.toast('Hasil dihapus');
@@ -1866,18 +1697,12 @@
                 } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
             },
 
-            // ═══ PETUGAS MANAGEMENT ═══
             async savePetugas() {
-                if (State.petugas.filter(p => p.is_active).length >= 10) {
-                    return UI.toast('Maksimal 10 akun aktif. Nonaktifkan akun lain dulu.', 'warning');
-                }
+                if (State.petugas.filter(p => p.is_active).length >= 10) return UI.toast('Maksimal 10 akun aktif.', 'warning');
                 const username = document.getElementById('pet-username').value.trim().toLowerCase();
                 const nama = document.getElementById('pet-nama').value.trim();
                 const pin = document.getElementById('pet-pin').value.trim();
                 const role = document.getElementById('pet-role').value;
-                if (!username || !nama || !pin) return UI.toast('Lengkapi semua kolom', 'error');
-                if (!/^[a-z0-9_]{3,}$/.test(username)) return UI.toast('Username: huruf kecil/angka/underscore, min 3 karakter', 'error');
-                if (!/^\d{4,6}$/.test(pin)) return UI.toast('PIN harus 4-6 digit angka', 'error');
 
                 try {
                     await DB.savePetugas({ username, nama, pin, role, is_active: true });
@@ -1885,21 +1710,19 @@
                     ['pet-username','pet-nama','pet-pin'].forEach(id => document.getElementById(id).value = '');
                     await DB.fetchAll();
                     UI.renderPetugasList();
-                } catch (e) {
-                    UI.toast('Gagal: ' + (e.message.includes('duplicate') ? 'Username sudah dipakai' : e.message), 'error');
-                }
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
             },
 
             async togglePetugas(id, isActive) {
                 try {
                     await DB.togglePetugas(id, isActive);
-                    UI.toast(isActive ? 'Akun diaktifkan' : 'Akun dinonaktifkan');
+                    UI.toast('Status diperbarui');
                     await DB.fetchAll();
                 } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
             },
 
             async deletePetugas(id) {
-                if (!await UI.confirm('Hapus akun petugas?', 'Akun akan hilang permanen.', 'Hapus')) return;
+                if (!await UI.confirm('Hapus akun petugas?')) return;
                 try {
                     await DB.deletePetugas(id);
                     UI.toast('Akun dihapus');
@@ -1908,7 +1731,6 @@
                 } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
             },
 
-            // ═══ PENGATURAN ═══
             async saveAllSettings() {
                 const activeStyles = Array.from(document.querySelectorAll('.style-toggle:checked')).map(cb => cb.value);
                 const updates = {
@@ -1928,92 +1750,48 @@
                 } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
             },
 
-            // ═══ EXPORT ═══
             exportToExcel() {
-                if (State.results.length === 0) return UI.toast('Tidak ada data untuk diekspor', 'warning');
+                if (State.results.length === 0) return UI.toast('Tidak ada data', 'warning');
                 const rows = State.results.map(r => ({
                     'Nama Atlet': r.name,
                     'Asal Sekolah': r.school,
                     'Asal Wilayah': r.region,
                     'Kategori': r.gender,
                     'Nomor Lomba': r.style,
-                    'Menit': r.mm,
-                    'Detik': r.ss,
-                    'Ratusan': r.ms,
-                    'Waktu': UI.formatTime(r.mm, r.ss, r.ms),
-                    'Input oleh': r.input_by || '',
-                    'Diperbarui': new Date(r.updated_at).toLocaleString('id-ID')
+                    'Waktu': UI.formatTime(r.mm, r.ss, r.ms)
                 }));
                 const ws = XLSX.utils.json_to_sheet(rows);
                 const wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, 'Hasil');
-                const filename = `Hasil_Renang_O2SN_${new Date().toISOString().slice(0,10)}.xlsx`;
-                XLSX.writeFile(wb, filename);
-                UI.toast('File Excel didownload');
+                XLSX.writeFile(wb, `Hasil_Renang_O2SN_${new Date().toISOString().slice(0,10)}.xlsx`);
             },
 
             async viewAuditLog() {
                 UI.showLoader(true);
                 try {
                     const { data, error } = await State.supabase
-                        .from('audit_log')
-                        .select('*')
-                        .order('created_at', { ascending: false })
-                        .limit(200);
+                        .from('audit_log').select('*').order('created_at', { ascending: false }).limit(100);
                     if (error) throw error;
 
-                    const rows = (data || []).map(log => {
-                        const p = log.payload || {};
-                        const ath = State.athletes.find(a => a.id === p.athlete_id);
-                        const athName = ath ? ath.name : `ID:${p.athlete_id || '?'}`;
-                        const time = log.created_at ? new Date(log.created_at).toLocaleString('id-ID') : '—';
-                        const actionLabel = {
-                            'insert': '<span class="text-green-700 bg-green-50 px-2 py-0.5 rounded text-[10px] font-semibold">BARU</span>',
-                            'update': '<span class="text-blue-700 bg-blue-50 px-2 py-0.5 rounded text-[10px] font-semibold">UBAH</span>',
-                            'reject_stale': '<span class="text-red-700 bg-red-50 px-2 py-0.5 rounded text-[10px] font-semibold">TOLAK</span>',
-                            'upsert': '<span class="text-gray-700 bg-gray-100 px-2 py-0.5 rounded text-[10px] font-semibold">SIMPAN</span>'
-                        }[log.action] || log.action;
-
-                        const detail = p.style ?
-                            `${UI.escape(p.style)} · ${UI.escape(p.gender || '')} · ${p.mm}:${String(p.ss).padStart(2,'0')}.${String(p.ms).padStart(2,'0')}` : '';
-
-                        return `<tr>
-                            <td class="text-xs">${time}</td>
-                            <td>${actionLabel}</td>
-                            <td class="text-xs font-semibold">${UI.escape(log.petugas || '—')}</td>
-                            <td>${UI.escape(athName)}</td>
-                            <td class="text-xs text-ink-muted">${detail}</td>
-                        </tr>`;
-                    }).join('');
+                    const rows = (data || []).map(log => `
+                        <tr>
+                            <td class="text-xs">${new Date(log.created_at).toLocaleString('id-ID')}</td>
+                            <td>${log.action}</td>
+                            <td>${UI.escape(log.petugas || '—')}</td>
+                            <td class="text-xs">${JSON.stringify(log.payload || {})}</td>
+                        </tr>
+                    `).join('');
 
                     Swal.fire({
-                        title: 'Riwayat Perubahan (200 terakhir)',
-                        html: `
-                            <p class="text-sm text-ink-muted mb-3 text-left">Setiap input, ubah, dan penolakan tercatat di sini. Berguna untuk verifikasi jika ada protes hasil.</p>
-                            <div class="overflow-x-auto max-h-[500px]">
-                                <table class="data-table text-sm">
-                                    <thead class="sticky top-0 bg-white">
-                                        <tr><th>Waktu</th><th>Aksi</th><th>Petugas</th><th>Atlet</th><th>Detail</th></tr>
-                                    </thead>
-                                    <tbody>${rows || '<tr><td colspan="5" class="text-center py-6 text-ink-muted">Belum ada aktivitas</td></tr>'}</tbody>
-                                </table>
-                            </div>
-                        `,
-                        width: 900,
-                        confirmButtonText: 'Tutup',
-                        confirmButtonColor: '#0369A1'
+                        title: 'Riwayat Perubahan',
+                        html: `<div class="overflow-x-auto max-h-[400px] text-left"><table class="data-table text-xs"><thead><tr><th>Waktu</th><th>Aksi</th><th>User</th><th>Payload</th></tr></thead><tbody>${rows}</tbody></table></div>`,
+                        width: 800
                     });
-                } catch (e) {
-                    UI.toast('Gagal memuat audit log: ' + e.message, 'error');
-                } finally {
-                    UI.showLoader(false);
-                }
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+                finally { UI.showLoader(false); }
             }
         };
 
-        // ─────────────────────────────────────────────────────────────
-        // INIT
-        // ─────────────────────────────────────────────────────────────
         window.addEventListener('DOMContentLoaded', () => AppLogic.init());
     </script>
 </body>
