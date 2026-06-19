@@ -806,8 +806,8 @@
 
         const STYLES_ALL = ["Gaya Bebas", "Gaya Punggung", "Gaya Dada", "Gaya Kupu-kupu"];
         const REGIONS_DKI = [
-            "Jakarta Pusat", "Jakarta Utara", "Jakarta Selatan",
-            "Jakarta Barat", "Jakarta Timur", "Kepulauan Seribu"
+            "Jakarta Pusat 1", "Jakarta Pusat 2", "Jakarta Utara 1", "Jakarta Utara 2", "Jakarta Selatan 1", "Jakarta Selatan 2",
+            "Jakarta Barat 1", "Jakarta Barat 2", "Jakarta Timur 1", "Jakarta Timur 2", "Kepulauan Seribu"
         ];
 
         // ─────────────────────────────────────────────────────────────
@@ -1737,8 +1737,8 @@
             downloadAthleteTemplate() {
                 const data = [
                     ['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'],
-                    ['Contoh: Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat', 'Putra'],
-                    ['Contoh: Siti Aminah', '0987654321', 'SDN Cipinang 02', 'Jakarta Timur', 'Putri']
+                    ['Contoh: Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat 1', 'Putra'],
+                    ['Contoh: Siti Aminah', '0987654321', 'SDN Cipinang 02', 'Jakarta Timur 1', 'Putri']
                 ];
                 const ws = XLSX.utils.aoa_to_sheet(data);
                 const wb = XLSX.utils.book_new();
