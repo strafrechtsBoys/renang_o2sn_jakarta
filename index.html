@@ -365,9 +365,9 @@
                 </div>
             </div>
 
-            <!-- KONTROL: PILIH NOMOR LOMBA + KATEGORI + PENCARIAN -->
+            <!-- KONTROL: PILIH NOMOR LOMBA + KATEGORI + WILAYAH + PENCARIAN -->
             <div class="card mb-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">Nomor Lomba</label>
                         <select id="public-filter-style" onchange="UI.renderPublicResults()" class="field">
@@ -383,10 +383,16 @@
                         </select>
                     </div>
                     <div>
+                        <label class="block text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">Wilayah</label>
+                        <select id="public-filter-region" onchange="UI.renderPublicResults()" class="field">
+                            <option value="__ALL__">Semua Wilayah</option>
+                        </select>
+                    </div>
+                    <div>
                         <label class="block text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">
-                            <i class="fa-solid fa-magnifying-glass mr-1"></i> Cari Nama / NISN
+                            <i class="fa-solid fa-magnifying-glass mr-1"></i> Cari
                         </label>
-                        <input type="text" id="public-search" oninput="UI.renderPublicResults()" class="field" placeholder="Ketik nama atau NISN anak...">
+                        <input type="text" id="public-search" oninput="UI.renderPublicResults()" class="field" placeholder="Nama, NISN, atau sekolah...">
                     </div>
                 </div>
             </div>
@@ -411,7 +417,8 @@
                                 <tr>
                                     <th class="text-center" style="width:60px">Pos</th>
                                     <th>Atlet</th>
-                                    <th>Kontingen</th>
+                                    <th>Sekolah</th>
+                                    <th>Wilayah</th>
                                     <th>Nomor</th>
                                     <th class="text-center">Kategori</th>
                                     <th class="text-right">Waktu</th>
@@ -440,7 +447,8 @@
                                 <tr>
                                     <th class="text-center" style="width:60px">Rank</th>
                                     <th>Atlet</th>
-                                    <th>Kontingen</th>
+                                    <th>Sekolah</th>
+                                    <th>Wilayah</th>
                                     <th class="text-center">Kategori</th>
                                     <th class="text-right">Waktu Kombinasi</th>
                                 </tr>
@@ -582,7 +590,10 @@
                             <div class="space-y-3">
                                 <input type="text" id="ath-name" class="field" placeholder="Nama Lengkap">
                                 <input type="text" id="ath-nisn" class="field font-mono-num" maxlength="10" placeholder="NISN (10 digit, opsional)">
-                                <input type="text" id="ath-team" class="field" placeholder="Kontingen / Sekolah">
+                                <input type="text" id="ath-school" class="field" placeholder="Asal Sekolah (mis. SDN Menteng 01)">
+                                <select id="ath-region" class="field">
+                                    <option value="">-- Pilih Asal Wilayah --</option>
+                                </select>
                                 <select id="ath-gender" class="field">
                                     <option value="Putra">Putra</option>
                                     <option value="Putri">Putri</option>
@@ -620,7 +631,7 @@
                         <div class="overflow-y-auto max-h-[500px] border border-line rounded-xl">
                             <table class="data-table">
                                 <thead class="sticky top-0">
-                                    <tr><th>Atlet</th><th>NISN</th><th>Kontingen</th><th class="text-center">Kategori</th><th></th></tr>
+                                    <tr><th>Atlet</th><th>NISN</th><th>Sekolah</th><th>Wilayah</th><th class="text-center">Kategori</th><th></th></tr>
                                 </thead>
                                 <tbody id="athlete-list-tbody"></tbody>
                             </table>
@@ -637,7 +648,8 @@
                             <i class="fa-solid fa-database text-brand"></i> Log Input Hasil
                         </h3>
                         <div class="flex flex-wrap gap-2">
-                            <input type="text" id="manage-search" oninput="UI.renderManageData()" class="field" placeholder="Cari atlet/tim...">
+                            <input type="text" id="manage-search" oninput="UI.renderManageData()" class="field" placeholder="Cari atlet/sekolah...">
+                            <select id="manage-filter-region" onchange="UI.renderManageData()" class="field"></select>
                             <select id="manage-filter-style" onchange="UI.renderManageData()" class="field"></select>
                         </div>
                     </div>
@@ -646,7 +658,8 @@
                             <table class="data-table">
                                 <thead>
                                     <tr>
-                                        <th>Atlet & Kontingen</th>
+                                        <th>Atlet</th>
+                                        <th>Sekolah & Wilayah</th>
                                         <th>Nomor</th>
                                         <th class="text-right">Waktu</th>
                                         <th>Input oleh</th>
@@ -787,11 +800,15 @@
         // KONFIGURASI SUPABASE — GANTI dengan kredensial Anda
         // ─────────────────────────────────────────────────────────────
         const CONFIG = {
-            SUPABASE_URL: "https://fsskbjqftmiwduwruloo.supabase.co",
-            SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzc2tianFmdG1pd2R1d3J1bG9vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTg3MTg3MiwiZXhwIjoyMDk3NDQ3ODcyfQ.UdnAZXZZ_nGhDWR-YF882pbhgwAxRFnpFSwtY9-2tD4"
+            SUPABASE_URL: "https://imkquqsbbdicfeddtmgn.supabase.co",
+            SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlta3F1cXNiYmRpY2ZlZGR0bWduIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTg3Mjc1MSwiZXhwIjoyMDk3NDQ4NzUxfQ.fmTejKe4vPtnCGnM-wR3ETUEyHjEg8awbX9ByhmHjgY"
         };
 
         const STYLES_ALL = ["Gaya Bebas", "Gaya Punggung", "Gaya Dada", "Gaya Kupu-kupu"];
+        const REGIONS_DKI = [
+            "Jakarta Pusat", "Jakarta Utara", "Jakarta Selatan",
+            "Jakarta Barat", "Jakarta Timur", "Kepulauan Seribu"
+        ];
 
         // ─────────────────────────────────────────────────────────────
         // STATE
@@ -902,7 +919,8 @@
                 const { data, error } = await State.supabase.rpc('upsert_result_if_newer', {
                     p_athlete_id: row.athlete_id,
                     p_name: row.name,
-                    p_team: row.team,
+                    p_school: row.school,
+                    p_region: row.region,
                     p_gender: row.gender,
                     p_style: row.style,
                     p_mm: row.mm,
@@ -1139,7 +1157,7 @@
                 if (items.length === 0) return;
                 const html = items.map(x => `
                     <tr>
-                        <td><strong>${UI.escape(x.name)}</strong><br><span class="text-xs text-ink-muted">${UI.escape(x.team)}</span></td>
+                        <td><strong>${UI.escape(x.name)}</strong><br><span class="text-xs text-ink-muted">${UI.escape(x.school)} · ${UI.escape(x.region)}</span></td>
                         <td class="text-xs">${UI.escape(x.style)}</td>
                         <td class="text-center text-xs">${UI.escape(x.gender)}</td>
                         <td class="text-right font-mono-num">${UI.formatTime(x.mm, x.ss, x.ms)}</td>
@@ -1218,6 +1236,17 @@
                 sel.innerHTML = '<option value="__ALL__">Tampilkan Semua Nomor</option>' +
                     active.map(s => `<option value="${s}">${s}</option>`).join('');
 
+                const regSel = document.getElementById('public-filter-region');
+                regSel.innerHTML = '<option value="__ALL__">Semua Wilayah</option>' +
+                    REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+
+                // Populate region dropdown di form atlet juga (sekali init cukup)
+                const athRegSel = document.getElementById('ath-region');
+                if (athRegSel && athRegSel.options.length <= 1) {
+                    athRegSel.innerHTML = '<option value="">-- Pilih Asal Wilayah --</option>' +
+                        REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                }
+
                 document.getElementById('dash-running-text').textContent = State.config.RUNNING_TEXT;
             },
 
@@ -1226,18 +1255,20 @@
 
                 const styleFilter = document.getElementById('public-filter-style').value;
                 const genderFilter = document.getElementById('public-filter-gender').value;
+                const regionFilter = document.getElementById('public-filter-region').value;
                 const search = document.getElementById('public-search').value.trim().toLowerCase();
 
                 let filtered = State.results.filter(r => {
                     if (styleFilter !== '__ALL__' && r.style !== styleFilter) return false;
                     if (genderFilter !== '__ALL__' && r.gender !== genderFilter) return false;
+                    if (regionFilter !== '__ALL__' && r.region !== regionFilter) return false;
                     if (search) {
                         const ath = State.athletes.find(a => a.id === r.athlete_id);
                         const nisn = ath?.nisn || '';
                         const nameMatch = r.name.toLowerCase().includes(search);
                         const nisnMatch = nisn.toLowerCase().includes(search);
-                        const teamMatch = r.team.toLowerCase().includes(search);
-                        if (!nameMatch && !nisnMatch && !teamMatch) return false;
+                        const schoolMatch = (r.school || '').toLowerCase().includes(search);
+                        if (!nameMatch && !nisnMatch && !schoolMatch) return false;
                     }
                     return true;
                 });
@@ -1301,7 +1332,8 @@
                                         <div class="medal-badge badge-${cls}">${labels[i]}</div>
                                         <div class="flex-1 min-w-0">
                                             <div class="font-display font-bold text-ink truncate">${this.escape(r.name)}</div>
-                                            <div class="text-xs text-ink-muted truncate">${this.escape(r.team)}</div>
+                                            <div class="text-xs text-ink-muted truncate">${this.escape(r.school)}</div>
+                                            <div class="text-[10px] text-ink-muted truncate font-semibold uppercase tracking-wider">${this.escape(r.region)}</div>
                                         </div>
                                         <div class="font-mono-num font-bold text-base text-ink">${this.formatTime(r.mm, r.ss, r.ms)}</div>
                                     </div>
@@ -1333,7 +1365,8 @@
                     <tr>
                         <td class="text-center font-bold text-brand">${i + 1}</td>
                         <td><div class="font-semibold">${this.escape(r.name)}</div></td>
-                        <td class="text-ink-muted">${this.escape(r.team)}</td>
+                        <td class="text-ink-muted">${this.escape(r.school)}</td>
+                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.region)}</span></td>
                         <td class="text-ink-muted text-sm">${this.escape(r.style)}</td>
                         <td class="text-center"><span class="text-xs px-2 py-0.5 rounded-md ${r.gender === 'Putra' ? 'bg-sky-50 text-sky-700' : 'bg-pink-50 text-pink-700'}">${r.gender}</span></td>
                         <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
@@ -1351,7 +1384,7 @@
                 State.results.forEach(r => {
                     if (r.style === 'Gaya Bebas' || r.style === 'Gaya Punggung') {
                         const k = `${r.athlete_id}`;
-                        if (!map[k]) map[k] = { name: r.name, team: r.team, gender: r.gender, ms: 0, count: 0 };
+                        if (!map[k]) map[k] = { name: r.name, school: r.school, region: r.region, gender: r.gender, ms: 0, count: 0 };
                         map[k].ms += Number(r.total_ms);
                         map[k].count++;
                     }
@@ -1359,7 +1392,7 @@
 
                 const list = Object.values(map).filter(x => x.count === 2).sort((a, b) => a.ms - b.ms);
                 if (list.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="5" class="text-center py-12 text-ink-muted">Belum ada akumulasi (perlu Bebas + Punggung)</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada akumulasi (perlu Bebas + Punggung)</td></tr>';
                     return;
                 }
 
@@ -1371,7 +1404,8 @@
                         <tr>
                             <td class="text-center font-bold text-medal-gold">#${i + 1}</td>
                             <td class="font-semibold">${this.escape(x.name)}</td>
-                            <td class="text-ink-muted">${this.escape(x.team)}</td>
+                            <td class="text-ink-muted">${this.escape(x.school)}</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(x.region)}</span></td>
                             <td class="text-center text-xs">${x.gender}</td>
                             <td class="text-right font-mono-num font-bold text-medal-gold">${this.formatTime(tm, ts, tms)}</td>
                         </tr>
@@ -1453,7 +1487,7 @@
                     tr.innerHTML = `
                         <td>
                             <div class="font-semibold">${this.escape(a.name)}</div>
-                            <div class="text-xs text-ink-muted">${this.escape(a.team)}</div>
+                            <div class="text-xs text-ink-muted">${this.escape(a.school)} <span class="px-1.5 py-0.5 ml-1 rounded bg-brand-soft text-brand-ink text-[10px] font-semibold">${this.escape(a.region)}</span></div>
                             ${inputBy}
                         </td>
                         <td><input type="number" min="0" max="59" value="${mm}" class="field font-mono-num text-center inp-mm"></td>
@@ -1477,14 +1511,15 @@
                 if (search) {
                     list = list.filter(a =>
                         a.name.toLowerCase().includes(search) ||
-                        a.team.toLowerCase().includes(search) ||
+                        (a.school || '').toLowerCase().includes(search) ||
+                        (a.region || '').toLowerCase().includes(search) ||
                         (a.nisn || '').includes(search)
                     );
                 }
                 document.getElementById('athlete-count').textContent = `${list.length} atlet`;
 
                 if (list.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada atlet</td></tr>';
                     return;
                 }
 
@@ -1492,7 +1527,8 @@
                     <tr>
                         <td><div class="font-semibold">${this.escape(a.name)}</div></td>
                         <td class="font-mono-num text-xs text-ink-muted">${a.nisn || '—'}</td>
-                        <td class="text-ink-muted">${this.escape(a.team)}</td>
+                        <td class="text-ink-muted">${this.escape(a.school)}</td>
+                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(a.region)}</span></td>
                         <td class="text-center"><span class="text-xs px-2 py-0.5 rounded-md ${a.gender === 'Putra' ? 'bg-sky-50 text-sky-700' : 'bg-pink-50 text-pink-700'}">${a.gender}</span></td>
                         <td class="text-center">
                             <button onclick="AppLogic.deleteAthlete(${a.id})" class="text-red-500 hover:text-red-700">
@@ -1510,26 +1546,34 @@
                     sSel.innerHTML = '<option value="__ALL__">Semua Nomor</option>' +
                         STYLES_ALL.map(s => `<option value="${s}">${s}</option>`).join('');
                 }
+                const rSel = document.getElementById('manage-filter-region');
+                if (!rSel.options.length) {
+                    rSel.innerHTML = '<option value="__ALL__">Semua Wilayah</option>' +
+                        REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                }
                 const search = document.getElementById('manage-search').value.trim().toLowerCase();
                 const styleFilter = sSel.value;
+                const regionFilter = rSel.value;
 
                 const tbody = document.getElementById('manage-tbody');
                 let list = State.results;
                 if (styleFilter !== '__ALL__') list = list.filter(r => r.style === styleFilter);
+                if (regionFilter !== '__ALL__') list = list.filter(r => r.region === regionFilter);
                 if (search) list = list.filter(r =>
-                    r.name.toLowerCase().includes(search) || r.team.toLowerCase().includes(search)
+                    r.name.toLowerCase().includes(search) || (r.school || '').toLowerCase().includes(search)
                 );
 
                 if (list.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada hasil</td></tr>';
+                    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-ink-muted">Belum ada hasil</td></tr>';
                     return;
                 }
 
                 tbody.innerHTML = list.map(r => `
                     <tr>
+                        <td><div class="font-semibold">${this.escape(r.name)}</div></td>
                         <td>
-                            <div class="font-semibold">${this.escape(r.name)}</div>
-                            <div class="text-xs text-ink-muted">${this.escape(r.team)}</div>
+                            <div class="text-sm">${this.escape(r.school)}</div>
+                            <div class="text-[10px] font-semibold uppercase tracking-wider text-brand">${this.escape(r.region)}</div>
                         </td>
                         <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.style)}</span> <span class="text-[10px] text-ink-muted">${r.gender}</span></td>
                         <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
@@ -1661,15 +1705,18 @@
             async saveSingleAthlete() {
                 const name = document.getElementById('ath-name').value.trim();
                 const nisn = document.getElementById('ath-nisn').value.trim() || null;
-                const team = document.getElementById('ath-team').value.trim();
+                const school = document.getElementById('ath-school').value.trim();
+                const region = document.getElementById('ath-region').value;
                 const gender = document.getElementById('ath-gender').value;
-                if (!name || !team) return UI.toast('Nama & kontingen wajib diisi', 'error');
+                if (!name || !school) return UI.toast('Nama & asal sekolah wajib diisi', 'error');
+                if (!region || !REGIONS_DKI.includes(region)) return UI.toast('Pilih asal wilayah DKI', 'error');
                 if (nisn && !/^\d{10}$/.test(nisn)) return UI.toast('NISN harus 10 digit angka', 'error');
 
                 try {
-                    await DB.saveAthlete({ name, nisn, team, gender });
+                    await DB.saveAthlete({ name, nisn, school, region, gender });
                     UI.toast('Atlet ditambahkan');
-                    ['ath-name','ath-nisn','ath-team'].forEach(id => document.getElementById(id).value = '');
+                    ['ath-name','ath-nisn','ath-school'].forEach(id => document.getElementById(id).value = '');
+                    document.getElementById('ath-region').value = '';
                     await DB.fetchAll();
                     UI.renderAthleteList();
                 } catch (e) {
@@ -1689,13 +1736,19 @@
 
             downloadAthleteTemplate() {
                 const data = [
-                    ['Nama Lengkap', 'NISN', 'Kontingen', 'Gender'],
-                    ['Contoh: Budi Santoso', '1234567890', 'SDN Menteng 01', 'Putra'],
-                    ['Contoh: Siti Aminah', '0987654321', 'SDN Cipinang 02', 'Putri']
+                    ['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'],
+                    ['Contoh: Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat', 'Putra'],
+                    ['Contoh: Siti Aminah', '0987654321', 'SDN Cipinang 02', 'Jakarta Timur', 'Putri']
                 ];
                 const ws = XLSX.utils.aoa_to_sheet(data);
                 const wb = XLSX.utils.book_new();
                 XLSX.utils.book_append_sheet(wb, ws, 'Atlet');
+
+                // Tambah sheet referensi wilayah agar admin tahu opsi valid
+                const refData = [['Daftar Wilayah DKI yang Valid'], ...REGIONS_DKI.map(r => [r])];
+                const wsRef = XLSX.utils.aoa_to_sheet(refData);
+                XLSX.utils.book_append_sheet(wb, wsRef, 'Ref Wilayah');
+
                 XLSX.writeFile(wb, 'Template_Atlet_Renang_O2SN.xlsx');
             },
 
@@ -1713,16 +1766,44 @@
 
             async processAthleteExcel() {
                 if (!State.excelBuffer) return;
-                const rows = State.excelBuffer.map(r => ({
-                    name: String(r['Nama Lengkap'] || '').trim(),
-                    nisn: String(r['NISN'] || '').trim() || null,
-                    team: String(r['Kontingen'] || '').trim(),
-                    gender: ['Putra', 'Putri'].includes(r['Gender']) ? r['Gender'] : 'Putra'
-                })).filter(r => r.name && r.team);
-                if (rows.length === 0) return UI.toast('File kosong atau format salah', 'error');
+                const skipped = [];
+                const rows = State.excelBuffer.map((r, idx) => {
+                    const name = String(r['Nama Lengkap'] || '').trim();
+                    const school = String(r['Asal Sekolah'] || r['Kontingen'] || '').trim();
+                    const region = String(r['Asal Wilayah'] || '').trim();
+                    const gender = ['Putra', 'Putri'].includes(r['Gender']) ? r['Gender'] : null;
+                    const nisn = String(r['NISN'] || '').trim() || null;
+
+                    if (!name || !school || !gender) {
+                        skipped.push(`Baris ${idx + 2}: data tidak lengkap`);
+                        return null;
+                    }
+                    if (!REGIONS_DKI.includes(region)) {
+                        skipped.push(`Baris ${idx + 2} (${name}): wilayah "${region}" tidak valid`);
+                        return null;
+                    }
+                    return { name, nisn, school, region, gender };
+                }).filter(Boolean);
+
+                if (rows.length === 0) {
+                    return UI.toast('Tidak ada baris valid. Cek format & nama wilayah.', 'error');
+                }
+
                 try {
                     await DB.upsertAthletes(rows);
-                    UI.toast(`${rows.length} atlet diimpor/diperbarui`);
+                    let msg = `${rows.length} atlet diimpor/diperbarui`;
+                    if (skipped.length > 0) msg += ` (${skipped.length} dilewati)`;
+                    UI.toast(msg);
+
+                    if (skipped.length > 0) {
+                        Swal.fire({
+                            title: 'Beberapa Baris Dilewati',
+                            html: '<div class="text-left text-xs">' + skipped.slice(0, 10).map(s => `• ${UI.escape(s)}`).join('<br>') +
+                                  (skipped.length > 10 ? `<br>... dan ${skipped.length - 10} lainnya` : '') + '</div>',
+                            icon: 'warning'
+                        });
+                    }
+
                     State.excelBuffer = null;
                     document.getElementById('btn-process-excel').classList.add('hidden');
                     document.getElementById('file-name-display').textContent = '';
@@ -1754,7 +1835,7 @@
                     if (ss > 59 || ms > 99) return; // validasi
                     rows.push({
                         athlete_id: ath.id,
-                        name: ath.name, team: ath.team,
+                        name: ath.name, school: ath.school, region: ath.region,
                         gender, style, mm, ss, ms
                     });
                 });
@@ -1852,7 +1933,8 @@
                 if (State.results.length === 0) return UI.toast('Tidak ada data untuk diekspor', 'warning');
                 const rows = State.results.map(r => ({
                     'Nama Atlet': r.name,
-                    'Kontingen': r.team,
+                    'Asal Sekolah': r.school,
+                    'Asal Wilayah': r.region,
                     'Kategori': r.gender,
                     'Nomor Lomba': r.style,
                     'Menit': r.mm,
