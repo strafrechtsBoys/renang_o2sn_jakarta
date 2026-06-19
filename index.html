@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>AquaRace Hub — O2SN Renang SD DKI Jakarta 2026</title>
+    <title>A2SN — Cabor Renang Jenjang SD Tingkat Provinsi DKI Jakarta 2026</title>
 
-    <!-- Favicon: Logo O2SN -->
-    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Logo_O2SN.png/120px-Logo_O2SN.png">
-    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Logo_O2SN.png/120px-Logo_O2SN.png">
+    <!-- Favicon: Logo Baru O2SN / Puspresnas -->
+    <link rel="icon" type="image/png" href="https://pusatprestasinasional.kemendikdasmen.go.id/uploads/event/1pSda9JSc3s6qmWiP4hKqX9m0jZwS9sFL479urh6.png">
+    <link rel="apple-touch-icon" href="https://pusatprestasinasional.kemendikdasmen.go.id/uploads/event/1pSda9JSc3s6qmWiP4hKqX9m0jZwS9sFL479urh6.png">
 
     <!-- Tipografi: Plus Jakarta Sans (display) + Inter (body) + JetBrains Mono (waktu) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
                         brand: {
                             DEFAULT: '#0369A1',   // sky-700, biru kolam
                             soft: '#E0F2FE',
-                            ink: '#0C4A6E',
+                            brandInk: '#0C4A6E',
                             accent: '#EA580C'
                         },
                         medal: {
@@ -84,7 +84,6 @@
         .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.02em; }
         .font-mono-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 
-        /* Lane divider — signature hairline meniru pemisah jalur kolam */
         .lane-divider {
             height: 2px;
             background: repeating-linear-gradient(90deg,
@@ -93,7 +92,6 @@
             opacity: 0.18;
         }
 
-        /* Kartu juara — glassmorphism medali */
         .medal-card {
             position: relative;
             border-radius: 20px;
@@ -137,7 +135,6 @@
         .badge-silver { background: linear-gradient(135deg, #E5E7EB, #6B7280); }
         .badge-bronze { background: linear-gradient(135deg, #E8A87C, #8B4513); }
 
-        /* Tabel — bersih, lega */
         .data-table { width: 100%; border-collapse: separate; border-spacing: 0; }
         .data-table thead th {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -158,7 +155,6 @@
         .data-table tbody tr:hover { background: #F8FAFC; }
         .data-table tbody tr:last-child td { border-bottom: none; }
 
-        /* Input umum */
         .field {
             width: 100%;
             background: #fff;
@@ -189,7 +185,6 @@
         .btn-danger { background: #FEE2E2; color: #B91C1C; }
         .btn-danger:hover { background: #FECACA; }
 
-        /* Card */
         .card {
             background: #fff;
             border: 1px solid #E2E8F0;
@@ -198,7 +193,6 @@
             box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 12px rgba(15,23,42,0.06);
         }
 
-        /* Hero title */
         .hero-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
@@ -209,7 +203,6 @@
         }
         .hero-title .accent { color: #0369A1; }
 
-        /* Tabs admin */
         .tab-btn {
             padding: 10px 16px;
             border-radius: 10px;
@@ -225,7 +218,6 @@
         .tab-btn:hover { background: #F1F5F9; color: #0F172A; }
         .tab-btn.active { background: #0369A1; color: #fff; }
 
-        /* Live indicator */
         .live-dot {
             display: inline-block; width: 8px; height: 8px; border-radius: 50%;
             background: #10B981;
@@ -241,7 +233,6 @@
         .fade-in { animation: fadeIn .4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Loader */
         .loader-ring {
             width: 48px; height: 48px; border-radius: 50%;
             border: 3px solid #E2E8F0;
@@ -250,18 +241,15 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Marquee */
         .marquee-container { overflow: hidden; }
         .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: marquee 25s linear infinite; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 8px; }
         ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
         ::-webkit-scrollbar-track { background: transparent; }
 
-        /* Responsive */
         @media (max-width: 640px) {
             .card { padding: 16px; border-radius: 12px; }
             .data-table thead th, .data-table tbody td { padding: 10px 12px; font-size: 12px; }
@@ -269,14 +257,12 @@
             .medal-card { padding: 16px; }
         }
 
-        /* Print */
         @media print {
             .no-print { display: none !important; }
             body { background: #fff; }
             .card { box-shadow: none; border: 1px solid #CBD5E1; }
         }
 
-        /* Switch */
         .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .switch .slider {
@@ -299,8 +285,9 @@
     <nav class="bg-white border-b border-line sticky top-0 z-40 no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer" onclick="UI.navigate('dashboard')">
-                <div class="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center">
-                    <i class="fa-solid fa-person-swimming text-brand text-lg"></i>
+                <div class="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center overflow-hidden">
+                    <!-- Tampilan Mini Logo Baru di Navbar -->
+                    <img src="https://pusatprestasinasional.kemendikdasmen.go.id/uploads/event/1pSda9JSc3s6qmWiP4hKqX9m0jZwS9sFL479urh6.png" alt="O2SN Logo" class="w-8 h-8 object-contain">
                 </div>
                 <div class="leading-tight">
                     <div class="font-display font-extrabold text-base sm:text-lg text-ink">AquaRace Hub</div>
@@ -360,7 +347,7 @@
                 </div>
             </div>
 
-            <!-- KONTROL: PILIH NOMOR LOMBA + KATEGORI + WILAYAH + PENCARIAN -->
+            <!-- KONTROL: FILTERS -->
             <div class="card mb-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
@@ -482,10 +469,8 @@
             </div>
         </section>
 
-        <!-- VIEW: ADMIN / PETUGAS WORKSPACE -->
+        <!-- VIEW: ADMIN WORKSPACE -->
         <section id="view-admin" class="hidden fade-in">
-
-            <!-- Header workspace -->
             <div class="card mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <div class="text-xs font-semibold text-brand uppercase tracking-wider">Workspace Petugas</div>
@@ -503,7 +488,6 @@
                 </div>
             </div>
 
-            <!-- Tabs -->
             <div class="card mb-6 p-3 overflow-x-auto">
                 <div id="admin-tabs" class="flex gap-2 min-w-max"></div>
             </div>
@@ -515,11 +499,8 @@
                         <h3 class="font-display font-bold text-lg text-ink">
                             <i class="fa-solid fa-stopwatch text-brand mr-1"></i> Catat Waktu
                         </h3>
-                        <span class="text-xs text-ink-muted">
-                            <i class="fa-solid fa-shield-halved"></i> Offline-safe
-                        </span>
+                        <span class="text-xs text-ink-muted"><i class="fa-solid fa-shield-halved"></i> Offline-safe</span>
                     </div>
-
                     <form onsubmit="AppLogic.handleSaveBulkResult(event)">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                             <div>
@@ -534,7 +515,6 @@
                                 <select id="inp-style" onchange="UI.initInputTable()" class="field"></select>
                             </div>
                         </div>
-
                         <div class="border border-line rounded-xl overflow-hidden mb-4">
                             <div class="overflow-x-auto">
                                 <table class="data-table">
@@ -551,7 +531,6 @@
                                 </table>
                             </div>
                         </div>
-
                         <div class="flex flex-wrap gap-3">
                             <button type="submit" class="btn btn-primary flex-1 py-3">
                                 <i class="fa-solid fa-cloud-arrow-up"></i> Simpan Semua Waktu
@@ -569,13 +548,11 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="space-y-4">
                         <div class="card">
-                            <h4 class="font-display font-bold text-sm text-ink mb-4">
-                                <i class="fa-solid fa-user-plus text-brand"></i> Tambah Atlet
-                            </h4>
+                            <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-user-plus text-brand"></i> Tambah Atlet</h4>
                             <div class="space-y-3">
                                 <input type="text" id="ath-name" class="field" placeholder="Nama Lengkap">
-                                <input type="text" id="ath-nisn" class="field font-mono-num" maxlength="10" placeholder="NISN (10 digit, opsional)">
-                                <input type="text" id="ath-school" class="field" placeholder="Asal Sekolah (mis. SDN Menteng 01)">
+                                <input type="text" id="ath-nisn" class="field font-mono-num" maxlength="10" placeholder="NISN (10 digit)">
+                                <input type="text" id="ath-school" class="field" placeholder="Asal Sekolah">
                                 <select id="ath-region" class="field">
                                     <option value="">-- Pilih Asal Wilayah --</option>
                                 </select>
@@ -588,25 +565,15 @@
                                 </button>
                             </div>
                         </div>
-
                         <div class="card border-2 border-dashed">
-                            <h4 class="font-display font-bold text-sm text-ink mb-3">
-                                <i class="fa-solid fa-file-excel text-green-600"></i> Import Excel
-                            </h4>
-                            <button onclick="AppLogic.downloadAthleteTemplate()" class="text-xs text-brand underline mb-3 block">
-                                Download Template
-                            </button>
+                            <h4 class="font-display font-bold text-sm text-ink mb-3"><i class="fa-solid fa-file-excel text-green-600"></i> Import Excel</h4>
+                            <button onclick="AppLogic.downloadAthleteTemplate()" class="text-xs text-brand underline mb-3 block">Download Template</button>
                             <input type="file" id="excel-file" accept=".xlsx,.xls" class="hidden" onchange="AppLogic.handleExcelSelect(event)">
-                            <button onclick="document.getElementById('excel-file').click()" class="btn btn-ghost w-full">
-                                <i class="fa-solid fa-upload"></i> Pilih File
-                            </button>
+                            <button onclick="document.getElementById('excel-file').click()" class="btn btn-ghost w-full"><i class="fa-solid fa-upload"></i> Pilih File</button>
                             <p id="file-name-display" class="text-xs text-ink-muted mt-2 truncate"></p>
-                            <button id="btn-process-excel" onclick="AppLogic.processAthleteExcel()" class="hidden btn btn-accent w-full mt-3">
-                                <i class="fa-solid fa-play"></i> Jalankan Import
-                            </button>
+                            <button id="btn-process-excel" onclick="AppLogic.processAthleteExcel()" class="hidden btn btn-accent w-full mt-3"><i class="fa-solid fa-play"></i> Jalankan Import</button>
                         </div>
                     </div>
-
                     <div class="lg:col-span-2 card">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="font-display font-bold text-sm text-ink">Daftar Atlet</h4>
@@ -615,7 +582,7 @@
                         <input type="text" id="athlete-search" oninput="UI.renderAthleteList()" class="field mb-4" placeholder="Cari atlet...">
                         <div class="overflow-y-auto max-h-[500px] border border-line rounded-xl">
                             <table class="data-table">
-                                <thead class="sticky top-0">
+                                <thead class="sticky top-0 bg-white">
                                     <tr><th>Atlet</th><th>NISN</th><th>Sekolah</th><th>Wilayah</th><th class="text-center">Kategori</th><th></th></tr>
                                 </thead>
                                 <tbody id="athlete-list-tbody"></tbody>
@@ -629,11 +596,9 @@
             <div id="tabpane-manage" class="hidden">
                 <div class="card">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-                        <h3 class="font-display font-bold text-lg text-ink">
-                            <i class="fa-solid fa-database text-brand"></i> Log Input Hasil
-                        </h3>
+                        <h3 class="font-display font-bold text-lg text-ink"><i class="fa-solid fa-database text-brand"></i> Log Input Hasil</h3>
                         <div class="flex flex-wrap gap-2">
-                            <input type="text" id="manage-search" oninput="UI.renderManageData()" class="field" placeholder="Cari atlet/sekolah...">
+                            <input type="text" id="manage-search" oninput="UI.renderManageData()" class="field" placeholder="Cari...">
                             <select id="manage-filter-region" onchange="UI.renderManageData()" class="field"></select>
                             <select id="manage-filter-style" onchange="UI.renderManageData()" class="field"></select>
                         </div>
@@ -663,9 +628,7 @@
             <div id="tabpane-petugas" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="card">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4">
-                            <i class="fa-solid fa-user-plus text-brand"></i> Tambah Petugas
-                        </h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-user-plus text-brand"></i> Tambah Petugas</h4>
                         <div class="space-y-3">
                             <input type="text" id="pet-username" class="field" placeholder="Username">
                             <input type="text" id="pet-nama" class="field" placeholder="Nama Lengkap">
@@ -674,9 +637,7 @@
                                 <option value="petugas">Petugas (input only)</option>
                                 <option value="admin">Admin (full access)</option>
                             </select>
-                            <button onclick="AppLogic.savePetugas()" class="btn btn-primary w-full">
-                                <i class="fa-solid fa-user-check"></i> Buat Akun
-                            </button>
+                            <button onclick="AppLogic.savePetugas()" class="btn btn-primary w-full"><i class="fa-solid fa-user-check"></i> Buat Akun</button>
                         </div>
                     </div>
                     <div class="lg:col-span-2 card">
@@ -697,9 +658,7 @@
             <div id="tabpane-settings" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="card">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4">
-                            <i class="fa-solid fa-sliders text-brand"></i> Identitas & Tampilan
-                        </h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-sliders text-brand"></i> Identitas</h4>
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">Judul Aplikasi</label>
@@ -715,11 +674,8 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="card">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4">
-                            <i class="fa-solid fa-eye text-brand"></i> Visibilitas Papan Skor
-                        </h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-eye text-brand"></i> Visibilitas</h4>
                         <div class="space-y-3">
                             <label class="flex justify-between items-center p-3 bg-surface-mist rounded-lg">
                                 <span class="text-sm font-medium text-ink">Tampilkan Akumulasi</span>
@@ -735,28 +691,17 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="card lg:col-span-2">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4">
-                            <i class="fa-solid fa-file-export text-green-600"></i> Cadangan & Export
-                        </h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-file-export text-green-600"></i> Cadangan & Export</h4>
                         <div class="flex flex-wrap gap-3">
-                            <button onclick="AppLogic.exportToExcel()" class="btn btn-primary">
-                                <i class="fa-solid fa-file-excel"></i> Export ke Excel
-                            </button>
-                            <button onclick="AppLogic.viewAuditLog()" class="btn btn-ghost">
-                                <i class="fa-solid fa-clock-rotate-left"></i> Lihat Riwayat Perubahan
-                            </button>
-                            <button onclick="AppLogic.saveAllSettings()" class="btn btn-accent ml-auto">
-                                <i class="fa-solid fa-floppy-disk"></i> Simpan Pengaturan
-                            </button>
+                            <button onclick="AppLogic.exportToExcel()" class="btn btn-primary"><i class="fa-solid fa-file-excel"></i> Export ke Excel</button>
+                            <button onclick="AppLogic.viewAuditLog()" class="btn btn-ghost"><i class="fa-solid fa-clock-rotate-left"></i> Riwayat Perubahan</button>
+                            <button onclick="AppLogic.saveAllSettings()" class="btn btn-accent ml-auto"><i class="fa-solid fa-floppy-disk"></i> Simpan Pengaturan</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
-
     </main>
 
     <!-- FOOTER -->
@@ -777,19 +722,10 @@
 
         const STYLES_ALL = ["Gaya Bebas", "Gaya Punggung", "Gaya Dada", "Gaya Kupu-kupu"];
         
-        // UPDATE: Penyesuaian 11 Wilayah Kontingen DKI Jakarta
         const REGIONS_DKI = [
-            "Jakarta Barat 1",
-            "Jakarta Barat 2",
-            "Jakarta Selatan 1",
-            "Jakarta Selatan 2",
-            "Jakarta Timur 1",
-            "Jakarta Timur 2",
-            "Jakarta Pusat 1",
-            "Jakarta Pusat 2",
-            "Jakarta Utara 1",
-            "Jakarta Utara 2",
-            "Kepulauan 1000"
+            "Jakarta Barat 1", "Jakarta Barat 2", "Jakarta Selatan 1", "Jakarta Selatan 2",
+            "Jakarta Timur 1", "Jakarta Timur 2", "Jakarta Pusat 1", "Jakarta Pusat 2",
+            "Jakarta Utara 1", "Jakarta Utara 2", "Kepulauan 1000"
         ];
 
         const State = {
@@ -813,10 +749,7 @@
 
         const DB = {
             init() {
-                if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY === "GANTI_DENGAN_ANON_KEY_ANDA") {
-                    console.warn("Supabase belum dikonfigurasi.");
-                    return false;
-                }
+                if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY === "GANTI_DENGAN_ANON_KEY_ANDA") return false;
                 State.supabase = supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
                 return true;
             },
@@ -839,9 +772,7 @@
                     State.results = resRes.data || [];
                     State.petugas = petRes.data || [];
 
-                    (cfgRes.data || []).forEach(row => {
-                        State.config[row.key] = row.value;
-                    });
+                    (cfgRes.data || []).forEach(row => { State.config[row.key] = row.value; });
                 } catch (e) {
                     console.error(e);
                     UI.toast('Gagal memuat data: ' + e.message, 'error');
@@ -852,29 +783,21 @@
 
             async login(username, pin) {
                 const { data, error } = await State.supabase
-                    .from('petugas')
-                    .select('*')
-                    .eq('username', username.trim().toLowerCase())
-                    .eq('pin', pin)
-                    .eq('is_active', true)
-                    .maybeSingle();
+                    .from('petugas').select('*')
+                    .eq('username', username.trim().toLowerCase()).eq('pin', pin).eq('is_active', true).maybeSingle();
                 if (error || !data) return null;
                 State.supabase.from('petugas').update({ last_login: new Date().toISOString() }).eq('id', data.id).then(() => {});
                 return data;
             },
 
             async saveAthlete(payload) {
-                const { data, error } = await State.supabase
-                    .from('athletes').insert(payload).select().single();
+                const { data, error } = await State.supabase.from('athletes').insert(payload).select().single();
                 if (error) throw error;
                 return data;
             },
 
             async upsertAthletes(rows) {
-                const { data, error } = await State.supabase
-                    .from('athletes')
-                    .upsert(rows, { onConflict: 'nisn', ignoreDuplicates: false })
-                    .select();
+                const { data, error } = await State.supabase.from('athletes').upsert(rows, { onConflict: 'nisn', ignoreDuplicates: false }).select();
                 if (error) throw error;
                 return data;
             },
@@ -886,17 +809,9 @@
 
             async upsertResultIfNewer(row, petugasUsername, clientTs) {
                 const { data, error } = await State.supabase.rpc('upsert_result_if_newer', {
-                    p_athlete_id: row.athlete_id,
-                    p_name: row.name,
-                    p_school: row.school,
-                    p_region: row.region,
-                    p_gender: row.gender,
-                    p_style: row.style,
-                    p_mm: row.mm,
-                    p_ss: row.ss,
-                    p_ms: row.ms,
-                    p_input_by: petugasUsername,
-                    p_client_ts: clientTs
+                    p_athlete_id: row.athlete_id, p_name: row.name, p_school: row.school, p_region: row.region,
+                    p_gender: row.gender, p_style: row.style, p_mm: row.mm, p_ss: row.ss, p_ms: row.ms,
+                    p_input_by: petugasUsername, p_client_ts: clientTs
                 });
                 if (error) throw error;
                 return data;
@@ -931,19 +846,13 @@
 
             subscribeRealtime() {
                 if (State.realtimeChannel) State.supabase.removeChannel(State.realtimeChannel);
-                State.realtimeChannel = State.supabase
-                    .channel('aquarace-live')
+                State.realtimeChannel = State.supabase.channel('aquarace-live')
                     .on('postgres_changes', { event: '*', schema: 'public', table: 'results' }, async () => {
-                        await DB.fetchAll();
-                        UI.renderPublicResults();
-                        if (State.session) UI.renderAdminTabs();
+                        await DB.fetchAll(); UI.renderPublicResults(); if (State.session) UI.renderAdminTabs();
                     })
                     .on('postgres_changes', { event: '*', schema: 'public', table: 'athletes' }, async () => {
-                        await DB.fetchAll();
-                        UI.renderPublicResults();
-                        if (State.session) UI.renderAdminTabs();
-                    })
-                    .subscribe();
+                        await DB.fetchAll(); UI.renderPublicResults(); if (State.session) UI.renderAdminTabs();
+                    }).subscribe();
             }
         };
 
@@ -953,199 +862,93 @@
             intervalId: null,
             isFlushing: false,
 
-            _queueKey() {
-                const user = State.session?.username || 'anon';
-                return `${this.STORAGE_KEY}_${user}`;
-            },
-
-            getAll() {
-                try { return JSON.parse(localStorage.getItem(this._queueKey()) || '[]'); }
-                catch { return []; }
-            },
-
-            _save(items) {
-                localStorage.setItem(this._queueKey(), JSON.stringify(items));
-            },
+            _queueKey() { return `${this.STORAGE_KEY}_${State.session?.username || 'anon'}`; },
+            getAll() { try { return JSON.parse(localStorage.getItem(this._queueKey()) || '[]'); } catch { return []; } },
+            _save(items) { localStorage.setItem(this._queueKey(), JSON.stringify(items)); },
 
             enqueue(row) {
                 const items = this.getAll();
-                const idx = items.findIndex(x =>
-                    x.athlete_id === row.athlete_id && x.style === row.style && x.gender === row.gender
-                );
-                const entry = {
-                    ...row,
-                    client_ts: new Date().toISOString(),
-                    queue_id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2),
-                    attempts: 0
-                };
-                if (idx >= 0) items[idx] = entry;
-                else items.push(entry);
-                this._save(items);
-                this._updateBadge();
+                const idx = items.findIndex(x => x.athlete_id === row.athlete_id && x.style === row.style && x.gender === row.gender);
+                const entry = { ...row, client_ts: new Date().toISOString(), queue_id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), attempts: 0 };
+                if (idx >= 0) items[idx] = entry; else items.push(entry);
+                this._save(items); this._updateBadge();
             },
 
-            remove(queueId) {
-                this._save(this.getAll().filter(x => x.queue_id !== queueId));
-                this._updateBadge();
-            },
-
+            remove(queueId) { this._save(this.getAll().filter(x => x.queue_id !== queueId)); this._updateBadge(); },
             markRejected(queueId) {
-                const items = this.getAll();
-                const entry = items.find(x => x.queue_id === queueId);
-                if (entry) {
-                    entry.rejected = true;
-                    entry.rejected_at = new Date().toISOString();
-                    this._save(items);
-                }
+                const items = this.getAll(); const entry = items.find(x => x.queue_id === queueId);
+                if (entry) { entry.rejected = true; entry.rejected_at = new Date().toISOString(); this._save(items); }
             },
 
             async flush() {
-                if (this.isFlushing) return;
-                if (!State.supabase || !State.session) return;
-                if (!navigator.onLine) return;
-
-                const items = this.getAll().filter(x => !x.rejected);
-                if (items.length === 0) return;
-
-                this.isFlushing = true;
-                let sentCount = 0, rejectedCount = 0;
-
+                if (this.isFlushing || !State.supabase || !State.session || !navigator.onLine) return;
+                const items = this.getAll().filter(x => !x.rejected); if (items.length === 0) return;
+                this.isFlushing = true; let sentCount = 0, rejectedCount = 0;
                 for (const entry of items) {
                     try {
                         entry.attempts = (entry.attempts || 0) + 1;
-                        const status = await DB.upsertResultIfNewer(
-                            entry,
-                            State.session.username,
-                            entry.client_ts
-                        );
-                        if (status === 'rejected') {
-                            this.markRejected(entry.queue_id);
-                            rejectedCount++;
-                        } else {
-                            this.remove(entry.queue_id);
-                            sentCount++;
-                        }
-                    } catch (e) {
-                        console.warn('SyncQueue flush failed:', entry, e);
-                    }
+                        const status = await DB.upsertResultIfNewer(entry, State.session.username, entry.client_ts);
+                        if (status === 'rejected') { this.markRejected(entry.queue_id); rejectedCount++; }
+                        else { this.remove(entry.queue_id); sentCount++; }
+                    } catch (e) { console.warn(e); }
                 }
-
-                this.isFlushing = false;
-                this._updateBadge();
-
-                if (sentCount > 0) UI.toast(`${sentCount} hasil ter-sinkron`, 'success');
-                if (rejectedCount > 0) {
-                    UI.toast(`${rejectedCount} input ditolak server`, 'warning');
-                }
+                this.isFlushing = false; this._updateBadge();
+                if (sentCount > 0) UI.toast(`${sentCount} hasil ter-sinkron`);
+                if (rejectedCount > 0) UI.toast(`${rejectedCount} input ditolak server`, 'warning');
             },
 
-            startAutoFlush() {
-                this.stopAutoFlush();
-                this.intervalId = setInterval(() => this.flush(), this.FLUSH_INTERVAL_MS);
-                window.addEventListener('online', () => this.flush());
-            },
-
-            stopAutoFlush() {
-                if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; }
-            },
+            startAutoFlush() { this.stopAutoFlush(); this.intervalId = setInterval(() => this.flush(), this.FLUSH_INTERVAL_MS); },
+            stopAutoFlush() { if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; } },
 
             _updateBadge() {
-                const items = this.getAll();
-                const pending = items.filter(x => !x.rejected).length;
-                const rejected = items.filter(x => x.rejected).length;
-                const el = document.getElementById('sync-badge');
-                if (!el) return;
-                if (pending === 0 && rejected === 0) {
-                    el.classList.add('hidden');
-                } else {
+                const items = this.getAll(); const pending = items.filter(x => !x.rejected).length; const rejected = items.filter(x => x.rejected).length;
+                const el = document.getElementById('sync-badge'); if (!el) return;
+                if (pending === 0 && rejected === 0) el.classList.add('hidden');
+                else {
                     el.classList.remove('hidden');
                     el.innerHTML = `
-                        ${pending > 0 ? `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 text-xs font-semibold"><i class="fa-solid fa-cloud-arrow-up"></i> ${pending} antrian</span>` : ''}
-                        ${rejected > 0 ? `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-red-100 text-red-800 text-xs font-semibold cursor-pointer" onclick="SyncQueue.showRejected()"><i class="fa-solid fa-triangle-exclamation"></i> ${rejected} ditolak</span>` : ''}
+                        ${pending > 0 ? `<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-semibold"><i class="fa-solid fa-cloud-arrow-up"></i> ${pending}</span>` : ''}
+                        ${rejected > 0 ? `<span class="px-2 py-0.5 rounded bg-red-100 text-red-800 text-xs font-semibold cursor-pointer" onclick="SyncQueue.showRejected()"><i class="fa-solid fa-triangle-exclamation"></i> ${rejected}</span>` : ''}
                     `;
                 }
             },
 
             showRejected() {
-                const items = this.getAll().filter(x => x.rejected);
-                if (items.length === 0) return;
-                const html = items.map(x => `
-                    <tr>
-                        <td><strong>${UI.escape(x.name)}</strong><br><span class="text-xs text-ink-muted">${UI.escape(x.school)} · ${UI.escape(x.region)}</span></td>
-                        <td class="text-xs">${UI.escape(x.style)}</td>
-                        <td class="text-center text-xs">${UI.escape(x.gender)}</td>
-                        <td class="text-right font-mono-num">${UI.formatTime(x.mm, x.ss, x.ms)}</td>
-                    </tr>
-                `).join('');
-                Swal.fire({
-                    title: 'Input Ditolak Server',
-                    html: `<div class="overflow-x-auto"><table class="data-table text-sm"><thead><tr><th>Atlet</th><th>Nomor</th><th>Kategori</th><th>Waktu</th></tr></thead><tbody>${html}</tbody></table></div>`,
-                    width: 700,
-                    confirmButtonText: 'Bersihkan',
-                    confirmButtonColor: '#EA580C'
-                }).then(() => {
-                    this._save(this.getAll().filter(x => !x.rejected));
-                    this._updateBadge();
+                const items = this.getAll().filter(x => x.rejected); if (items.length === 0) return;
+                const html = items.map(x => `<tr><td>${UI.escape(x.name)}</td><td>${x.style}</td><td>${x.gender}</td><td class="text-right">${UI.formatTime(x.mm, x.ss, x.ms)}</td></tr>`).join('');
+                Swal.fire({ title: 'Input Ditolak', html: `<div class="overflow-x-auto"><table class="data-table text-sm"><thead><tr><th>Atlet</th><th>Nomor</th><th>Kat</th><th>Waktu</th></tr></thead><tbody>${html}</tbody></table></div>` }).then(() => {
+                    this._save(this.getAll().filter(x => !x.rejected)); this._updateBadge();
                 });
             }
         };
 
         const UI = {
-            showLoader(show) {
-                document.getElementById('loader').classList.toggle('hidden', !show);
-            },
-
-            toast(msg, type = 'success') {
-                Swal.fire({
-                    toast: true, position: 'top-end',
-                    icon: type, title: msg,
-                    showConfirmButton: false, timer: 3000
-                });
-            },
-
-            async confirm(title, text, confirmText = 'Ya') {
-                const res = await Swal.fire({
-                    title, text, icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText, cancelButtonText: 'Batal',
-                    confirmButtonColor: '#0369A1'
-                });
-                return res.isConfirmed;
-            },
+            showLoader(show) { document.getElementById('loader').classList.toggle('hidden', !show); },
+            toast(msg, type = 'success') { Swal.fire({ toast: true, position: 'top-end', icon: type, title: msg, showConfirmButton: false, timer: 3000 }); },
+            async confirm(title, text) { const res = await Swal.fire({ title, text, icon: 'warning', showCancelButton: true, confirmButtonColor: '#0369A1' }); return res.isConfirmed; },
 
             navigate(view) {
-                ['dashboard', 'login', 'admin'].forEach(v => {
-                    document.getElementById('view-' + v).classList.toggle('hidden', v !== view);
-                });
+                ['dashboard', 'login', 'admin'].forEach(v => document.getElementById('view-' + v).classList.toggle('hidden', v !== view));
                 document.getElementById('nav-login-btn').classList.toggle('hidden', !!State.session || view === 'login');
                 document.getElementById('nav-logout-btn').classList.toggle('hidden', !State.session);
-
                 if (view === 'dashboard') this.renderPublicResults();
                 if (view === 'admin' && State.session) this.renderAdminTabs();
             },
 
             populatePublicFilters() {
-                const sel = document.getElementById('public-filter-style');
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
-                sel.innerHTML = '<option value="__ALL__">Tampilkan Semua Nomor</option>' +
-                    active.map(s => `<option value="${s}">${s}</option>`).join('');
-
-                const regSel = document.getElementById('public-filter-region');
-                regSel.innerHTML = '<option value="__ALL__">Semua Wilayah</option>' +
-                    REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
-
+                document.getElementById('public-filter-style').innerHTML = '<option value="__ALL__">Semua Nomor</option>' + active.map(s => `<option value="${s}">${s}</option>`).join('');
+                document.getElementById('public-filter-region').innerHTML = '<option value="__ALL__">Semua Wilayah</option>' + REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                
                 const athRegSel = document.getElementById('ath-region');
                 if (athRegSel && athRegSel.options.length <= 1) {
-                    athRegSel.innerHTML = '<option value="">-- Pilih Asal Wilayah --</option>' +
-                        REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                    athRegSel.innerHTML = '<option value="">-- Pilih Asal Wilayah --</option>' + REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
                 }
-
                 document.getElementById('dash-running-text').textContent = State.config.RUNNING_TEXT;
             },
 
             renderPublicResults() {
                 this.populatePublicFilters();
-
                 const styleFilter = document.getElementById('public-filter-style').value;
                 const genderFilter = document.getElementById('public-filter-gender').value;
                 const regionFilter = document.getElementById('public-filter-region').value;
@@ -1155,11 +958,7 @@
                     if (styleFilter !== '__ALL__' && r.style !== styleFilter) return false;
                     if (genderFilter !== '__ALL__' && r.gender !== genderFilter) return false;
                     if (regionFilter !== '__ALL__' && r.region !== regionFilter) return false;
-                    if (search) {
-                        const nameMatch = r.name.toLowerCase().includes(search);
-                        const schoolMatch = (r.school || '').toLowerCase().includes(search);
-                        if (!nameMatch && !schoolMatch) return false;
-                    }
+                    if (search && !r.name.toLowerCase().includes(search) && !(r.school || '').toLowerCase().includes(search)) return false;
                     return true;
                 });
 
@@ -1168,328 +967,93 @@
                 this.renderAccumulation();
             },
 
-            renderPodium(filtered, styleFilter, genderFilter) {
-                const cont = document.getElementById('podium-section');
-                cont.innerHTML = '';
-
-                const groups = {};
-                filtered.forEach(r => {
-                    const k = `${r.style}__${r.gender}`;
-                    if (!groups[k]) groups[k] = { style: r.style, gender: r.gender, list: [] };
-                    groups[k].list.push(r);
-                });
-
+            renderPodium(filtered) {
+                const cont = document.getElementById('podium-section'); cont.innerHTML = '';
+                const groups = {}; filtered.forEach(r => { const k = `${r.style}__${r.gender}`; if (!groups[k]) groups[k] = { style: r.style, gender: r.gender, list: [] }; groups[k].list.push(r); });
                 const groupKeys = Object.keys(groups).sort();
-                if (groupKeys.length === 0) {
-                    cont.innerHTML = `
-                        <div class="card text-center py-12">
-                            <i class="fa-solid fa-trophy text-4xl text-line mb-3"></i>
-                            <p class="text-ink-muted">Belum ada hasil untuk filter yang dipilih.</p>
-                        </div>`;
-                    return;
-                }
+                if (groupKeys.length === 0) { cont.innerHTML = `<div class="card text-center py-12 text-ink-muted">Belum ada hasil pertandingan.</div>`; return; }
 
                 const html = ['<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">'];
                 groupKeys.forEach(k => {
-                    const g = groups[k];
-                    g.list.sort((a, b) => a.total_ms - b.total_ms);
-                    const top3 = g.list.slice(0, 3);
-
-                    html.push(`
-                        <div class="card">
-                            <div class="flex items-center justify-between mb-5">
-                                <div>
-                                    <div class="text-[10px] font-bold uppercase tracking-wider text-brand">${g.gender}</div>
-                                    <h3 class="font-display font-extrabold text-lg text-ink">${g.style}</h3>
-                                </div>
-                                <i class="fa-solid fa-trophy text-2xl text-medal-gold"></i>
-                            </div>
-                            <div class="space-y-3">
-                    `);
-
-                    if (top3.length === 0) {
-                        html.push('<p class="text-sm text-ink-muted text-center py-4">Belum ada data</p>');
-                    } else {
-                        const ranks = ['gold', 'silver', 'bronze'];
-                        const labels = ['1', '2', '3'];
-                        top3.forEach((r, i) => {
-                            const cls = ranks[i];
-                            html.push(`
-                                <div class="medal-card medal-${cls}">
-                                    <div class="flex items-center gap-4">
-                                        <div class="medal-badge badge-${cls}">${labels[i]}</div>
-                                        <div class="flex-1 min-w-0">
-                                            <div class="font-display font-bold text-ink truncate">${this.escape(r.name)}</div>
-                                            <div class="text-xs text-ink-muted truncate">${this.escape(r.school)}</div>
-                                            <div class="text-[10px] text-ink-muted truncate font-semibold uppercase tracking-wider">${this.escape(r.region)}</div>
-                                        </div>
-                                        <div class="font-mono-num font-bold text-base text-ink">${this.formatTime(r.mm, r.ss, r.ms)}</div>
-                                    </div>
-                                </div>
-                            `);
-                        });
-                    }
+                    const g = groups[k]; g.list.sort((a, b) => a.total_ms - b.total_ms); const top3 = g.list.slice(0, 3);
+                    html.push(`<div class="card"><div class="flex items-center justify-between mb-5"><div><div class="text-[10px] font-bold text-brand uppercase">${g.gender}</div><h3 class="font-display font-extrabold text-lg">${g.style}</h3></div><i class="fa-solid fa-trophy text-2xl text-medal-gold"></i></div><div class="space-y-3">`);
+                    const ranks = ['gold', 'silver', 'bronze']; const labels = ['1', '2', '3'];
+                    top3.forEach((r, i) => {
+                        html.push(`<div class="medal-card medal-${ranks[i]}"><div class="flex items-center gap-4"><div class="medal-badge badge-${ranks[i]}">${labels[i]}</div><div class="flex-1 min-w-0"><div class="font-display font-bold truncate">${this.escape(r.name)}</div><div class="text-xs text-ink-muted truncate">${this.escape(r.school)}</div><div class="text-[10px] text-ink-muted font-semibold uppercase">${this.escape(r.region)}</div></div><div class="font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</div></div></div>`);
+                    });
                     html.push('</div></div>');
                 });
-                html.push('</div>');
-                cont.innerHTML = html.join('');
+                html.push('</div>'); cont.innerHTML = html.join('');
             },
 
             renderAllResults(filtered) {
-                const showAll = State.config.SHOW_ALL_RESULTS !== 'OFF';
-                document.getElementById('all-results-section').classList.toggle('hidden', !showAll);
-                if (!showAll) return;
-
-                const tbody = document.getElementById('all-results-tbody');
-                const sorted = [...filtered].sort((a, b) => a.total_ms - b.total_ms);
+                const showAll = State.config.SHOW_ALL_RESULTS !== 'OFF'; document.getElementById('all-results-section').classList.toggle('hidden', !showAll); if (!showAll) return;
+                const tbody = document.getElementById('all-results-tbody'); const sorted = [...filtered].sort((a, b) => a.total_ms - b.total_ms);
                 document.getElementById('all-results-count').textContent = `${sorted.length} hasil`;
-
-                if (sorted.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-12 text-ink-muted">Belum ada hasil</td></tr>';
-                    return;
-                }
-
-                tbody.innerHTML = sorted.map((r, i) => `
-                    <tr>
-                        <td class="text-center font-bold text-brand">${i + 1}</td>
-                        <td><div class="font-semibold">${this.escape(r.name)}</div></td>
-                        <td class="text-ink-muted">${this.escape(r.school)}</td>
-                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.region)}</span></td>
-                        <td class="text-ink-muted text-sm">${this.escape(r.style)}</td>
-                        <td class="text-center"><span class="text-xs px-2 py-0.5 rounded-md ${r.gender === 'Putra' ? 'bg-sky-50 text-sky-700' : 'bg-pink-50 text-pink-700'}">${r.gender}</span></td>
-                        <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
-                    </tr>
-                `).join('');
+                if (sorted.length === 0) { tbody.innerHTML = '<tr><td colspan="7" class="text-center py-12 text-ink-muted">Belum ada hasil</td></tr>'; return; }
+                tbody.innerHTML = sorted.map((r, i) => `<tr><td class="text-center font-bold text-brand">${i + 1}</td><td><div class="font-semibold">${this.escape(r.name)}</div></td><td>${this.escape(r.school)}</td><td><span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-ink">${this.escape(r.region)}</span></td><td>${this.escape(r.style)}</td><td class="text-center">${r.gender}</td><td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td></tr>`).join('');
             },
 
             renderAccumulation() {
-                const show = State.config.SHOW_ACCUMULATION !== 'OFF';
-                document.getElementById('accumulation-section').classList.toggle('hidden', !show);
-                if (!show) return;
-
-                const tbody = document.getElementById('accumulation-tbody');
-                const map = {};
-                State.results.forEach(r => {
-                    if (r.style === 'Gaya Bebas' || r.style === 'Gaya Punggung') {
-                        const k = `${r.athlete_id}`;
-                        if (!map[k]) map[k] = { name: r.name, school: r.school, region: r.region, gender: r.gender, ms: 0, count: 0 };
-                        map[k].ms += Number(r.total_ms);
-                        map[k].count++;
-                    }
-                });
-
+                const show = State.config.SHOW_ACCUMULATION !== 'OFF'; document.getElementById('accumulation-section').classList.toggle('hidden', !show); if (!show) return;
+                const tbody = document.getElementById('accumulation-tbody'); const map = {};
+                State.results.forEach(r => { if (r.style === 'Gaya Bebas' || r.style === 'Gaya Punggung') { const k = `${r.athlete_id}`; if (!map[k]) map[k] = { name: r.name, school: r.school, region: r.region, gender: r.gender, ms: 0, count: 0 }; map[k].ms += Number(r.total_ms); map[k].count++; } });
                 const list = Object.values(map).filter(x => x.count === 2).sort((a, b) => a.ms - b.ms);
-                if (list.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada akumulasi (perlu Bebas + Punggung)</td></tr>';
-                    return;
-                }
-
-                tbody.innerHTML = list.map((x, i) => {
-                    const tm = Math.floor(x.ms / 60000);
-                    const ts = Math.floor((x.ms % 60000) / 1000);
-                    const tms = Math.floor((x.ms % 1000) / 10);
-                    return `
-                        <tr>
-                            <td class="text-center font-bold text-medal-gold">#${i + 1}</td>
-                            <td class="font-semibold">${this.escape(x.name)}</td>
-                            <td class="text-ink-muted">${this.escape(x.school)}</td>
-                            <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(x.region)}</span></td>
-                            <td class="text-center text-xs">${x.gender}</td>
-                            <td class="text-right font-mono-num font-bold text-medal-gold">${this.formatTime(tm, ts, tms)}</td>
-                        </tr>
-                    `;
-                }).join('');
+                if (list.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada akumulasi (perlu Bebas + Punggung)</td></tr>'; return; }
+                tbody.innerHTML = list.map((x, i) => { const tm = Math.floor(x.ms / 60000); const ts = Math.floor((x.ms % 60000) / 1000); const tms = Math.floor((x.ms % 1000) / 10); return `<tr><td class="text-center font-bold text-medal-gold">#${i + 1}</td><td class="font-semibold">${this.escape(x.name)}</td><td>${this.escape(x.school)}</td><td><span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-ink">${this.escape(x.region)}</span></td><td class="text-center">${x.gender}</td><td class="text-right font-mono-num font-bold text-medal-gold">${this.formatTime(tm, ts, tms)}</td></tr>`; }).join('');
             },
 
             renderAdminTabs() {
-                const isAdmin = State.session?.role === 'admin';
-                document.getElementById('petugas-nama').textContent = State.session.nama;
-                const badge = document.getElementById('petugas-role-badge');
-                badge.textContent = isAdmin ? 'ADMIN' : 'PETUGAS';
-                badge.className = 'ml-2 px-2 py-0.5 rounded-md text-[10px] font-semibold ' +
-                    (isAdmin ? 'bg-brand text-white' : 'bg-surface-mist text-ink');
-
-                const tabs = [{ id: 'input', label: 'Input Hasil', icon: 'stopwatch', forAll: true }];
-                if (isAdmin) {
-                    tabs.push(
-                        { id: 'athletes', label: 'Database Atlet', icon: 'users' },
-                        { id: 'manage', label: 'Manajemen Hasil', icon: 'database' },
-                        { id: 'petugas', label: 'Akun Petugas', icon: 'user-shield' },
-                        { id: 'settings', label: 'Pengaturan', icon: 'sliders' }
-                    );
-                }
-
-                const tabsCont = document.getElementById('admin-tabs');
-                tabsCont.innerHTML = tabs.map(t => `
-                    <button onclick="UI.switchTab('${t.id}')" id="tab-${t.id}" class="tab-btn ${State.activeTab === t.id ? 'active' : ''}">
-                        <i class="fa-solid fa-${t.icon} mr-1"></i> ${t.label}
-                    </button>
-                `).join('');
-
+                const isAdmin = State.session?.role === 'admin'; document.getElementById('petugas-nama').textContent = State.session.nama;
+                const badge = document.getElementById('petugas-role-badge'); badge.textContent = isAdmin ? 'ADMIN' : 'PETUGAS';
+                badge.className = 'ml-2 px-2 py-0.5 rounded text-[10px] font-semibold ' + (isAdmin ? 'bg-brand text-white' : 'bg-surface-mist text-ink');
+                const tabs = [{ id: 'input', label: 'Input Hasil', icon: 'stopwatch' }];
+                if (isAdmin) { tabs.push({ id: 'athletes', label: 'Database Atlet', icon: 'users' }, { id: 'manage', label: 'Manajemen Hasil', icon: 'database' }, { id: 'petugas', label: 'Akun Petugas', icon: 'user-shield' }, { id: 'settings', label: 'Pengaturan', icon: 'sliders' }); }
+                document.getElementById('admin-tabs').innerHTML = tabs.map(t => `<button onclick="UI.switchTab('${t.id}')" id="tab-${t.id}" class="tab-btn ${State.activeTab === t.id ? 'active' : ''}"><i class="fa-solid fa-${t.icon} mr-1"></i> ${t.label}</button>`).join('');
                 this.switchTab(State.activeTab, true);
             },
 
             switchTab(tabId, skipUpdate = false) {
-                State.activeTab = tabId;
-                if (!skipUpdate) this.renderAdminTabs();
-                ['input', 'athletes', 'manage', 'petugas', 'settings'].forEach(t => {
-                    document.getElementById('tabpane-' + t).classList.toggle('hidden', t !== tabId);
-                });
-                if (tabId === 'input') this.initInputTable();
-                if (tabId === 'athletes') this.renderAthleteList();
-                if (tabId === 'manage') this.renderManageData();
-                if (tabId === 'petugas') this.renderPetugasList();
-                if (tabId === 'settings') this.populateSettingsForm();
+                State.activeTab = tabId; if (!skipUpdate) this.renderAdminTabs();
+                ['input', 'athletes', 'manage', 'petugas', 'settings'].forEach(t => document.getElementById('tabpane-' + t).classList.toggle('hidden', t !== tabId));
+                if (tabId === 'input') this.initInputTable(); if (tabId === 'athletes') this.renderAthleteList(); if (tabId === 'manage') this.renderManageData(); if (tabId === 'petugas') this.renderPetugasList(); if (tabId === 'settings') this.populateSettingsForm();
             },
 
             initInputTable() {
-                const gSel = document.getElementById('inp-gender');
-                const sSel = document.getElementById('inp-style');
+                const gender = document.getElementById('inp-gender').value;
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
-                sSel.innerHTML = active.map(s => `<option value="${s}">${s}</option>`).join('');
-
-                const gender = gSel.value;
-                const style = sSel.value;
-                const tbody = document.getElementById('bulk-input-tbody');
-                tbody.innerHTML = '';
-
+                document.getElementById('inp-style').innerHTML = active.map(s => `<option value="${s}">${s}</option>`).join('');
+                const style = document.getElementById('inp-style').value;
+                const tbody = document.getElementById('bulk-input-tbody'); tbody.innerHTML = '';
                 const list = State.athletes.filter(a => a.gender === gender).sort((a, b) => a.name.localeCompare(b.name));
-                if (list.length === 0) {
-                    tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet ${gender}.</td></tr>`;
-                    return;
-                }
-
+                if (list.length === 0) { tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet kategori ${gender}.</td></tr>`; return; }
                 list.forEach(a => {
                     const existing = State.results.find(r => r.athlete_id === a.id && r.style === style && r.gender === gender);
-                    const mm = existing?.mm ?? 0;
-                    const ss = existing?.ss ?? 0;
-                    const ms = existing?.ms ?? 0;
-                    const tr = document.createElement('tr');
-                    tr.className = 'bulk-row';
-                    tr.dataset.athleteId = a.id;
-                    tr.innerHTML = `
-                        <td>
-                            <div class="font-semibold">${this.escape(a.name)}</div>
-                            <div class="text-xs text-ink-muted">${this.escape(a.school)} <span class="px-1.5 py-0.5 ml-1 rounded bg-brand-soft text-brand-ink text-[10px] font-semibold">${this.escape(a.region)}</span></div>
-                        </td>
-                        <td><input type="number" min="0" max="59" value="${mm}" class="field font-mono-num text-center inp-mm"></td>
-                        <td><input type="number" min="0" max="59" value="${ss}" class="field font-mono-num text-center inp-ss"></td>
-                        <td><input type="number" min="0" max="99" value="${ms}" class="field font-mono-num text-center inp-ms"></td>
-                        <td class="text-center">
-                            <button type="button" onclick="this.closest('tr').querySelectorAll('input').forEach(i=>i.value=0)" class="text-ink-muted hover:text-brand-accent">
-                                <i class="fa-solid fa-rotate-left"></i>
-                            </button>
-                        </td>
-                    `;
+                    const tr = document.createElement('tr'); tr.className = 'bulk-row'; tr.dataset.athleteId = a.id;
+                    tr.innerHTML = `<td><div class="font-semibold">${this.escape(a.name)}</div><div class="text-xs text-ink-muted">${this.escape(a.school)} <span class="px-1.5 py-0.5 ml-1 rounded bg-brand-soft text-brand-ink text-[10px] font-semibold">${this.escape(a.region)}</span></div></td><td><input type="number" min="0" max="59" value="${existing?.mm ?? 0}" class="field font-mono-num text-center inp-mm"></td><td><input type="number" min="0" max="59" value="${existing?.ss ?? 0}" class="field font-mono-num text-center inp-ss"></td><td><input type="number" min="0" max="99" value="${existing?.ms ?? 0}" class="field font-mono-num text-center inp-ms"></td><td class="text-center"><button type="button" onclick="this.closest('tr').querySelectorAll('input').forEach(i=>i.value=0)" class="text-ink-muted hover:text-brand-accent"><i class="fa-solid fa-rotate-left"></i></button></td>`;
                     tbody.appendChild(tr);
                 });
             },
 
             renderAthleteList() {
-                const tbody = document.getElementById('athlete-list-tbody');
-                const search = document.getElementById('athlete-search').value.trim().toLowerCase();
-                let list = State.athletes;
-                if (search) {
-                    list = list.filter(a =>
-                        a.name.toLowerCase().includes(search) ||
-                        (a.school || '').toLowerCase().includes(search) ||
-                        (a.region || '').toLowerCase().includes(search)
-                    );
-                }
+                const tbody = document.getElementById('athlete-list-tbody'); const search = document.getElementById('athlete-search').value.trim().toLowerCase();
+                let list = State.athletes; if (search) { list = list.filter(a => a.name.toLowerCase().includes(search) || (a.school || '').toLowerCase().includes(search)); }
                 document.getElementById('athlete-count').textContent = `${list.length} atlet`;
-
-                if (list.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada atlet</td></tr>';
-                    return;
-                }
-
-                tbody.innerHTML = list.map(a => `
-                    <tr>
-                        <td><div class="font-semibold">${this.escape(a.name)}</div></td>
-                        <td class="font-mono-num text-xs text-ink-muted">${a.nisn || '—'}</td>
-                        <td class="text-ink-muted">${this.escape(a.school)}</td>
-                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(a.region)}</span></td>
-                        <td class="text-center"><span class="text-xs px-2 py-0.5 rounded-md ${a.gender === 'Putra' ? 'bg-sky-50 text-sky-700' : 'bg-pink-50 text-pink-700'}">${a.gender}</span></td>
-                        <td class="text-center">
-                            <button onclick="AppLogic.deleteAthlete(${a.id})" class="text-red-500 hover:text-red-700">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                `).join('');
+                if (list.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada atlet</td></tr>'; return; }
+                tbody.innerHTML = list.map(a => `<tr><td class="font-semibold">${this.escape(a.name)}</td><td class="font-mono-num text-xs">${a.nisn || '—'}</td><td>${this.escape(a.school)}</td><td><span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-ink">${this.escape(a.region)}</span></td><td class="text-center">${a.gender}</td><td class="text-center"><button onclick="AppLogic.deleteAthlete(${a.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></td></tr>`).join('');
             },
 
             renderManageData() {
-                const sSel = document.getElementById('manage-filter-style');
-                if (!sSel.options.length) {
-                    sSel.innerHTML = '<option value="__ALL__">Semua Nomor</option>' +
-                        STYLES_ALL.map(s => `<option value="${s}">${s}</option>`).join('');
-                }
-                const rSel = document.getElementById('manage-filter-region');
-                if (!rSel.options.length) {
-                    rSel.innerHTML = '<option value="__ALL__">Semua Wilayah</option>' +
-                        REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
-                }
                 const search = document.getElementById('manage-search').value.trim().toLowerCase();
-                const styleFilter = sSel.value;
-                const regionFilter = rSel.value;
-
-                const tbody = document.getElementById('manage-tbody');
-                let list = State.results;
-                if (styleFilter !== '__ALL__') list = list.filter(r => r.style === styleFilter);
-                if (regionFilter !== '__ALL__') list = list.filter(r => r.region === regionFilter);
-                if (search) list = list.filter(r =>
-                    r.name.toLowerCase().includes(search) || (r.school || '').toLowerCase().includes(search)
-                );
-
-                if (list.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-ink-muted">Belum ada hasil</td></tr>';
-                    return;
-                }
-
-                tbody.innerHTML = list.map(r => `
-                    <tr>
-                        <td><div class="font-semibold">${this.escape(r.name)}</div></td>
-                        <td>
-                            <div class="text-sm">${this.escape(r.school)}</div>
-                            <div class="text-[10px] font-semibold uppercase tracking-wider text-brand">${this.escape(r.region)}</div>
-                        </td>
-                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.style)}</span></td>
-                        <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
-                        <td class="text-xs text-ink-muted">${this.escape(r.input_by || '—')}</td>
-                        <td class="text-xs text-ink-muted">${new Date(r.updated_at).toLocaleString('id-ID')}</td>
-                        <td class="text-center">
-                            <button onclick="AppLogic.deleteResult(${r.id})" class="text-red-500 hover:text-red-700">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
-                `).join('');
+                const tbody = document.getElementById('manage-tbody'); let list = State.results;
+                if (search) list = list.filter(r => r.name.toLowerCase().includes(search));
+                if (list.length === 0) { tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-ink-muted">Belum ada data</td></tr>'; return; }
+                tbody.innerHTML = list.map(r => `<tr><td class="font-semibold">${this.escape(r.name)}</td><td><div>${this.escape(r.school)}</div><div class="text-[10px] font-bold text-brand">${this.escape(r.region)}</div></td><td>${this.escape(r.style)}</td><td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td><td>${this.escape(r.input_by)}</td><td class="text-xs text-ink-muted">${new Date(r.updated_at).toLocaleString('id-ID')}</td><td class="text-center"><button onclick="AppLogic.deleteResult(${r.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></td></tr>`).join('');
             },
 
             renderPetugasList() {
-                const tbody = document.getElementById('petugas-tbody');
-                if (State.petugas.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada petugas</td></tr>';
-                    return;
-                }
-                tbody.innerHTML = State.petugas.map(p => `
-                    <tr>
-                        <td class="font-mono-num font-semibold">${this.escape(p.username)}</td>
-                        <td>${this.escape(p.nama)}</td>
-                        <td><span class="text-xs px-2 py-0.5 rounded-md ${p.role === 'admin' ? 'bg-brand text-white' : 'bg-surface-mist text-ink'}">${p.role}</span></td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" ${p.is_active ? 'checked' : ''} onchange="AppLogic.togglePetugas(${p.id}, this.checked)">
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                        <td class="text-xs text-ink-muted">${p.last_login ? new Date(p.last_login).toLocaleString('id-ID') : '—'}</td>
-                        <td class="text-center">
-                            ${p.username !== State.session.username ? `<button onclick="AppLogic.deletePetugas(${p.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>` : '<span class="text-xs text-ink-muted">(Anda)</span>'}
-                        </td>
-                    </tr>
-                `).join('');
+                const tbody = document.getElementById('petugas-tbody'); if (State.petugas.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada petugas</td></tr>'; return; }
+                tbody.innerHTML = State.petugas.map(p => `<tr><td class="font-mono-num font-semibold">${this.escape(p.username)}</td><td>${this.escape(p.nama)}</td><td>${p.role}</td><td class="text-center"><label class="switch"><input type="checkbox" ${p.is_active ? 'checked' : ''} onchange="AppLogic.togglePetugas(${p.id}, this.checked)"><span class="slider"></span></label></td><td>${p.last_login ? new Date(p.last_login).toLocaleString('id-ID') : '—'}</td><td class="text-center">${p.username !== State.session.username ? `<button onclick="AppLogic.deletePetugas(${p.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>` : '<span class="text-xs text-ink-muted">(Anda)</span>'}</td></tr>`).join('');
             },
 
             populateSettingsForm() {
@@ -1498,297 +1062,105 @@
                 document.getElementById('conf-running').value = State.config.RUNNING_TEXT || '';
                 document.getElementById('conf-show-acc').checked = State.config.SHOW_ACCUMULATION !== 'OFF';
                 document.getElementById('conf-show-all').checked = State.config.SHOW_ALL_RESULTS !== 'OFF';
-
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
-                document.getElementById('settings-styles-list').innerHTML = STYLES_ALL.map(s => `
-                    <label class="flex items-center justify-between p-3 bg-surface-mist rounded-lg cursor-pointer">
-                        <span class="text-sm font-medium text-ink">${s}</span>
-                        <input type="checkbox" class="style-toggle w-4 h-4 accent-brand" value="${s}" ${active.includes(s) ? 'checked' : ''}>
-                    </label>
-                `).join('');
+                document.getElementById('settings-styles-list').innerHTML = STYLES_ALL.map(s => `<label class="flex items-center justify-between p-3 bg-surface-mist rounded-lg cursor-pointer"><span class="text-sm font-medium">${s}</span><input type="checkbox" class="style-toggle w-4 h-4 accent-brand" value="${s}" ${active.includes(s) ? 'checked' : ''}></label>`).join('');
             },
 
-            formatTime(m, s, ms) {
-                return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(ms).padStart(2,'0')}`;
-            },
-            escape(str) {
-                return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-            }
+            formatTime(m, s, ms) { return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(ms).padStart(2,'0')}`; },
+            escape(str) { return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
         };
 
         const AppLogic = {
             async init() {
-                if (!DB.init()) {
-                    UI.toast('Supabase belum dikonfigurasi.', 'warning');
-                    return;
-                }
-                await DB.fetchAll();
-                DB.subscribeRealtime();
-                UI.populatePublicFilters();
-                UI.renderPublicResults();
-
+                if (!DB.init()) { UI.toast('Supabase error.', 'warning'); return; }
+                await DB.fetchAll(); DB.subscribeRealtime(); UI.populatePublicFilters(); UI.renderPublicResults();
                 if (State.session) {
-                    const fresh = await State.supabase
-                        .from('petugas').select('*')
-                        .eq('id', State.session.id)
-                        .eq('is_active', true)
-                        .maybeSingle();
-                    if (fresh.data) {
-                        State.session = fresh.data;
-                        localStorage.setItem('aquarace_session', JSON.stringify(State.session));
-                        SyncQueue.startAutoFlush();
-                        setTimeout(() => SyncQueue.flush(), 1000);
-                        UI.navigate('admin');
-                    } else {
-                        this.logout(true);
-                    }
+                    const fresh = await State.supabase.from('petugas').select('*').eq('id', State.session.id).eq('is_active', true).maybeSingle();
+                    if (fresh.data) { State.session = fresh.data; localStorage.setItem('aquarace_session', JSON.stringify(State.session)); SyncQueue.startAutoFlush(); UI.navigate('admin'); }
+                    else { this.logout(true); }
                 }
             },
 
             async handleLogin(e) {
-                e.preventDefault();
-                const username = document.getElementById('login-username').value.trim().toLowerCase();
-                const pin = document.getElementById('login-pin').value.trim();
-                UI.showLoader(true);
-                const result = await DB.login(username, pin);
-                UI.showLoader(false);
-                if (!result) {
-                    UI.toast('Username atau PIN salah', 'error');
-                    return;
-                }
-                State.session = result;
-                localStorage.setItem('aquarace_session', JSON.stringify(result));
-                UI.toast(`Selamat datang, ${result.nama}`);
-                SyncQueue.startAutoFlush();
-                UI.navigate('admin');
+                e.preventDefault(); const u = document.getElementById('login-username').value.trim().toLowerCase(); const p = document.getElementById('login-pin').value.trim();
+                UI.showLoader(true); const res = await DB.login(u, p); UI.showLoader(false);
+                if (!res) { UI.toast('Gagal masuk', 'error'); return; }
+                State.session = res; localStorage.setItem('aquarace_session', JSON.stringify(res)); SyncQueue.startAutoFlush(); UI.navigate('admin');
             },
 
-            logout(silent = false) {
-                SyncQueue.stopAutoFlush();
-                State.session = null;
-                localStorage.removeItem('aquarace_session');
-                if (!silent) UI.toast('Anda telah keluar');
-                UI.navigate('dashboard');
-            },
+            logout(silent = false) { SyncQueue.stopAutoFlush(); State.session = null; localStorage.removeItem('aquarace_session'); if (!silent) UI.toast('Keluar'); UI.navigate('dashboard'); },
 
             async saveSingleAthlete() {
-                const name = document.getElementById('ath-name').value.trim();
-                const nisn = document.getElementById('ath-nisn').value.trim() || null;
-                const school = document.getElementById('ath-school').value.trim();
-                const region = document.getElementById('ath-region').value;
-                const gender = document.getElementById('ath-gender').value;
-                if (!name || !school) return UI.toast('Nama & sekolah wajib diisi', 'error');
-                if (!region || !REGIONS_DKI.includes(region)) return UI.toast('Pilih wilayah yang valid', 'error');
-
-                try {
-                    await DB.saveAthlete({ name, nisn, school, region, gender });
-                    UI.toast('Atlet ditambahkan');
-                    ['ath-name','ath-nisn','ath-school'].forEach(id => document.getElementById(id).value = '');
-                    document.getElementById('ath-region').value = '';
-                    await DB.fetchAll();
-                    UI.renderAthleteList();
-                } catch (e) {
-                    UI.toast('Gagal: ' + e.message, 'error');
-                }
+                const name = document.getElementById('ath-name').value.trim(); const nisn = document.getElementById('ath-nisn').value.trim() || null; const school = document.getElementById('ath-school').value.trim(); const region = document.getElementById('ath-region').value; const gender = document.getElementById('ath-gender').value;
+                if (!name || !school || !region) return UI.toast('Lengkapi kolom', 'error');
+                try { await DB.saveAthlete({ name, nisn, school, region, gender }); UI.toast('Berhasil'); await DB.fetchAll(); UI.renderAthleteList(); } catch (e) { UI.toast(e.message, 'error'); }
             },
 
-            async deleteAthlete(id) {
-                if (!await UI.confirm('Hapus atlet?', 'Data hasil terkait juga akan terhapus.')) return;
-                try {
-                    await DB.deleteAthlete(id);
-                    UI.toast('Atlet dihapus');
-                    await DB.fetchAll();
-                    UI.renderAthleteList();
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
-            },
+            async deleteAthlete(id) { if (!await UI.confirm('Hapus atlet?')) return; try { await DB.deleteAthlete(id); UI.toast('Dihapus'); await DB.fetchAll(); UI.renderAthleteList(); } catch (e) { UI.toast(e.message, 'error'); } },
 
             downloadAthleteTemplate() {
-                const data = [
-                    ['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'],
-                    ['Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat 1', 'Putra']
-                ];
-                const ws = XLSX.utils.aoa_to_sheet(data);
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, 'Atlet');
-
-                const refData = [['Daftar Wilayah DKI yang Valid'], ...REGIONS_DKI.map(r => [r])];
-                const wsRef = XLSX.utils.aoa_to_sheet(refData);
-                XLSX.utils.book_append_sheet(wb, wsRef, 'Ref Wilayah');
-
-                XLSX.writeFile(wb, 'Template_Atlet_Renang_O2SN.xlsx');
+                const ws = XLSX.utils.aoa_to_sheet([['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'], ['Andi', '1234567890', 'SDN 01', 'Jakarta Barat 1', 'Putra']]);
+                const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Atlet');
+                XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Wilayah Valid'], ...REGIONS_DKI.map(r=>[r])]), 'Ref');
+                XLSX.writeFile(wb, 'Template_Atlet.xlsx');
             },
 
             handleExcelSelect(e) {
-                const f = e.target.files[0]; if (!f) return;
-                document.getElementById('file-name-display').textContent = f.name;
-                document.getElementById('btn-process-excel').classList.remove('hidden');
-                const reader = new FileReader();
-                reader.onload = (evt) => {
-                    const wb = XLSX.read(evt.target.result, { type: 'binary' });
-                    State.excelBuffer = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-                };
-                reader.readAsBinaryString(f);
+                const f = e.target.files[0]; if (!f) return; document.getElementById('file-name-display').textContent = f.name; document.getElementById('btn-process-excel').classList.remove('hidden');
+                const reader = new FileReader(); reader.onload = (evt) => { const wb = XLSX.read(evt.target.result, { type: 'binary' }); State.excelBuffer = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]); }; reader.readAsBinaryString(f);
             },
 
             async processAthleteExcel() {
                 if (!State.excelBuffer) return;
                 const rows = State.excelBuffer.map(r => {
-                    const name = String(r['Nama Lengkap'] || '').trim();
-                    const school = String(r['Asal Sekolah'] || '').trim();
-                    const region = String(r['Asal Wilayah'] || '').trim();
-                    const gender = ['Putra', 'Putri'].includes(r['Gender']) ? r['Gender'] : null;
-                    const nisn = String(r['NISN'] || '').trim() || null;
-
-                    if (!name || !school || !gender || !REGIONS_DKI.includes(region)) return null;
-                    return { name, nisn, school, region, gender };
+                    const name = String(r['Nama Lengkap'] || '').trim(); const school = String(r['Asal Sekolah'] || '').trim(); const region = String(r['Asal Wilayah'] || '').trim(); const gender = r['Gender']; const nisn = String(r['NISN'] || '').trim() || null;
+                    if (!name || !school || !REGIONS_DKI.includes(region)) return null; return { name, nisn, school, region, gender };
                 }).filter(Boolean);
-
-                try {
-                    await DB.upsertAthletes(rows);
-                    UI.toast(`${rows.length} atlet diimpor`);
-                    State.excelBuffer = null;
-                    document.getElementById('btn-process-excel').classList.add('hidden');
-                    document.getElementById('file-name-display').textContent = '';
-                    await DB.fetchAll();
-                    UI.renderAthleteList();
-                } catch (e) { UI.toast('Gagal import: ' + e.message, 'error'); }
+                try { await DB.upsertAthletes(rows); UI.toast('Impor Berhasil'); await DB.fetchAll(); UI.renderAthleteList(); } catch (e) { UI.toast(e.message, 'error'); }
             },
 
             async handleSaveBulkResult(e) {
-                e.preventDefault();
-                const gender = document.getElementById('inp-gender').value;
-                const style = document.getElementById('inp-style').value;
-                const rows = [];
-
+                e.preventDefault(); const gender = document.getElementById('inp-gender').value; const style = document.getElementById('inp-style').value; const rows = [];
                 document.querySelectorAll('.bulk-row').forEach(tr => {
-                    const athleteId = parseInt(tr.dataset.athleteId);
-                    const ath = State.athletes.find(a => a.id === athleteId);
-                    if (!ath) return;
-                    const mm = parseInt(tr.querySelector('.inp-mm').value || 0);
-                    const ss = parseInt(tr.querySelector('.inp-ss').value || 0);
-                    const ms = parseInt(tr.querySelector('.inp-ms').value || 0);
-                    if (mm + ss + ms === 0) return;
-                    rows.push({
-                        athlete_id: ath.id,
-                        name: ath.name, school: ath.school, region: ath.region,
-                        gender, style, mm, ss, ms
-                    });
+                    const id = parseInt(tr.dataset.athleteId); const ath = State.athletes.find(a => a.id === id); if (!ath) return;
+                    const mm = parseInt(tr.querySelector('.inp-mm').value || 0); const ss = parseInt(tr.querySelector('.inp-ss').value || 0); const ms = parseInt(tr.querySelector('.inp-ms').value || 0);
+                    if (mm + ss + ms === 0) return; rows.push({ athlete_id: ath.id, name: ath.name, school: ath.school, region: ath.region, gender, style, mm, ss, ms });
                 });
-
-                if (rows.length === 0) return UI.toast('Tidak ada waktu untuk disimpan', 'warning');
-
-                rows.forEach(r => SyncQueue.enqueue(r));
-                UI.toast(`${rows.length} hasil masuk antrian`, 'success');
-
-                await SyncQueue.flush();
-                await DB.fetchAll();
-                UI.initInputTable();
-                UI.renderPublicResults();
+                if (rows.length === 0) return UI.toast('Kosong', 'warning'); rows.forEach(r => SyncQueue.enqueue(r)); UI.toast('Masuk antrian');
+                await SyncQueue.flush(); await DB.fetchAll(); UI.initInputTable(); UI.renderPublicResults();
             },
 
-            async deleteResult(id) {
-                if (!await UI.confirm('Hapus hasil?', 'Tindakan ini tidak bisa dibatalkan.')) return;
-                try {
-                    await DB.deleteResult(id);
-                    UI.toast('Hasil dihapus');
-                    await DB.fetchAll();
-                    UI.renderManageData();
-                    UI.renderPublicResults();
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
-            },
+            async deleteResult(id) { if (!await UI.confirm('Hapus?')) return; try { await DB.deleteResult(id); UI.toast('Dihapus'); await DB.fetchAll(); UI.renderManageData(); UI.renderPublicResults(); } catch (e) { UI.toast(e.message, 'error'); } },
 
             async savePetugas() {
-                if (State.petugas.filter(p => p.is_active).length >= 10) return UI.toast('Maksimal 10 akun aktif.', 'warning');
-                const username = document.getElementById('pet-username').value.trim().toLowerCase();
-                const nama = document.getElementById('pet-nama').value.trim();
-                const pin = document.getElementById('pet-pin').value.trim();
-                const role = document.getElementById('pet-role').value;
-
-                try {
-                    await DB.savePetugas({ username, nama, pin, role, is_active: true });
-                    UI.toast('Akun petugas dibuat');
-                    ['pet-username','pet-nama','pet-pin'].forEach(id => document.getElementById(id).value = '');
-                    await DB.fetchAll();
-                    UI.renderPetugasList();
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+                const username = document.getElementById('pet-username').value.trim(); const nama = document.getElementById('pet-nama').value.trim(); const pin = document.getElementById('pet-pin').value.trim(); const role = document.getElementById('pet-role').value;
+                try { await DB.savePetugas({ username, nama, pin, role, is_active: true }); UI.toast('Dibuat'); await DB.fetchAll(); UI.renderPetugasList(); } catch (e) { UI.toast(e.message, 'error'); }
             },
 
-            async togglePetugas(id, isActive) {
-                try {
-                    await DB.togglePetugas(id, isActive);
-                    UI.toast('Status diperbarui');
-                    await DB.fetchAll();
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
-            },
-
-            async deletePetugas(id) {
-                if (!await UI.confirm('Hapus akun petugas?')) return;
-                try {
-                    await DB.deletePetugas(id);
-                    UI.toast('Akun dihapus');
-                    await DB.fetchAll();
-                    UI.renderPetugasList();
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
-            },
+            async togglePetugas(id, isActive) { try { await DB.togglePetugas(id, isActive); UI.toast('Disimpan'); await DB.fetchAll(); } catch (e) { UI.toast(e.message, 'error'); } },
+            async deletePetugas(id) { if (!await UI.confirm('Hapus petugas?')) return; try { await DB.deletePetugas(id); UI.toast('Dihapus'); await DB.fetchAll(); UI.renderPetugasList(); } catch (e) { UI.toast(e.message, 'error'); } },
 
             async saveAllSettings() {
                 const activeStyles = Array.from(document.querySelectorAll('.style-toggle:checked')).map(cb => cb.value);
                 const updates = {
-                    APP_TITLE: document.getElementById('conf-title').value,
-                    APP_SUBTITLE: document.getElementById('conf-subtitle').value,
-                    RUNNING_TEXT: document.getElementById('conf-running').value,
-                    SHOW_ACCUMULATION: document.getElementById('conf-show-acc').checked ? 'ON' : 'OFF',
-                    SHOW_ALL_RESULTS: document.getElementById('conf-show-all').checked ? 'ON' : 'OFF',
-                    STYLES_ACTIVE: activeStyles.join(',')
+                    APP_TITLE: document.getElementById('conf-title').value, APP_SUBTITLE: document.getElementById('conf-subtitle').value, RUNNING_TEXT: document.getElementById('conf-running').value,
+                    SHOW_ACCUMULATION: document.getElementById('conf-show-acc').checked ? 'ON' : 'OFF', SHOW_ALL_RESULTS: document.getElementById('conf-show-all').checked ? 'ON' : 'OFF', STYLES_ACTIVE: activeStyles.join(',')
                 };
-                try {
-                    await DB.updateConfig(updates);
-                    Object.assign(State.config, updates);
-                    UI.toast('Pengaturan disimpan');
-                    UI.populatePublicFilters();
-                    UI.renderPublicResults();
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+                try { await DB.updateConfig(updates); Object.assign(State.config, updates); UI.toast('Disimpan'); UI.populatePublicFilters(); UI.renderPublicResults(); } catch (e) { UI.toast(e.message, 'error'); }
             },
 
             exportToExcel() {
-                if (State.results.length === 0) return UI.toast('Tidak ada data', 'warning');
-                const rows = State.results.map(r => ({
-                    'Nama Atlet': r.name,
-                    'Asal Sekolah': r.school,
-                    'Asal Wilayah': r.region,
-                    'Kategori': r.gender,
-                    'Nomor Lomba': r.style,
-                    'Waktu': UI.formatTime(r.mm, r.ss, r.ms)
-                }));
-                const ws = XLSX.utils.json_to_sheet(rows);
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, 'Hasil');
-                XLSX.writeFile(wb, `Hasil_Renang_O2SN_${new Date().toISOString().slice(0,10)}.xlsx`);
+                const rows = State.results.map(r => ({ 'Nama': r.name, 'Sekolah': r.school, 'Wilayah': r.region, 'Kategori': r.gender, 'Nomor': r.style, 'Waktu': UI.formatTime(r.mm, r.ss, r.ms) }));
+                const ws = XLSX.utils.json_to_sheet(rows); const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Hasil'); XLSX.writeFile(wb, 'Hasil_O2SN.xlsx');
             },
 
             async viewAuditLog() {
                 UI.showLoader(true);
                 try {
-                    const { data, error } = await State.supabase
-                        .from('audit_log').select('*').order('created_at', { ascending: false }).limit(100);
-                    if (error) throw error;
-
-                    const rows = (data || []).map(log => `
-                        <tr>
-                            <td class="text-xs">${new Date(log.created_at).toLocaleString('id-ID')}</td>
-                            <td>${log.action}</td>
-                            <td>${UI.escape(log.petugas || '—')}</td>
-                            <td class="text-xs">${JSON.stringify(log.payload || {})}</td>
-                        </tr>
-                    `).join('');
-
-                    Swal.fire({
-                        title: 'Riwayat Perubahan',
-                        html: `<div class="overflow-x-auto max-h-[400px] text-left"><table class="data-table text-xs"><thead><tr><th>Waktu</th><th>Aksi</th><th>User</th><th>Payload</th></tr></thead><tbody>${rows}</tbody></table></div>`,
-                        width: 800
-                    });
-                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
-                finally { UI.showLoader(false); }
+                    const { data } = await State.supabase.from('audit_log').select('*').order('created_at', { ascending: false }).limit(50);
+                    const rows = (data || []).map(l => `<tr><td>${new Date(l.created_at).toLocaleString('id-ID')}</td><td>${l.action}</td><td>${UI.escape(l.petugas)}</td><td>${JSON.stringify(l.payload || {})}</td></tr>`).join('');
+                    Swal.fire({ title: 'Log Perubahan', html: `<div class="overflow-x-auto max-h-[350px]"><table class="data-table text-xs"><thead><tr><th>Waktu</th><th>Aksi</th><th>User</th><th>Detail</th></tr></thead><tbody>${rows}</tbody></table></div>`, width: 750 });
+                } catch (e) { UI.toast(e.message, 'error'); } finally { UI.showLoader(false); }
             }
         };
 
