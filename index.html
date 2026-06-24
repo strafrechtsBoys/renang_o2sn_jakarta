@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>O2SN — Cabor Renang Jenjang SD Tingkat Provinsi DKI Jakarta 2026</title>
+    <title>AquaRace Hub — O2SN Renang SD DKI Jakarta 2026</title>
 
-    <!-- Favicon: Logo Baru O2SN / Puspresnas -->
-    <link rel="icon" type="image/png" href="https://pusatprestasinasional.kemendikdasmen.go.id/uploads/event/1pSda9JSc3s6qmWiP4hKqX9m0jZwS9sFL479urh6.png">
-    <link rel="apple-touch-icon" href="https://pusatprestasinasional.kemendikdasmen.go.id/uploads/event/1pSda9JSc3s6qmWiP4hKqX9m0jZwS9sFL479urh6.png">
+    <!-- Favicon: Logo O2SN -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Logo_O2SN.png/120px-Logo_O2SN.png">
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Logo_O2SN.png/120px-Logo_O2SN.png">
 
     <!-- Tipografi: Plus Jakarta Sans (display) + Inter (body) + JetBrains Mono (waktu) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
                         brand: {
                             DEFAULT: '#0369A1',   // sky-700, biru kolam
                             soft: '#E0F2FE',
-                            brandInk: '#0C4A6E',
+                            ink: '#0C4A6E',
                             accent: '#EA580C'
                         },
                         medal: {
@@ -84,6 +84,7 @@
         .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.02em; }
         .font-mono-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 
+        /* Lane divider — signature hairline meniru pemisah jalur kolam */
         .lane-divider {
             height: 2px;
             background: repeating-linear-gradient(90deg,
@@ -92,6 +93,7 @@
             opacity: 0.18;
         }
 
+        /* Kartu juara — glassmorphism medali */
         .medal-card {
             position: relative;
             border-radius: 20px;
@@ -135,6 +137,7 @@
         .badge-silver { background: linear-gradient(135deg, #E5E7EB, #6B7280); }
         .badge-bronze { background: linear-gradient(135deg, #E8A87C, #8B4513); }
 
+        /* Tabel — bersih, lega */
         .data-table { width: 100%; border-collapse: separate; border-spacing: 0; }
         .data-table thead th {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -155,6 +158,7 @@
         .data-table tbody tr:hover { background: #F8FAFC; }
         .data-table tbody tr:last-child td { border-bottom: none; }
 
+        /* Input umum */
         .field {
             width: 100%;
             background: #fff;
@@ -185,6 +189,7 @@
         .btn-danger { background: #FEE2E2; color: #B91C1C; }
         .btn-danger:hover { background: #FECACA; }
 
+        /* Card */
         .card {
             background: #fff;
             border: 1px solid #E2E8F0;
@@ -193,6 +198,7 @@
             box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 12px rgba(15,23,42,0.06);
         }
 
+        /* Hero title */
         .hero-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
@@ -203,6 +209,7 @@
         }
         .hero-title .accent { color: #0369A1; }
 
+        /* Tabs admin */
         .tab-btn {
             padding: 10px 16px;
             border-radius: 10px;
@@ -218,6 +225,7 @@
         .tab-btn:hover { background: #F1F5F9; color: #0F172A; }
         .tab-btn.active { background: #0369A1; color: #fff; }
 
+        /* Live indicator */
         .live-dot {
             display: inline-block; width: 8px; height: 8px; border-radius: 50%;
             background: #10B981;
@@ -233,6 +241,7 @@
         .fade-in { animation: fadeIn .4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Loader */
         .loader-ring {
             width: 48px; height: 48px; border-radius: 50%;
             border: 3px solid #E2E8F0;
@@ -241,15 +250,18 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* Marquee */
         .marquee-container { overflow: hidden; }
         .marquee-content { display: inline-block; white-space: nowrap; padding-left: 100%; animation: marquee 25s linear infinite; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 8px; }
         ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
         ::-webkit-scrollbar-track { background: transparent; }
 
+        /* Responsive */
         @media (max-width: 640px) {
             .card { padding: 16px; border-radius: 12px; }
             .data-table thead th, .data-table tbody td { padding: 10px 12px; font-size: 12px; }
@@ -257,12 +269,14 @@
             .medal-card { padding: 16px; }
         }
 
+        /* Print */
         @media print {
             .no-print { display: none !important; }
             body { background: #fff; }
             .card { box-shadow: none; border: 1px solid #CBD5E1; }
         }
 
+        /* Switch */
         .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .switch .slider {
@@ -281,13 +295,14 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- NAVBAR -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- NAVBAR                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
     <nav class="bg-white border-b border-line sticky top-0 z-40 no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer" onclick="UI.navigate('dashboard')">
-                <div class="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center overflow-hidden">
-                    <!-- Tampilan Mini Logo Baru di Navbar -->
-                    <img src="https://pusatprestasinasional.kemendikdasmen.go.id/uploads/event/1pSda9JSc3s6qmWiP4hKqX9m0jZwS9sFL479urh6.png" alt="O2SN Logo" class="w-8 h-8 object-contain">
+                <div class="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center">
+                    <i class="fa-solid fa-person-swimming text-brand text-lg"></i>
                 </div>
                 <div class="leading-tight">
                     <div class="font-display font-extrabold text-base sm:text-lg text-ink">AquaRace Hub</div>
@@ -321,7 +336,10 @@
             <div class="loader-ring"></div>
         </div>
 
-        <!-- VIEW: DASHBOARD PUBLIK -->
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW: DASHBOARD PUBLIK                                          -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="view-dashboard" class="fade-in">
 
             <!-- HERO -->
@@ -347,7 +365,7 @@
                 </div>
             </div>
 
-            <!-- KONTROL: FILTERS -->
+            <!-- KONTROL: PILIH NOMOR LOMBA + KATEGORI + WILAYAH + PENCARIAN -->
             <div class="card mb-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
@@ -380,7 +398,9 @@
             </div>
 
             <!-- PODIUM JUARA -->
-            <div id="podium-section" class="mb-12"></div>
+            <div id="podium-section" class="mb-12">
+                <!-- Diisi oleh JS -->
+            </div>
 
             <!-- TABEL HASIL LENGKAP -->
             <div id="all-results-section" class="mb-12">
@@ -441,7 +461,10 @@
 
         </section>
 
-        <!-- VIEW: LOGIN -->
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW: LOGIN                                                     -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="view-login" class="hidden fade-in">
             <div class="max-w-md mx-auto">
                 <div class="card">
@@ -469,8 +492,12 @@
             </div>
         </section>
 
-        <!-- VIEW: ADMIN WORKSPACE -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- VIEW: ADMIN / PETUGAS WORKSPACE                                 -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="view-admin" class="hidden fade-in">
+
+            <!-- Header workspace -->
             <div class="card mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <div class="text-xs font-semibold text-brand uppercase tracking-wider">Workspace Petugas</div>
@@ -488,19 +515,26 @@
                 </div>
             </div>
 
+            <!-- Tabs (dinamis sesuai role) -->
             <div class="card mb-6 p-3 overflow-x-auto">
-                <div id="admin-tabs" class="flex gap-2 min-w-max"></div>
+                <div id="admin-tabs" class="flex gap-2 min-w-max">
+                    <!-- Diisi JS sesuai role -->
+                </div>
             </div>
 
-            <!-- TAB: INPUT HASIL -->
+            <!-- TAB: INPUT HASIL (untuk semua petugas) -->
             <div id="tabpane-input" class="hidden">
                 <div class="card">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
                         <h3 class="font-display font-bold text-lg text-ink">
                             <i class="fa-solid fa-stopwatch text-brand mr-1"></i> Catat Waktu
                         </h3>
-                        <span class="text-xs text-ink-muted"><i class="fa-solid fa-shield-halved"></i> Offline-safe</span>
+                        <span class="text-xs text-ink-muted">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Offline-safe: input tersimpan lokal lalu sync otomatis
+                        </span>
                     </div>
+
                     <form onsubmit="AppLogic.handleSaveBulkResult(event)">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                             <div>
@@ -515,6 +549,7 @@
                                 <select id="inp-style" onchange="UI.initInputTable()" class="field"></select>
                             </div>
                         </div>
+
                         <div class="border border-line rounded-xl overflow-hidden mb-4">
                             <div class="overflow-x-auto">
                                 <table class="data-table">
@@ -531,6 +566,7 @@
                                 </table>
                             </div>
                         </div>
+
                         <div class="flex flex-wrap gap-3">
                             <button type="submit" class="btn btn-primary flex-1 py-3">
                                 <i class="fa-solid fa-cloud-arrow-up"></i> Simpan Semua Waktu
@@ -543,16 +579,18 @@
                 </div>
             </div>
 
-            <!-- TAB: DATABASE ATLET -->
+            <!-- TAB: DATABASE ATLET (admin only) -->
             <div id="tabpane-athletes" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="space-y-4">
                         <div class="card">
-                            <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-user-plus text-brand"></i> Tambah Atlet</h4>
+                            <h4 class="font-display font-bold text-sm text-ink mb-4">
+                                <i class="fa-solid fa-user-plus text-brand"></i> Tambah Atlet
+                            </h4>
                             <div class="space-y-3">
                                 <input type="text" id="ath-name" class="field" placeholder="Nama Lengkap">
-                                <input type="text" id="ath-nisn" class="field font-mono-num" maxlength="10" placeholder="NISN (10 digit)">
-                                <input type="text" id="ath-school" class="field" placeholder="Asal Sekolah">
+                                <input type="text" id="ath-nisn" class="field font-mono-num" maxlength="10" placeholder="NISN (10 digit, opsional)">
+                                <input type="text" id="ath-school" class="field" placeholder="Asal Sekolah (mis. SDN Menteng 01)">
                                 <select id="ath-region" class="field">
                                     <option value="">-- Pilih Asal Wilayah --</option>
                                 </select>
@@ -565,15 +603,25 @@
                                 </button>
                             </div>
                         </div>
+
                         <div class="card border-2 border-dashed">
-                            <h4 class="font-display font-bold text-sm text-ink mb-3"><i class="fa-solid fa-file-excel text-green-600"></i> Import Excel</h4>
-                            <button onclick="AppLogic.downloadAthleteTemplate()" class="text-xs text-brand underline mb-3 block">Download Template</button>
+                            <h4 class="font-display font-bold text-sm text-ink mb-3">
+                                <i class="fa-solid fa-file-excel text-green-600"></i> Import Excel
+                            </h4>
+                            <button onclick="AppLogic.downloadAthleteTemplate()" class="text-xs text-brand underline mb-3 block">
+                                Download Template
+                            </button>
                             <input type="file" id="excel-file" accept=".xlsx,.xls" class="hidden" onchange="AppLogic.handleExcelSelect(event)">
-                            <button onclick="document.getElementById('excel-file').click()" class="btn btn-ghost w-full"><i class="fa-solid fa-upload"></i> Pilih File</button>
+                            <button onclick="document.getElementById('excel-file').click()" class="btn btn-ghost w-full">
+                                <i class="fa-solid fa-upload"></i> Pilih File
+                            </button>
                             <p id="file-name-display" class="text-xs text-ink-muted mt-2 truncate"></p>
-                            <button id="btn-process-excel" onclick="AppLogic.processAthleteExcel()" class="hidden btn btn-accent w-full mt-3"><i class="fa-solid fa-play"></i> Jalankan Import</button>
+                            <button id="btn-process-excel" onclick="AppLogic.processAthleteExcel()" class="hidden btn btn-accent w-full mt-3">
+                                <i class="fa-solid fa-play"></i> Jalankan Import
+                            </button>
                         </div>
                     </div>
+
                     <div class="lg:col-span-2 card">
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="font-display font-bold text-sm text-ink">Daftar Atlet</h4>
@@ -582,7 +630,7 @@
                         <input type="text" id="athlete-search" oninput="UI.renderAthleteList()" class="field mb-4" placeholder="Cari atlet...">
                         <div class="overflow-y-auto max-h-[500px] border border-line rounded-xl">
                             <table class="data-table">
-                                <thead class="sticky top-0 bg-white">
+                                <thead class="sticky top-0">
                                     <tr><th>Atlet</th><th>NISN</th><th>Sekolah</th><th>Wilayah</th><th class="text-center">Kategori</th><th></th></tr>
                                 </thead>
                                 <tbody id="athlete-list-tbody"></tbody>
@@ -592,13 +640,15 @@
                 </div>
             </div>
 
-            <!-- TAB: MANAJEMEN HASIL -->
+            <!-- TAB: MANAJEMEN HASIL (admin only) -->
             <div id="tabpane-manage" class="hidden">
                 <div class="card">
                     <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-                        <h3 class="font-display font-bold text-lg text-ink"><i class="fa-solid fa-database text-brand"></i> Log Input Hasil</h3>
+                        <h3 class="font-display font-bold text-lg text-ink">
+                            <i class="fa-solid fa-database text-brand"></i> Log Input Hasil
+                        </h3>
                         <div class="flex flex-wrap gap-2">
-                            <input type="text" id="manage-search" oninput="UI.renderManageData()" class="field" placeholder="Cari...">
+                            <input type="text" id="manage-search" oninput="UI.renderManageData()" class="field" placeholder="Cari nama / NISN / sekolah / gaya...">
                             <select id="manage-filter-region" onchange="UI.renderManageData()" class="field"></select>
                             <select id="manage-filter-style" onchange="UI.renderManageData()" class="field"></select>
                         </div>
@@ -608,6 +658,7 @@
                             <table class="data-table">
                                 <thead>
                                     <tr>
+                                        <th class="text-center" style="width:50px">Rank</th>
                                         <th>Atlet</th>
                                         <th>Sekolah & Wilayah</th>
                                         <th>Nomor</th>
@@ -624,20 +675,25 @@
                 </div>
             </div>
 
-            <!-- TAB: PETUGAS -->
+            <!-- TAB: PETUGAS (admin only) -->
             <div id="tabpane-petugas" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="card">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-user-plus text-brand"></i> Tambah Petugas</h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4">
+                            <i class="fa-solid fa-user-plus text-brand"></i> Tambah Petugas
+                        </h4>
+                        <p class="text-xs text-ink-muted mb-4">Maksimal 10 akun aktif. Petugas hanya bisa input hasil — tidak bisa hapus atau ubah pengaturan.</p>
                         <div class="space-y-3">
-                            <input type="text" id="pet-username" class="field" placeholder="Username">
+                            <input type="text" id="pet-username" class="field" placeholder="Username (huruf kecil, tanpa spasi)">
                             <input type="text" id="pet-nama" class="field" placeholder="Nama Lengkap">
                             <input type="text" id="pet-pin" class="field font-mono-num" maxlength="6" inputmode="numeric" placeholder="PIN 4-6 digit">
                             <select id="pet-role" class="field">
                                 <option value="petugas">Petugas (input only)</option>
                                 <option value="admin">Admin (full access)</option>
                             </select>
-                            <button onclick="AppLogic.savePetugas()" class="btn btn-primary w-full"><i class="fa-solid fa-user-check"></i> Buat Akun</button>
+                            <button onclick="AppLogic.savePetugas()" class="btn btn-primary w-full">
+                                <i class="fa-solid fa-user-check"></i> Buat Akun
+                            </button>
                         </div>
                     </div>
                     <div class="lg:col-span-2 card">
@@ -654,11 +710,13 @@
                 </div>
             </div>
 
-            <!-- TAB: PENGATURAN -->
+            <!-- TAB: PENGATURAN (admin only) -->
             <div id="tabpane-settings" class="hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="card">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-sliders text-brand"></i> Identitas</h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4">
+                            <i class="fa-solid fa-sliders text-brand"></i> Identitas & Tampilan
+                        </h4>
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-xs font-semibold text-ink-muted uppercase tracking-wider mb-2">Judul Aplikasi</label>
@@ -674,9 +732,16 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-eye text-brand"></i> Visibilitas</h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4">
+                            <i class="fa-solid fa-eye text-brand"></i> Visibilitas Papan Skor
+                        </h4>
                         <div class="space-y-3">
+                            <label class="flex justify-between items-center p-3 bg-surface-mist rounded-lg">
+                                <span class="text-sm font-medium text-ink">Tampilkan Peringkat 1-3 (Podium)</span>
+                                <span class="switch"><input type="checkbox" id="conf-show-podium"><span class="slider"></span></span>
+                            </label>
                             <label class="flex justify-between items-center p-3 bg-surface-mist rounded-lg">
                                 <span class="text-sm font-medium text-ink">Tampilkan Akumulasi</span>
                                 <span class="switch"><input type="checkbox" id="conf-show-acc"><span class="slider"></span></span>
@@ -691,20 +756,38 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card lg:col-span-2">
-                        <h4 class="font-display font-bold text-sm text-ink mb-4"><i class="fa-solid fa-file-export text-green-600"></i> Cadangan & Export</h4>
+                        <h4 class="font-display font-bold text-sm text-ink mb-4">
+                            <i class="fa-solid fa-file-export text-green-600"></i> Cadangan & Export
+                        </h4>
+                        <p class="text-xs text-ink-muted mb-4">
+                            <strong>Strategi backup:</strong> Supabase adalah penyimpanan utama dengan audit log lengkap.
+                            Untuk arsip resmi, gunakan tombol Export Excel — disarankan setiap rehat (~1 jam sekali).
+                            Setiap input petugas juga tersimpan lokal di browser sebelum sync — aman dari putus internet.
+                        </p>
                         <div class="flex flex-wrap gap-3">
-                            <button onclick="AppLogic.exportToExcel()" class="btn btn-primary"><i class="fa-solid fa-file-excel"></i> Export ke Excel</button>
-                            <button onclick="AppLogic.viewAuditLog()" class="btn btn-ghost"><i class="fa-solid fa-clock-rotate-left"></i> Riwayat Perubahan</button>
-                            <button onclick="AppLogic.saveAllSettings()" class="btn btn-accent ml-auto"><i class="fa-solid fa-floppy-disk"></i> Simpan Pengaturan</button>
+                            <button onclick="AppLogic.exportToExcel()" class="btn btn-primary">
+                                <i class="fa-solid fa-file-excel"></i> Export ke Excel
+                            </button>
+                            <button onclick="AppLogic.viewAuditLog()" class="btn btn-ghost">
+                                <i class="fa-solid fa-clock-rotate-left"></i> Lihat Riwayat Perubahan
+                            </button>
+                            <button onclick="AppLogic.saveAllSettings()" class="btn btn-accent ml-auto">
+                                <i class="fa-solid fa-floppy-disk"></i> Simpan Pengaturan
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
+
     </main>
 
-    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FOOTER                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
     <footer class="border-t border-line bg-white mt-auto no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
             <p class="text-sm text-ink-muted">
@@ -713,21 +796,28 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- JAVASCRIPT                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
     <script>
+        // ─────────────────────────────────────────────────────────────
+        // KONFIGURASI SUPABASE — GANTI dengan kredensial Anda
+        // ─────────────────────────────────────────────────────────────
         const CONFIG = {
             SUPABASE_URL: "https://imkquqsbbdicfeddtmgn.supabase.co",
             SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlta3F1cXNiYmRpY2ZlZGR0bWduIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTg3Mjc1MSwiZXhwIjoyMDk3NDQ4NzUxfQ.fmTejKe4vPtnCGnM-wR3ETUEyHjEg8awbX9ByhmHjgY"
         };
 
         const STYLES_ALL = ["Gaya Bebas", "Gaya Punggung", "Gaya Dada", "Gaya Kupu-kupu"];
-        
         const REGIONS_DKI = [
-            "Jakarta Barat 1", "Jakarta Barat 2", "Jakarta Selatan 1", "Jakarta Selatan 2",
-            "Jakarta Timur 1", "Jakarta Timur 2", "Jakarta Pusat 1", "Jakarta Pusat 2",
-            "Jakarta Utara 1", "Jakarta Utara 2", "Kepulauan 1000"
+            "Jakarta Pusat", "Jakarta Utara", "Jakarta Selatan",
+            "Jakarta Barat", "Jakarta Timur", "Kepulauan Seribu"
         ];
 
+        // ─────────────────────────────────────────────────────────────
+        // STATE
+        // ─────────────────────────────────────────────────────────────
         const State = {
             session: JSON.parse(localStorage.getItem('aquarace_session') || 'null'),
             athletes: [],
@@ -739,6 +829,7 @@
                 RUNNING_TEXT: 'Selamat datang.',
                 SHOW_ACCUMULATION: 'ON',
                 SHOW_ALL_RESULTS: 'ON',
+                SHOW_PODIUM: 'ON',
                 STYLES_ACTIVE: STYLES_ALL.join(',')
             },
             excelBuffer: null,
@@ -747,9 +838,15 @@
             realtimeChannel: null
         };
 
+        // ─────────────────────────────────────────────────────────────
+        // SUPABASE CLIENT
+        // ─────────────────────────────────────────────────────────────
         const DB = {
             init() {
-                if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY === "GANTI_DENGAN_ANON_KEY_ANDA") return false;
+                if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_ANON_KEY === "GANTI_DENGAN_ANON_KEY_ANDA") {
+                    console.warn("Supabase belum dikonfigurasi. Edit CONFIG.SUPABASE_ANON_KEY di file ini.");
+                    return false;
+                }
                 State.supabase = supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
                 return true;
             },
@@ -772,7 +869,9 @@
                     State.results = resRes.data || [];
                     State.petugas = petRes.data || [];
 
-                    (cfgRes.data || []).forEach(row => { State.config[row.key] = row.value; });
+                    (cfgRes.data || []).forEach(row => {
+                        State.config[row.key] = row.value;
+                    });
                 } catch (e) {
                     console.error(e);
                     UI.toast('Gagal memuat data: ' + e.message, 'error');
@@ -783,21 +882,31 @@
 
             async login(username, pin) {
                 const { data, error } = await State.supabase
-                    .from('petugas').select('*')
-                    .eq('username', username.trim().toLowerCase()).eq('pin', pin).eq('is_active', true).maybeSingle();
+                    .from('petugas')
+                    .select('*')
+                    .eq('username', username.trim().toLowerCase())
+                    .eq('pin', pin)
+                    .eq('is_active', true)
+                    .maybeSingle();
                 if (error || !data) return null;
+                // Update last_login (best-effort, jangan blokir login)
                 State.supabase.from('petugas').update({ last_login: new Date().toISOString() }).eq('id', data.id).then(() => {});
                 return data;
             },
 
             async saveAthlete(payload) {
-                const { data, error } = await State.supabase.from('athletes').insert(payload).select().single();
+                const { data, error } = await State.supabase
+                    .from('athletes').insert(payload).select().single();
                 if (error) throw error;
                 return data;
             },
 
             async upsertAthletes(rows) {
-                const { data, error } = await State.supabase.from('athletes').upsert(rows, { onConflict: 'nisn', ignoreDuplicates: false }).select();
+                // Untuk import bulk: insert dengan ON CONFLICT pada nisn
+                const { data, error } = await State.supabase
+                    .from('athletes')
+                    .upsert(rows, { onConflict: 'nisn', ignoreDuplicates: false })
+                    .select();
                 if (error) throw error;
                 return data;
             },
@@ -807,14 +916,41 @@
                 if (error) throw error;
             },
 
+            // ⭐ INTI ANTI-TABRAKAN + OFFLINE-SAFE: RPC conditional upsert
+            // Menggunakan upsert_result_if_newer untuk mencegah data lama menimpa data baru.
+            // Cocok untuk sync queue: kalau petugas A offline lalu pulih, datanya hanya tertulis
+            // jika client_ts-nya lebih baru daripada yang sudah ada.
+            // Return: 'inserted' | 'updated' | 'rejected'
             async upsertResultIfNewer(row, petugasUsername, clientTs) {
                 const { data, error } = await State.supabase.rpc('upsert_result_if_newer', {
-                    p_athlete_id: row.athlete_id, p_name: row.name, p_school: row.school, p_region: row.region,
-                    p_gender: row.gender, p_style: row.style, p_mm: row.mm, p_ss: row.ss, p_ms: row.ms,
-                    p_input_by: petugasUsername, p_client_ts: clientTs
+                    p_athlete_id: row.athlete_id,
+                    p_name: row.name,
+                    p_school: row.school,
+                    p_region: row.region,
+                    p_gender: row.gender,
+                    p_style: row.style,
+                    p_mm: row.mm,
+                    p_ss: row.ss,
+                    p_ms: row.ms,
+                    p_input_by: petugasUsername,
+                    p_client_ts: clientTs
                 });
                 if (error) throw error;
-                return data;
+                return data; // 'inserted' | 'updated' | 'rejected'
+            },
+
+            // Legacy bulk upsert (untuk backward compat, dipakai sebagai fallback batch)
+            async upsertResults(rows, petugasUsername) {
+                const results = { inserted: 0, updated: 0, rejected: 0, errors: [] };
+                for (const r of rows) {
+                    try {
+                        const status = await this.upsertResultIfNewer(r, petugasUsername, r.client_ts || new Date().toISOString());
+                        results[status] = (results[status] || 0) + 1;
+                    } catch (e) {
+                        results.errors.push({ row: r, error: e.message });
+                    }
+                }
+                return results;
             },
 
             async deleteResult(id) {
@@ -839,116 +975,307 @@
             },
 
             async updateConfig(updates) {
+                // updates = { key1: val1, key2: val2 }
                 const rows = Object.entries(updates).map(([key, value]) => ({ key, value, updated_at: new Date().toISOString() }));
                 const { error } = await State.supabase.from('app_config').upsert(rows, { onConflict: 'key' });
                 if (error) throw error;
             },
 
+            // Realtime subscription: setiap perubahan di results langsung di-broadcast
             subscribeRealtime() {
                 if (State.realtimeChannel) State.supabase.removeChannel(State.realtimeChannel);
-                State.realtimeChannel = State.supabase.channel('aquarace-live')
+                State.realtimeChannel = State.supabase
+                    .channel('aquarace-live')
                     .on('postgres_changes', { event: '*', schema: 'public', table: 'results' }, async () => {
-                        await DB.fetchAll(); UI.renderPublicResults(); if (State.session) UI.renderAdminTabs();
+                        await DB.fetchAll();
+                        UI.renderPublicResults();
+                        if (State.session) UI.renderAdminTabs();
                     })
                     .on('postgres_changes', { event: '*', schema: 'public', table: 'athletes' }, async () => {
-                        await DB.fetchAll(); UI.renderPublicResults(); if (State.session) UI.renderAdminTabs();
-                    }).subscribe();
+                        await DB.fetchAll();
+                        UI.renderPublicResults();
+                        if (State.session) UI.renderAdminTabs();
+                    })
+                    .subscribe();
             }
         };
 
+        // ─────────────────────────────────────────────────────────────
+        // SYNC QUEUE — Offline-first dengan localStorage
+        // ─────────────────────────────────────────────────────────────
+        // Alur:
+        //   1. Petugas input → langsung tampil di UI (optimistic) + masuk queue
+        //   2. Queue di-flush ke Supabase via RPC upsert_result_if_newer
+        //   3. Jika sukses → hapus dari queue
+        //   4. Jika gagal (offline/error) → tetap di queue, retry tiap 10 detik
+        //
+        // Anti-tabrakan:
+        //   - Setiap entry punya client_ts (waktu input lokal)
+        //   - RPC server hanya menerima jika client_ts > existing.client_ts
+        //   - Data lama dari localStorage TIDAK akan menimpa data baru di server
+        //
+        // Scope:
+        //   - Queue per petugas (key di localStorage di-namespace dengan username)
+        //   - Tidak campur antar petugas di device yang sama (jika berbagi laptop)
+        // ─────────────────────────────────────────────────────────────
         const SyncQueue = {
             STORAGE_KEY: 'aquarace_sync_queue',
             FLUSH_INTERVAL_MS: 10000,
             intervalId: null,
             isFlushing: false,
 
-            _queueKey() { return `${this.STORAGE_KEY}_${State.session?.username || 'anon'}`; },
-            getAll() { try { return JSON.parse(localStorage.getItem(this._queueKey()) || '[]'); } catch { return []; } },
-            _save(items) { localStorage.setItem(this._queueKey(), JSON.stringify(items)); },
+            _queueKey() {
+                const user = State.session?.username || 'anon';
+                return `${this.STORAGE_KEY}_${user}`;
+            },
 
+            getAll() {
+                try { return JSON.parse(localStorage.getItem(this._queueKey()) || '[]'); }
+                catch { return []; }
+            },
+
+            _save(items) {
+                localStorage.setItem(this._queueKey(), JSON.stringify(items));
+            },
+
+            // Tambah entri ke queue. Entry berisi data hasil + client_ts.
             enqueue(row) {
                 const items = this.getAll();
-                const idx = items.findIndex(x => x.athlete_id === row.athlete_id && x.style === row.style && x.gender === row.gender);
-                const entry = { ...row, client_ts: new Date().toISOString(), queue_id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), attempts: 0 };
-                if (idx >= 0) items[idx] = entry; else items.push(entry);
-                this._save(items); this._updateBadge();
+                // Dedup: jika sudah ada entry untuk (athlete_id, style, gender) di queue
+                // yang belum terkirim, replace dengan yang baru (input petugas terakhir menang)
+                const idx = items.findIndex(x =>
+                    x.athlete_id === row.athlete_id && x.style === row.style && x.gender === row.gender
+                );
+                const entry = {
+                    ...row,
+                    client_ts: new Date().toISOString(),
+                    queue_id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2),
+                    attempts: 0
+                };
+                if (idx >= 0) items[idx] = entry;
+                else items.push(entry);
+                this._save(items);
+                this._updateBadge();
             },
 
-            remove(queueId) { this._save(this.getAll().filter(x => x.queue_id !== queueId)); this._updateBadge(); },
+            // Hapus entry berdasarkan queue_id
+            remove(queueId) {
+                this._save(this.getAll().filter(x => x.queue_id !== queueId));
+                this._updateBadge();
+            },
+
+            // Tandai entry sebagai ditolak server (data lebih lama)
             markRejected(queueId) {
-                const items = this.getAll(); const entry = items.find(x => x.queue_id === queueId);
-                if (entry) { entry.rejected = true; entry.rejected_at = new Date().toISOString(); this._save(items); }
+                const items = this.getAll();
+                const entry = items.find(x => x.queue_id === queueId);
+                if (entry) {
+                    entry.rejected = true;
+                    entry.rejected_at = new Date().toISOString();
+                    this._save(items);
+                }
             },
 
+            // Flush: coba kirim semua entry yang belum terkirim ke Supabase
             async flush() {
-                if (this.isFlushing || !State.supabase || !State.session || !navigator.onLine) return;
-                const items = this.getAll().filter(x => !x.rejected); if (items.length === 0) return;
-                this.isFlushing = true; let sentCount = 0, rejectedCount = 0;
+                if (this.isFlushing) return; // prevent overlap
+                if (!State.supabase || !State.session) return;
+                if (!navigator.onLine) return;
+
+                const items = this.getAll().filter(x => !x.rejected);
+                if (items.length === 0) return;
+
+                this.isFlushing = true;
+                let sentCount = 0, rejectedCount = 0;
+
                 for (const entry of items) {
                     try {
                         entry.attempts = (entry.attempts || 0) + 1;
-                        const status = await DB.upsertResultIfNewer(entry, State.session.username, entry.client_ts);
-                        if (status === 'rejected') { this.markRejected(entry.queue_id); rejectedCount++; }
-                        else { this.remove(entry.queue_id); sentCount++; }
-                    } catch (e) { console.warn(e); }
+                        const status = await DB.upsertResultIfNewer(
+                            entry,
+                            State.session.username,
+                            entry.client_ts
+                        );
+                        if (status === 'rejected') {
+                            this.markRejected(entry.queue_id);
+                            rejectedCount++;
+                        } else {
+                            this.remove(entry.queue_id);
+                            sentCount++;
+                        }
+                    } catch (e) {
+                        console.warn('SyncQueue flush failed for entry:', entry, e);
+                        // Biarkan di queue, akan retry lagi
+                        // Jika sudah >10x attempts, beri tanda warning tapi tetap retry
+                        if (entry.attempts > 10) {
+                            const all = this.getAll();
+                            const target = all.find(x => x.queue_id === entry.queue_id);
+                            if (target) { target.last_error = e.message; this._save(all); }
+                        }
+                    }
                 }
-                this.isFlushing = false; this._updateBadge();
-                if (sentCount > 0) UI.toast(`${sentCount} hasil ter-sinkron`);
-                if (rejectedCount > 0) UI.toast(`${rejectedCount} input ditolak server`, 'warning');
+
+                this.isFlushing = false;
+                this._updateBadge();
+
+                if (sentCount > 0) UI.toast(`${sentCount} hasil ter-sinkron`, 'success');
+                if (rejectedCount > 0) {
+                    UI.toast(`${rejectedCount} input ditolak (sudah ada data lebih baru dari petugas lain)`, 'warning');
+                }
             },
 
-            startAutoFlush() { this.stopAutoFlush(); this.intervalId = setInterval(() => this.flush(), this.FLUSH_INTERVAL_MS); },
-            stopAutoFlush() { if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; } },
+            // Mulai loop retry
+            startAutoFlush() {
+                this.stopAutoFlush();
+                this.intervalId = setInterval(() => this.flush(), this.FLUSH_INTERVAL_MS);
+                // Coba flush juga saat online kembali
+                window.addEventListener('online', () => {
+                    UI.toast('Koneksi pulih, sinkronisasi data...', 'success');
+                    this.flush();
+                });
+                window.addEventListener('offline', () => {
+                    UI.toast('Koneksi terputus. Input Anda akan tersimpan lokal dan dikirim saat online.', 'warning');
+                });
+            },
+
+            stopAutoFlush() {
+                if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; }
+            },
 
             _updateBadge() {
-                const items = this.getAll(); const pending = items.filter(x => !x.rejected).length; const rejected = items.filter(x => x.rejected).length;
-                const el = document.getElementById('sync-badge'); if (!el) return;
-                if (pending === 0 && rejected === 0) el.classList.add('hidden');
-                else {
+                const items = this.getAll();
+                const pending = items.filter(x => !x.rejected).length;
+                const rejected = items.filter(x => x.rejected).length;
+                const el = document.getElementById('sync-badge');
+                if (!el) return;
+                if (pending === 0 && rejected === 0) {
+                    el.classList.add('hidden');
+                } else {
                     el.classList.remove('hidden');
                     el.innerHTML = `
-                        ${pending > 0 ? `<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-semibold"><i class="fa-solid fa-cloud-arrow-up"></i> ${pending}</span>` : ''}
-                        ${rejected > 0 ? `<span class="px-2 py-0.5 rounded bg-red-100 text-red-800 text-xs font-semibold cursor-pointer" onclick="SyncQueue.showRejected()"><i class="fa-solid fa-triangle-exclamation"></i> ${rejected}</span>` : ''}
+                        ${pending > 0 ? `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 text-xs font-semibold"><i class="fa-solid fa-cloud-arrow-up"></i> ${pending} antrian</span>` : ''}
+                        ${rejected > 0 ? `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-red-100 text-red-800 text-xs font-semibold cursor-pointer" onclick="SyncQueue.showRejected()"><i class="fa-solid fa-triangle-exclamation"></i> ${rejected} ditolak</span>` : ''}
                     `;
                 }
             },
 
             showRejected() {
-                const items = this.getAll().filter(x => x.rejected); if (items.length === 0) return;
-                const html = items.map(x => `<tr><td>${UI.escape(x.name)}</td><td>${x.style}</td><td>${x.gender}</td><td class="text-right">${UI.formatTime(x.mm, x.ss, x.ms)}</td></tr>`).join('');
-                Swal.fire({ title: 'Input Ditolak', html: `<div class="overflow-x-auto"><table class="data-table text-sm"><thead><tr><th>Atlet</th><th>Nomor</th><th>Kat</th><th>Waktu</th></tr></thead><tbody>${html}</tbody></table></div>` }).then(() => {
-                    this._save(this.getAll().filter(x => !x.rejected)); this._updateBadge();
+                const items = this.getAll().filter(x => x.rejected);
+                if (items.length === 0) return;
+                const html = items.map(x => `
+                    <tr>
+                        <td><strong>${UI.escape(x.name)}</strong><br><span class="text-xs text-ink-muted">${UI.escape(x.school)} · ${UI.escape(x.region)}</span></td>
+                        <td class="text-xs">${UI.escape(x.style)}</td>
+                        <td class="text-center text-xs">${UI.escape(x.gender)}</td>
+                        <td class="text-right font-mono-num">${UI.formatTime(x.mm, x.ss, x.ms)}</td>
+                        <td class="text-xs text-ink-muted">${new Date(x.client_ts).toLocaleString('id-ID')}</td>
+                    </tr>
+                `).join('');
+                Swal.fire({
+                    title: 'Input yang Ditolak Server',
+                    html: `
+                        <p class="text-sm text-ink-muted mb-3">Input ini tidak disimpan karena ada data <strong>lebih baru</strong> dari petugas lain. Cek dengan TM/Wasit jika perlu.</p>
+                        <div class="overflow-x-auto">
+                            <table class="data-table text-sm">
+                                <thead><tr><th>Atlet</th><th>Nomor</th><th>Kategori</th><th>Waktu Anda</th><th>Saat Input</th></tr></thead>
+                                <tbody>${html}</tbody>
+                            </table>
+                        </div>
+                    `,
+                    width: 800,
+                    showCancelButton: true,
+                    confirmButtonText: 'Hapus dari Antrian',
+                    cancelButtonText: 'Biarkan',
+                    confirmButtonColor: '#EA580C'
+                }).then(r => {
+                    if (r.isConfirmed) {
+                        const all = this.getAll().filter(x => !x.rejected);
+                        this._save(all);
+                        this._updateBadge();
+                    }
                 });
             }
         };
 
+
+        // ─────────────────────────────────────────────────────────────
+        // UI MODULE — Render & navigasi
+        // ─────────────────────────────────────────────────────────────
         const UI = {
-            showLoader(show) { document.getElementById('loader').classList.toggle('hidden', !show); },
-            toast(msg, type = 'success') { Swal.fire({ toast: true, position: 'top-end', icon: type, title: msg, showConfirmButton: false, timer: 3000 }); },
-            async confirm(title, text) { const res = await Swal.fire({ title, text, icon: 'warning', showCancelButton: true, confirmButtonColor: '#0369A1' }); return res.isConfirmed; },
+            showLoader(show) {
+                document.getElementById('loader').classList.toggle('hidden', !show);
+            },
+
+            toast(msg, type = 'success') {
+                Swal.fire({
+                    toast: true, position: 'top-end',
+                    icon: type, title: msg,
+                    showConfirmButton: false, timer: 3000,
+                    background: '#fff', color: '#0F172A'
+                });
+            },
+
+            async confirm(title, text, confirmText = 'Ya, lanjutkan') {
+                const res = await Swal.fire({
+                    title, text, icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: confirmText, cancelButtonText: 'Batal',
+                    confirmButtonColor: '#0369A1', cancelButtonColor: '#94A3B8'
+                });
+                return res.isConfirmed;
+            },
 
             navigate(view) {
-                ['dashboard', 'login', 'admin'].forEach(v => document.getElementById('view-' + v).classList.toggle('hidden', v !== view));
+                ['dashboard', 'login', 'admin'].forEach(v => {
+                    document.getElementById('view-' + v).classList.toggle('hidden', v !== view);
+                });
                 document.getElementById('nav-login-btn').classList.toggle('hidden', !!State.session || view === 'login');
                 document.getElementById('nav-logout-btn').classList.toggle('hidden', !State.session);
+
                 if (view === 'dashboard') this.renderPublicResults();
                 if (view === 'admin' && State.session) this.renderAdminTabs();
             },
 
+            // ═══ PUBLIC DASHBOARD ═══
+            // Populate dropdown HANYA jika opsi berubah, dan PERTAHANKAN pilihan user.
+            // Memisahkan ini dari renderPublicResults mencegah dropdown ter-reset
+            // saat user memilih (bug "terkunci di opsi pertama").
             populatePublicFilters() {
+                const sel = document.getElementById('public-filter-style');
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
-                document.getElementById('public-filter-style').innerHTML = '<option value="__ALL__">Semua Nomor</option>' + active.map(s => `<option value="${s}">${s}</option>`).join('');
-                document.getElementById('public-filter-region').innerHTML = '<option value="__ALL__">Semua Wilayah</option>' + REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
-                
+                const wantStyle = '<option value="__ALL__">Tampilkan Semua Nomor</option>' +
+                    active.map(s => `<option value="${s}">${s}</option>`).join('');
+                // Hanya tulis ulang jika berbeda — preservasi pilihan & hindari reset
+                if (sel.dataset.sig !== wantStyle) {
+                    const prev = sel.value;
+                    sel.innerHTML = wantStyle;
+                    sel.dataset.sig = wantStyle;
+                    if (prev && [...sel.options].some(o => o.value === prev)) sel.value = prev;
+                }
+
+                const regSel = document.getElementById('public-filter-region');
+                const wantRegion = '<option value="__ALL__">Semua Wilayah</option>' +
+                    REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                if (regSel.dataset.sig !== wantRegion) {
+                    const prev = regSel.value;
+                    regSel.innerHTML = wantRegion;
+                    regSel.dataset.sig = wantRegion;
+                    if (prev && [...regSel.options].some(o => o.value === prev)) regSel.value = prev;
+                }
+
+                // Populate region dropdown di form atlet juga (sekali init cukup)
                 const athRegSel = document.getElementById('ath-region');
                 if (athRegSel && athRegSel.options.length <= 1) {
-                    athRegSel.innerHTML = '<option value="">-- Pilih Asal Wilayah --</option>' + REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                    athRegSel.innerHTML = '<option value="">-- Pilih Asal Wilayah --</option>' +
+                        REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
                 }
+
                 document.getElementById('dash-running-text').textContent = State.config.RUNNING_TEXT;
             },
 
             renderPublicResults() {
+                // Pastikan dropdown sudah terisi (tanpa me-reset jika sudah ada)
                 this.populatePublicFilters();
+
                 const styleFilter = document.getElementById('public-filter-style').value;
                 const genderFilter = document.getElementById('public-filter-gender').value;
                 const regionFilter = document.getElementById('public-filter-region').value;
@@ -958,7 +1285,14 @@
                     if (styleFilter !== '__ALL__' && r.style !== styleFilter) return false;
                     if (genderFilter !== '__ALL__' && r.gender !== genderFilter) return false;
                     if (regionFilter !== '__ALL__' && r.region !== regionFilter) return false;
-                    if (search && !r.name.toLowerCase().includes(search) && !(r.school || '').toLowerCase().includes(search)) return false;
+                    if (search) {
+                        const ath = State.athletes.find(a => a.id === r.athlete_id);
+                        const nisn = ath?.nisn || '';
+                        const nameMatch = r.name.toLowerCase().includes(search);
+                        const nisnMatch = nisn.toLowerCase().includes(search);
+                        const schoolMatch = (r.school || '').toLowerCase().includes(search);
+                        if (!nameMatch && !nisnMatch && !schoolMatch) return false;
+                    }
                     return true;
                 });
 
@@ -967,203 +1301,798 @@
                 this.renderAccumulation();
             },
 
-            renderPodium(filtered) {
-                const cont = document.getElementById('podium-section'); cont.innerHTML = '';
-                const groups = {}; filtered.forEach(r => { const k = `${r.style}__${r.gender}`; if (!groups[k]) groups[k] = { style: r.style, gender: r.gender, list: [] }; groups[k].list.push(r); });
+            // ═══ PODIUM (3 besar dengan glassmorphism medal) ═══
+            renderPodium(filtered, styleFilter, genderFilter) {
+                const cont = document.getElementById('podium-section');
+                cont.innerHTML = '';
+
+                // Hormati toggle visibilitas podium
+                const showPodium = State.config.SHOW_PODIUM !== 'OFF';
+                cont.classList.toggle('hidden', !showPodium);
+                if (!showPodium) return;
+
+                // Group: per (style, gender)
+                const groups = {};
+                filtered.forEach(r => {
+                    const k = `${r.style}__${r.gender}`;
+                    if (!groups[k]) groups[k] = { style: r.style, gender: r.gender, list: [] };
+                    groups[k].list.push(r);
+                });
+
                 const groupKeys = Object.keys(groups).sort();
-                if (groupKeys.length === 0) { cont.innerHTML = `<div class="card text-center py-12 text-ink-muted">Belum ada hasil pertandingan.</div>`; return; }
+                if (groupKeys.length === 0) {
+                    cont.innerHTML = `
+                        <div class="card text-center py-12">
+                            <i class="fa-solid fa-trophy text-4xl text-line mb-3"></i>
+                            <p class="text-ink-muted">Belum ada hasil untuk filter yang dipilih.</p>
+                        </div>`;
+                    return;
+                }
 
                 const html = ['<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">'];
                 groupKeys.forEach(k => {
-                    const g = groups[k]; g.list.sort((a, b) => a.total_ms - b.total_ms); const top3 = g.list.slice(0, 3);
-                    html.push(`<div class="card"><div class="flex items-center justify-between mb-5"><div><div class="text-[10px] font-bold text-brand uppercase">${g.gender}</div><h3 class="font-display font-extrabold text-lg">${g.style}</h3></div><i class="fa-solid fa-trophy text-2xl text-medal-gold"></i></div><div class="space-y-3">`);
-                    const ranks = ['gold', 'silver', 'bronze']; const labels = ['1', '2', '3'];
-                    top3.forEach((r, i) => {
-                        html.push(`<div class="medal-card medal-${ranks[i]}"><div class="flex items-center gap-4"><div class="medal-badge badge-${ranks[i]}">${labels[i]}</div><div class="flex-1 min-w-0"><div class="font-display font-bold truncate">${this.escape(r.name)}</div><div class="text-xs text-ink-muted truncate">${this.escape(r.school)}</div><div class="text-[10px] text-ink-muted font-semibold uppercase">${this.escape(r.region)}</div></div><div class="font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</div></div></div>`);
-                    });
+                    const g = groups[k];
+                    g.list.sort((a, b) => a.total_ms - b.total_ms);
+                    const top3 = g.list.slice(0, 3);
+
+                    html.push(`
+                        <div class="card">
+                            <div class="flex items-center justify-between mb-5">
+                                <div>
+                                    <div class="text-[10px] font-bold uppercase tracking-wider text-brand">${g.gender}</div>
+                                    <h3 class="font-display font-extrabold text-lg text-ink">${g.style}</h3>
+                                </div>
+                                <i class="fa-solid fa-trophy text-2xl text-medal-gold"></i>
+                            </div>
+                            <div class="space-y-3">
+                    `);
+
+                    if (top3.length === 0) {
+                        html.push('<p class="text-sm text-ink-muted text-center py-4">Belum ada data</p>');
+                    } else {
+                        const ranks = ['gold', 'silver', 'bronze'];
+                        const labels = ['1', '2', '3'];
+                        top3.forEach((r, i) => {
+                            const cls = ranks[i];
+                            html.push(`
+                                <div class="medal-card medal-${cls}">
+                                    <div class="flex items-center gap-4">
+                                        <div class="medal-badge badge-${cls}">${labels[i]}</div>
+                                        <div class="flex-1 min-w-0">
+                                            <div class="font-display font-bold text-ink truncate">${this.escape(r.name)}</div>
+                                            <div class="text-xs text-ink-muted truncate">${this.escape(r.school)}</div>
+                                            <div class="text-[10px] text-ink-muted truncate font-semibold uppercase tracking-wider">${this.escape(r.region)}</div>
+                                        </div>
+                                        <div class="font-mono-num font-bold text-base text-ink">${this.formatTime(r.mm, r.ss, r.ms)}</div>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    }
                     html.push('</div></div>');
                 });
-                html.push('</div>'); cont.innerHTML = html.join('');
+                html.push('</div>');
+                cont.innerHTML = html.join('');
             },
 
             renderAllResults(filtered) {
-                const showAll = State.config.SHOW_ALL_RESULTS !== 'OFF'; document.getElementById('all-results-section').classList.toggle('hidden', !showAll); if (!showAll) return;
-                const tbody = document.getElementById('all-results-tbody'); const sorted = [...filtered].sort((a, b) => a.total_ms - b.total_ms);
+                const showAll = State.config.SHOW_ALL_RESULTS !== 'OFF';
+                document.getElementById('all-results-section').classList.toggle('hidden', !showAll);
+                if (!showAll) return;
+
+                const tbody = document.getElementById('all-results-tbody');
+                const sorted = [...filtered].sort((a, b) => a.total_ms - b.total_ms);
                 document.getElementById('all-results-count').textContent = `${sorted.length} hasil`;
-                if (sorted.length === 0) { tbody.innerHTML = '<tr><td colspan="7" class="text-center py-12 text-ink-muted">Belum ada hasil</td></tr>'; return; }
-                tbody.innerHTML = sorted.map((r, i) => `<tr><td class="text-center font-bold text-brand">${i + 1}</td><td><div class="font-semibold">${this.escape(r.name)}</div></td><td>${this.escape(r.school)}</td><td><span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-ink">${this.escape(r.region)}</span></td><td>${this.escape(r.style)}</td><td class="text-center">${r.gender}</td><td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td></tr>`).join('');
+
+                if (sorted.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada hasil</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = sorted.map((r, i) => `
+                    <tr>
+                        <td class="text-center font-bold text-brand">${i + 1}</td>
+                        <td><div class="font-semibold">${this.escape(r.name)}</div></td>
+                        <td class="text-ink-muted">${this.escape(r.school)}</td>
+                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.region)}</span></td>
+                        <td class="text-ink-muted text-sm">${this.escape(r.style)}</td>
+                        <td class="text-center"><span class="text-xs px-2 py-0.5 rounded-md ${r.gender === 'Putra' ? 'bg-sky-50 text-sky-700' : 'bg-pink-50 text-pink-700'}">${r.gender}</span></td>
+                        <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
+                    </tr>
+                `).join('');
             },
 
             renderAccumulation() {
-                const show = State.config.SHOW_ACCUMULATION !== 'OFF'; document.getElementById('accumulation-section').classList.toggle('hidden', !show); if (!show) return;
-                const tbody = document.getElementById('accumulation-tbody'); const map = {};
-                State.results.forEach(r => { if (r.style === 'Gaya Bebas' || r.style === 'Gaya Punggung') { const k = `${r.athlete_id}`; if (!map[k]) map[k] = { name: r.name, school: r.school, region: r.region, gender: r.gender, ms: 0, count: 0 }; map[k].ms += Number(r.total_ms); map[k].count++; } });
+                const show = State.config.SHOW_ACCUMULATION !== 'OFF';
+                document.getElementById('accumulation-section').classList.toggle('hidden', !show);
+                if (!show) return;
+
+                const tbody = document.getElementById('accumulation-tbody');
+                const map = {};
+                State.results.forEach(r => {
+                    if (r.style === 'Gaya Bebas' || r.style === 'Gaya Punggung') {
+                        const k = `${r.athlete_id}`;
+                        if (!map[k]) map[k] = { name: r.name, school: r.school, region: r.region, gender: r.gender, ms: 0, count: 0 };
+                        map[k].ms += Number(r.total_ms);
+                        map[k].count++;
+                    }
+                });
+
                 const list = Object.values(map).filter(x => x.count === 2).sort((a, b) => a.ms - b.ms);
-                if (list.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada akumulasi (perlu Bebas + Punggung)</td></tr>'; return; }
-                tbody.innerHTML = list.map((x, i) => { const tm = Math.floor(x.ms / 60000); const ts = Math.floor((x.ms % 60000) / 1000); const tms = Math.floor((x.ms % 1000) / 10); return `<tr><td class="text-center font-bold text-medal-gold">#${i + 1}</td><td class="font-semibold">${this.escape(x.name)}</td><td>${this.escape(x.school)}</td><td><span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-ink">${this.escape(x.region)}</span></td><td class="text-center">${x.gender}</td><td class="text-right font-mono-num font-bold text-medal-gold">${this.formatTime(tm, ts, tms)}</td></tr>`; }).join('');
+                if (list.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-12 text-ink-muted">Belum ada akumulasi (perlu Bebas + Punggung)</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = list.map((x, i) => {
+                    const tm = Math.floor(x.ms / 60000);
+                    const ts = Math.floor((x.ms % 60000) / 1000);
+                    const tms = Math.floor((x.ms % 1000) / 10);
+                    return `
+                        <tr>
+                            <td class="text-center font-bold text-medal-gold">#${i + 1}</td>
+                            <td class="font-semibold">${this.escape(x.name)}</td>
+                            <td class="text-ink-muted">${this.escape(x.school)}</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(x.region)}</span></td>
+                            <td class="text-center text-xs">${x.gender}</td>
+                            <td class="text-right font-mono-num font-bold text-medal-gold">${this.formatTime(tm, ts, tms)}</td>
+                        </tr>
+                    `;
+                }).join('');
             },
 
+            // ═══ ADMIN TABS ═══
             renderAdminTabs() {
-                const isAdmin = State.session?.role === 'admin'; document.getElementById('petugas-nama').textContent = State.session.nama;
-                const badge = document.getElementById('petugas-role-badge'); badge.textContent = isAdmin ? 'ADMIN' : 'PETUGAS';
-                badge.className = 'ml-2 px-2 py-0.5 rounded text-[10px] font-semibold ' + (isAdmin ? 'bg-brand text-white' : 'bg-surface-mist text-ink');
-                const tabs = [{ id: 'input', label: 'Input Hasil', icon: 'stopwatch' }];
-                if (isAdmin) { tabs.push({ id: 'athletes', label: 'Database Atlet', icon: 'users' }, { id: 'manage', label: 'Manajemen Hasil', icon: 'database' }, { id: 'petugas', label: 'Akun Petugas', icon: 'user-shield' }, { id: 'settings', label: 'Pengaturan', icon: 'sliders' }); }
-                document.getElementById('admin-tabs').innerHTML = tabs.map(t => `<button onclick="UI.switchTab('${t.id}')" id="tab-${t.id}" class="tab-btn ${State.activeTab === t.id ? 'active' : ''}"><i class="fa-solid fa-${t.icon} mr-1"></i> ${t.label}</button>`).join('');
+                const isAdmin = State.session?.role === 'admin';
+                document.getElementById('petugas-nama').textContent = State.session.nama;
+                const badge = document.getElementById('petugas-role-badge');
+                badge.textContent = isAdmin ? 'ADMIN' : 'PETUGAS';
+                badge.className = 'ml-2 px-2 py-0.5 rounded-md text-[10px] font-semibold ' +
+                    (isAdmin ? 'bg-brand text-white' : 'bg-surface-mist text-ink');
+
+                const tabs = [
+                    { id: 'input', label: 'Input Hasil', icon: 'stopwatch', forAll: true }
+                ];
+                if (isAdmin) {
+                    tabs.push(
+                        { id: 'athletes', label: 'Database Atlet', icon: 'users' },
+                        { id: 'manage', label: 'Manajemen Hasil', icon: 'database' },
+                        { id: 'petugas', label: 'Akun Petugas', icon: 'user-shield' },
+                        { id: 'settings', label: 'Pengaturan', icon: 'sliders' }
+                    );
+                }
+
+                const tabsCont = document.getElementById('admin-tabs');
+                tabsCont.innerHTML = tabs.map(t => `
+                    <button onclick="UI.switchTab('${t.id}')" id="tab-${t.id}" class="tab-btn ${State.activeTab === t.id ? 'active' : ''}">
+                        <i class="fa-solid fa-${t.icon} mr-1"></i> ${t.label}
+                    </button>
+                `).join('');
+
                 this.switchTab(State.activeTab, true);
             },
 
             switchTab(tabId, skipUpdate = false) {
-                State.activeTab = tabId; if (!skipUpdate) this.renderAdminTabs();
-                ['input', 'athletes', 'manage', 'petugas', 'settings'].forEach(t => document.getElementById('tabpane-' + t).classList.toggle('hidden', t !== tabId));
-                if (tabId === 'input') this.initInputTable(); if (tabId === 'athletes') this.renderAthleteList(); if (tabId === 'manage') this.renderManageData(); if (tabId === 'petugas') this.renderPetugasList(); if (tabId === 'settings') this.populateSettingsForm();
+                State.activeTab = tabId;
+                if (!skipUpdate) this.renderAdminTabs();
+                ['input', 'athletes', 'manage', 'petugas', 'settings'].forEach(t => {
+                    document.getElementById('tabpane-' + t).classList.toggle('hidden', t !== tabId);
+                });
+                if (tabId === 'input') this.initInputTable();
+                if (tabId === 'athletes') this.renderAthleteList();
+                if (tabId === 'manage') this.renderManageData();
+                if (tabId === 'petugas') this.renderPetugasList();
+                if (tabId === 'settings') this.populateSettingsForm();
             },
 
+            // ═══ INPUT TABLE ═══
             initInputTable() {
-                const gender = document.getElementById('inp-gender').value;
+                const gSel = document.getElementById('inp-gender');
+                const sSel = document.getElementById('inp-style');
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
-                document.getElementById('inp-style').innerHTML = active.map(s => `<option value="${s}">${s}</option>`).join('');
-                const style = document.getElementById('inp-style').value;
-                const tbody = document.getElementById('bulk-input-tbody'); tbody.innerHTML = '';
+                // Populate dropdown style HANYA jika berubah, pertahankan pilihan user
+                const wantStyle = active.map(s => `<option value="${s}">${s}</option>`).join('');
+                if (sSel.dataset.sig !== wantStyle) {
+                    const prev = sSel.value;
+                    sSel.innerHTML = wantStyle;
+                    sSel.dataset.sig = wantStyle;
+                    if (prev && [...sSel.options].some(o => o.value === prev)) sSel.value = prev;
+                }
+
+                const gender = gSel.value;
+                const style = sSel.value;
+                const tbody = document.getElementById('bulk-input-tbody');
+                tbody.innerHTML = '';
+
                 const list = State.athletes.filter(a => a.gender === gender).sort((a, b) => a.name.localeCompare(b.name));
-                if (list.length === 0) { tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet kategori ${gender}.</td></tr>`; return; }
+                if (list.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-ink-muted">Belum ada atlet ${gender}. Tambah di tab Database Atlet.</td></tr>`;
+                    return;
+                }
+
                 list.forEach(a => {
                     const existing = State.results.find(r => r.athlete_id === a.id && r.style === style && r.gender === gender);
-                    const tr = document.createElement('tr'); tr.className = 'bulk-row'; tr.dataset.athleteId = a.id;
-                    tr.innerHTML = `<td><div class="font-semibold">${this.escape(a.name)}</div><div class="text-xs text-ink-muted">${this.escape(a.school)} <span class="px-1.5 py-0.5 ml-1 rounded bg-brand-soft text-brand-ink text-[10px] font-semibold">${this.escape(a.region)}</span></div></td><td><input type="number" min="0" max="59" value="${existing?.mm ?? 0}" class="field font-mono-num text-center inp-mm"></td><td><input type="number" min="0" max="59" value="${existing?.ss ?? 0}" class="field font-mono-num text-center inp-ss"></td><td><input type="number" min="0" max="99" value="${existing?.ms ?? 0}" class="field font-mono-num text-center inp-ms"></td><td class="text-center"><button type="button" onclick="this.closest('tr').querySelectorAll('input').forEach(i=>i.value=0)" class="text-ink-muted hover:text-brand-accent"><i class="fa-solid fa-rotate-left"></i></button></td>`;
+                    const mm = existing?.mm ?? 0;
+                    const ss = existing?.ss ?? 0;
+                    const ms = existing?.ms ?? 0;
+                    const inputBy = existing?.input_by ? `<div class="text-[10px] text-ink-muted mt-0.5"><i class="fa-solid fa-clock-rotate-left"></i> ${this.escape(existing.input_by)}</div>` : '';
+                    const tr = document.createElement('tr');
+                    tr.className = 'bulk-row';
+                    tr.dataset.athleteId = a.id;
+                    tr.innerHTML = `
+                        <td>
+                            <div class="font-semibold">${this.escape(a.name)}</div>
+                            <div class="text-xs text-ink-muted">${this.escape(a.school)} <span class="px-1.5 py-0.5 ml-1 rounded bg-brand-soft text-brand-ink text-[10px] font-semibold">${this.escape(a.region)}</span></div>
+                            ${inputBy}
+                        </td>
+                        <td><input type="number" min="0" max="59" value="${mm}" class="field font-mono-num text-center inp-mm"></td>
+                        <td><input type="number" min="0" max="59" value="${ss}" class="field font-mono-num text-center inp-ss"></td>
+                        <td><input type="number" min="0" max="99" value="${ms}" class="field font-mono-num text-center inp-ms"></td>
+                        <td class="text-center">
+                            <button type="button" onclick="this.closest('tr').querySelectorAll('input').forEach(i=>i.value=0)" class="text-ink-muted hover:text-brand-accent" title="Reset">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </button>
+                        </td>
+                    `;
                     tbody.appendChild(tr);
                 });
             },
 
+            // ═══ DATABASE ATLET ═══
             renderAthleteList() {
-                const tbody = document.getElementById('athlete-list-tbody'); const search = document.getElementById('athlete-search').value.trim().toLowerCase();
-                let list = State.athletes; if (search) { list = list.filter(a => a.name.toLowerCase().includes(search) || (a.school || '').toLowerCase().includes(search)); }
+                const tbody = document.getElementById('athlete-list-tbody');
+                const search = document.getElementById('athlete-search').value.trim().toLowerCase();
+                let list = State.athletes;
+                if (search) {
+                    list = list.filter(a =>
+                        a.name.toLowerCase().includes(search) ||
+                        (a.school || '').toLowerCase().includes(search) ||
+                        (a.region || '').toLowerCase().includes(search) ||
+                        (a.nisn || '').includes(search)
+                    );
+                }
                 document.getElementById('athlete-count').textContent = `${list.length} atlet`;
-                if (list.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada atlet</td></tr>'; return; }
-                tbody.innerHTML = list.map(a => `<tr><td class="font-semibold">${this.escape(a.name)}</td><td class="font-mono-num text-xs">${a.nisn || '—'}</td><td>${this.escape(a.school)}</td><td><span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-ink">${this.escape(a.region)}</span></td><td class="text-center">${a.gender}</td><td class="text-center"><button onclick="AppLogic.deleteAthlete(${a.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></td></tr>`).join('');
+
+                if (list.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada atlet</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = list.map(a => `
+                    <tr>
+                        <td><div class="font-semibold">${this.escape(a.name)}</div></td>
+                        <td class="font-mono-num text-xs text-ink-muted">${a.nisn || '—'}</td>
+                        <td class="text-ink-muted">${this.escape(a.school)}</td>
+                        <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(a.region)}</span></td>
+                        <td class="text-center"><span class="text-xs px-2 py-0.5 rounded-md ${a.gender === 'Putra' ? 'bg-sky-50 text-sky-700' : 'bg-pink-50 text-pink-700'}">${a.gender}</span></td>
+                        <td class="text-center">
+                            <button onclick="AppLogic.deleteAthlete(${a.id})" class="text-red-500 hover:text-red-700">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
             },
 
+            // ═══ MANAJEMEN HASIL ═══
             renderManageData() {
+                const sSel = document.getElementById('manage-filter-style');
+                if (!sSel.options.length) {
+                    sSel.innerHTML = '<option value="__ALL__">Semua Nomor</option>' +
+                        STYLES_ALL.map(s => `<option value="${s}">${s}</option>`).join('');
+                }
+                const rSel = document.getElementById('manage-filter-region');
+                if (!rSel.options.length) {
+                    rSel.innerHTML = '<option value="__ALL__">Semua Wilayah</option>' +
+                        REGIONS_DKI.map(r => `<option value="${r}">${r}</option>`).join('');
+                }
                 const search = document.getElementById('manage-search').value.trim().toLowerCase();
-                const tbody = document.getElementById('manage-tbody'); let list = State.results;
-                if (search) list = list.filter(r => r.name.toLowerCase().includes(search));
-                if (list.length === 0) { tbody.innerHTML = '<tr><td colspan="7" class="text-center py-8 text-ink-muted">Belum ada data</td></tr>'; return; }
-                tbody.innerHTML = list.map(r => `<tr><td class="font-semibold">${this.escape(r.name)}</td><td><div>${this.escape(r.school)}</div><div class="text-[10px] font-bold text-brand">${this.escape(r.region)}</div></td><td>${this.escape(r.style)}</td><td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td><td>${this.escape(r.input_by)}</td><td class="text-xs text-ink-muted">${new Date(r.updated_at).toLocaleString('id-ID')}</td><td class="text-center"><button onclick="AppLogic.deleteResult(${r.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button></td></tr>`).join('');
+                const styleFilter = sSel.value;
+                const regionFilter = rSel.value;
+
+                const tbody = document.getElementById('manage-tbody');
+                let list = State.results.slice(); // copy agar tidak mutasi State
+                if (styleFilter !== '__ALL__') list = list.filter(r => r.style === styleFilter);
+                if (regionFilter !== '__ALL__') list = list.filter(r => r.region === regionFilter);
+                if (search) list = list.filter(r => {
+                    const ath = State.athletes.find(a => a.id === r.athlete_id);
+                    const nisn = (ath?.nisn || '').toLowerCase();
+                    return r.name.toLowerCase().includes(search) ||
+                           (r.school || '').toLowerCase().includes(search) ||
+                           r.style.toLowerCase().includes(search) ||
+                           nisn.includes(search);
+                });
+
+                // Urutkan: per nomor lomba (sesuai urutan STYLES_ALL), lalu kategori,
+                // lalu waktu tercepat. Ini membuat hasil dikelompokkan rapi per gaya.
+                const styleOrder = {};
+                STYLES_ALL.forEach((s, i) => styleOrder[s] = i);
+                list.sort((a, b) => {
+                    const so = (styleOrder[a.style] ?? 99) - (styleOrder[b.style] ?? 99);
+                    if (so !== 0) return so;
+                    if (a.gender !== b.gender) return a.gender.localeCompare(b.gender);
+                    return a.total_ms - b.total_ms;
+                });
+
+                if (list.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="8" class="text-center py-8 text-ink-muted">Belum ada hasil</td></tr>';
+                    return;
+                }
+
+                // Render dengan header pemisah tiap ganti nomor lomba+kategori
+                let lastGroup = null;
+                let rank = 0;
+                const htmlParts = [];
+                list.forEach(r => {
+                    const groupKey = `${r.style}__${r.gender}`;
+                    if (groupKey !== lastGroup) {
+                        lastGroup = groupKey;
+                        rank = 0;
+                        htmlParts.push(`
+                            <tr class="bg-surface-mist">
+                                <td colspan="8" class="font-display font-bold text-sm text-brand-ink py-2">
+                                    <i class="fa-solid fa-flag-checkered mr-1"></i> ${this.escape(r.style)} — ${r.gender}
+                                </td>
+                            </tr>
+                        `);
+                    }
+                    rank++;
+                    const ath = State.athletes.find(a => a.id === r.athlete_id);
+                    const nisn = ath?.nisn || '—';
+                    htmlParts.push(`
+                        <tr>
+                            <td class="text-center font-bold ${rank <= 3 ? 'text-medal-gold' : 'text-ink-muted'}">${rank}</td>
+                            <td>
+                                <div class="font-semibold">${this.escape(r.name)}</div>
+                                <div class="font-mono-num text-[10px] text-ink-muted">NISN: ${this.escape(nisn)}</div>
+                            </td>
+                            <td>
+                                <div class="text-sm">${this.escape(r.school)}</div>
+                                <div class="text-[10px] font-semibold uppercase tracking-wider text-brand">${this.escape(r.region)}</div>
+                            </td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-md bg-brand-soft text-brand-ink">${this.escape(r.style)}</span> <span class="text-[10px] text-ink-muted">${r.gender}</span></td>
+                            <td class="text-right font-mono-num font-bold">${this.formatTime(r.mm, r.ss, r.ms)}</td>
+                            <td class="text-xs text-ink-muted">${this.escape(r.input_by || '—')}</td>
+                            <td class="text-xs text-ink-muted">${new Date(r.updated_at).toLocaleString('id-ID')}</td>
+                            <td class="text-center">
+                                <button onclick="AppLogic.deleteResult(${r.id})" class="text-red-500 hover:text-red-700">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `);
+                });
+                tbody.innerHTML = htmlParts.join('');
             },
 
+            // ═══ PETUGAS LIST ═══
             renderPetugasList() {
-                const tbody = document.getElementById('petugas-tbody'); if (State.petugas.length === 0) { tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada petugas</td></tr>'; return; }
-                tbody.innerHTML = State.petugas.map(p => `<tr><td class="font-mono-num font-semibold">${this.escape(p.username)}</td><td>${this.escape(p.nama)}</td><td>${p.role}</td><td class="text-center"><label class="switch"><input type="checkbox" ${p.is_active ? 'checked' : ''} onchange="AppLogic.togglePetugas(${p.id}, this.checked)"><span class="slider"></span></label></td><td>${p.last_login ? new Date(p.last_login).toLocaleString('id-ID') : '—'}</td><td class="text-center">${p.username !== State.session.username ? `<button onclick="AppLogic.deletePetugas(${p.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>` : '<span class="text-xs text-ink-muted">(Anda)</span>'}</td></tr>`).join('');
+                const tbody = document.getElementById('petugas-tbody');
+                if (State.petugas.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="text-center py-8 text-ink-muted">Belum ada petugas</td></tr>';
+                    return;
+                }
+                tbody.innerHTML = State.petugas.map(p => `
+                    <tr>
+                        <td class="font-mono-num font-semibold">${this.escape(p.username)}</td>
+                        <td>${this.escape(p.nama)}</td>
+                        <td><span class="text-xs px-2 py-0.5 rounded-md ${p.role === 'admin' ? 'bg-brand text-white' : 'bg-surface-mist text-ink'}">${p.role}</span></td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" ${p.is_active ? 'checked' : ''} onchange="AppLogic.togglePetugas(${p.id}, this.checked)">
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                        <td class="text-xs text-ink-muted">${p.last_login ? new Date(p.last_login).toLocaleString('id-ID') : '—'}</td>
+                        <td class="text-center">
+                            ${p.username !== State.session.username ? `<button onclick="AppLogic.deletePetugas(${p.id})" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>` : '<span class="text-xs text-ink-muted">(Anda)</span>'}
+                        </td>
+                    </tr>
+                `).join('');
             },
 
+            // ═══ SETTINGS FORM ═══
             populateSettingsForm() {
                 document.getElementById('conf-title').value = State.config.APP_TITLE || '';
                 document.getElementById('conf-subtitle').value = State.config.APP_SUBTITLE || '';
                 document.getElementById('conf-running').value = State.config.RUNNING_TEXT || '';
+                document.getElementById('conf-show-podium').checked = State.config.SHOW_PODIUM !== 'OFF';
                 document.getElementById('conf-show-acc').checked = State.config.SHOW_ACCUMULATION !== 'OFF';
                 document.getElementById('conf-show-all').checked = State.config.SHOW_ALL_RESULTS !== 'OFF';
+
                 const active = (State.config.STYLES_ACTIVE || '').split(',').filter(Boolean);
-                document.getElementById('settings-styles-list').innerHTML = STYLES_ALL.map(s => `<label class="flex items-center justify-between p-3 bg-surface-mist rounded-lg cursor-pointer"><span class="text-sm font-medium">${s}</span><input type="checkbox" class="style-toggle w-4 h-4 accent-brand" value="${s}" ${active.includes(s) ? 'checked' : ''}></label>`).join('');
+                document.getElementById('settings-styles-list').innerHTML = STYLES_ALL.map(s => `
+                    <label class="flex items-center justify-between p-3 bg-surface-mist rounded-lg cursor-pointer">
+                        <span class="text-sm font-medium text-ink">${s}</span>
+                        <input type="checkbox" class="style-toggle w-4 h-4 accent-brand" value="${s}" ${active.includes(s) ? 'checked' : ''}>
+                    </label>
+                `).join('');
             },
 
-            formatTime(m, s, ms) { return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(ms).padStart(2,'0')}`; },
-            escape(str) { return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+            // ═══ HELPERS ═══
+            formatTime(m, s, ms) {
+                return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(ms).padStart(2,'0')}`;
+            },
+            escape(str) {
+                return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+            }
         };
 
+
+        // ─────────────────────────────────────────────────────────────
+        // APP LOGIC — Handlers
+        // ─────────────────────────────────────────────────────────────
         const AppLogic = {
             async init() {
-                if (!DB.init()) { UI.toast('Supabase error.', 'warning'); return; }
-                await DB.fetchAll(); DB.subscribeRealtime(); UI.populatePublicFilters(); UI.renderPublicResults();
+                if (!DB.init()) {
+                    UI.toast('Supabase belum dikonfigurasi. Lihat README_DEPLOY.md', 'warning');
+                    return;
+                }
+                await DB.fetchAll();
+                DB.subscribeRealtime();
+                UI.populatePublicFilters();
+                UI.renderPublicResults();
+
                 if (State.session) {
-                    const fresh = await State.supabase.from('petugas').select('*').eq('id', State.session.id).eq('is_active', true).maybeSingle();
-                    if (fresh.data) { State.session = fresh.data; localStorage.setItem('aquarace_session', JSON.stringify(State.session)); SyncQueue.startAutoFlush(); UI.navigate('admin'); }
-                    else { this.logout(true); }
+                    // Verifikasi session masih valid
+                    const fresh = await State.supabase
+                        .from('petugas').select('*')
+                        .eq('id', State.session.id)
+                        .eq('is_active', true)
+                        .maybeSingle();
+                    if (fresh.data) {
+                        State.session = fresh.data;
+                        localStorage.setItem('aquarace_session', JSON.stringify(State.session));
+                        SyncQueue.startAutoFlush();
+                        // Flush sekali saat masuk, untuk kirim data yang mungkin tertahan
+                        setTimeout(() => SyncQueue.flush(), 1000);
+                        UI.navigate('admin');
+                    } else {
+                        this.logout(true);
+                    }
                 }
             },
 
             async handleLogin(e) {
-                e.preventDefault(); const u = document.getElementById('login-username').value.trim().toLowerCase(); const p = document.getElementById('login-pin').value.trim();
-                UI.showLoader(true); const res = await DB.login(u, p); UI.showLoader(false);
-                if (!res) { UI.toast('Gagal masuk', 'error'); return; }
-                State.session = res; localStorage.setItem('aquarace_session', JSON.stringify(res)); SyncQueue.startAutoFlush(); UI.navigate('admin');
+                e.preventDefault();
+                const username = document.getElementById('login-username').value.trim().toLowerCase();
+                const pin = document.getElementById('login-pin').value.trim();
+                UI.showLoader(true);
+                const result = await DB.login(username, pin);
+                UI.showLoader(false);
+                if (!result) {
+                    UI.toast('Username atau PIN salah, atau akun nonaktif', 'error');
+                    return;
+                }
+                State.session = result;
+                localStorage.setItem('aquarace_session', JSON.stringify(result));
+                UI.toast(`Selamat datang, ${result.nama}`);
+                SyncQueue.startAutoFlush();
+                UI.navigate('admin');
             },
 
-            logout(silent = false) { SyncQueue.stopAutoFlush(); State.session = null; localStorage.removeItem('aquarace_session'); if (!silent) UI.toast('Keluar'); UI.navigate('dashboard'); },
+            logout(silent = false) {
+                SyncQueue.stopAutoFlush();
+                State.session = null;
+                localStorage.removeItem('aquarace_session');
+                if (!silent) UI.toast('Anda telah keluar');
+                UI.navigate('dashboard');
+            },
 
+            // ═══ ATLET ═══
             async saveSingleAthlete() {
-                const name = document.getElementById('ath-name').value.trim(); const nisn = document.getElementById('ath-nisn').value.trim() || null; const school = document.getElementById('ath-school').value.trim(); const region = document.getElementById('ath-region').value; const gender = document.getElementById('ath-gender').value;
-                if (!name || !school || !region) return UI.toast('Lengkapi kolom', 'error');
-                try { await DB.saveAthlete({ name, nisn, school, region, gender }); UI.toast('Berhasil'); await DB.fetchAll(); UI.renderAthleteList(); } catch (e) { UI.toast(e.message, 'error'); }
+                const name = document.getElementById('ath-name').value.trim();
+                const nisn = document.getElementById('ath-nisn').value.trim() || null;
+                const school = document.getElementById('ath-school').value.trim();
+                const region = document.getElementById('ath-region').value;
+                const gender = document.getElementById('ath-gender').value;
+                if (!name || !school) return UI.toast('Nama & asal sekolah wajib diisi', 'error');
+                if (!region || !REGIONS_DKI.includes(region)) return UI.toast('Pilih asal wilayah DKI', 'error');
+                if (nisn && !/^\d{10}$/.test(nisn)) return UI.toast('NISN harus 10 digit angka', 'error');
+
+                try {
+                    await DB.saveAthlete({ name, nisn, school, region, gender });
+                    UI.toast('Atlet ditambahkan');
+                    ['ath-name','ath-nisn','ath-school'].forEach(id => document.getElementById(id).value = '');
+                    document.getElementById('ath-region').value = '';
+                    await DB.fetchAll();
+                    UI.renderAthleteList();
+                } catch (e) {
+                    UI.toast('Gagal: ' + (e.message.includes('duplicate') ? 'NISN sudah terdaftar' : e.message), 'error');
+                }
             },
 
-            async deleteAthlete(id) { if (!await UI.confirm('Hapus atlet?')) return; try { await DB.deleteAthlete(id); UI.toast('Dihapus'); await DB.fetchAll(); UI.renderAthleteList(); } catch (e) { UI.toast(e.message, 'error'); } },
+            async deleteAthlete(id) {
+                if (!await UI.confirm('Hapus atlet?', 'Hasil yang terkait juga ikut terhapus.', 'Hapus')) return;
+                try {
+                    await DB.deleteAthlete(id);
+                    UI.toast('Atlet dihapus');
+                    await DB.fetchAll();
+                    UI.renderAthleteList();
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+            },
 
             downloadAthleteTemplate() {
-                const ws = XLSX.utils.aoa_to_sheet([['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'], ['Andi', '1234567890', 'SDN 01', 'Jakarta Barat 1', 'Putra']]);
-                const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Atlet');
-                XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['Wilayah Valid'], ...REGIONS_DKI.map(r=>[r])]), 'Ref');
-                XLSX.writeFile(wb, 'Template_Atlet.xlsx');
+                const data = [
+                    ['Nama Lengkap', 'NISN', 'Asal Sekolah', 'Asal Wilayah', 'Gender'],
+                    ['Contoh: Budi Santoso', '1234567890', 'SDN Menteng 01', 'Jakarta Pusat', 'Putra'],
+                    ['Contoh: Siti Aminah', '0987654321', 'SDN Cipinang 02', 'Jakarta Timur', 'Putri']
+                ];
+                const ws = XLSX.utils.aoa_to_sheet(data);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Atlet');
+
+                // Tambah sheet referensi wilayah agar admin tahu opsi valid
+                const refData = [['Daftar Wilayah DKI yang Valid'], ...REGIONS_DKI.map(r => [r])];
+                const wsRef = XLSX.utils.aoa_to_sheet(refData);
+                XLSX.utils.book_append_sheet(wb, wsRef, 'Ref Wilayah');
+
+                XLSX.writeFile(wb, 'Template_Atlet_Renang_O2SN.xlsx');
             },
 
             handleExcelSelect(e) {
-                const f = e.target.files[0]; if (!f) return; document.getElementById('file-name-display').textContent = f.name; document.getElementById('btn-process-excel').classList.remove('hidden');
-                const reader = new FileReader(); reader.onload = (evt) => { const wb = XLSX.read(evt.target.result, { type: 'binary' }); State.excelBuffer = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]); }; reader.readAsBinaryString(f);
+                const f = e.target.files[0]; if (!f) return;
+                document.getElementById('file-name-display').textContent = f.name;
+                document.getElementById('btn-process-excel').classList.remove('hidden');
+                const reader = new FileReader();
+                reader.onload = (evt) => {
+                    const wb = XLSX.read(evt.target.result, { type: 'binary' });
+                    State.excelBuffer = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+                };
+                reader.readAsBinaryString(f);
             },
 
             async processAthleteExcel() {
                 if (!State.excelBuffer) return;
-                const rows = State.excelBuffer.map(r => {
-                    const name = String(r['Nama Lengkap'] || '').trim(); const school = String(r['Asal Sekolah'] || '').trim(); const region = String(r['Asal Wilayah'] || '').trim(); const gender = r['Gender']; const nisn = String(r['NISN'] || '').trim() || null;
-                    if (!name || !school || !REGIONS_DKI.includes(region)) return null; return { name, nisn, school, region, gender };
+                const skipped = [];
+                const rows = State.excelBuffer.map((r, idx) => {
+                    const name = String(r['Nama Lengkap'] || '').trim();
+                    const school = String(r['Asal Sekolah'] || r['Kontingen'] || '').trim();
+                    const region = String(r['Asal Wilayah'] || '').trim();
+                    const gender = ['Putra', 'Putri'].includes(r['Gender']) ? r['Gender'] : null;
+                    const nisn = String(r['NISN'] || '').trim() || null;
+
+                    if (!name || !school || !gender) {
+                        skipped.push(`Baris ${idx + 2}: data tidak lengkap`);
+                        return null;
+                    }
+                    if (!REGIONS_DKI.includes(region)) {
+                        skipped.push(`Baris ${idx + 2} (${name}): wilayah "${region}" tidak valid`);
+                        return null;
+                    }
+                    return { name, nisn, school, region, gender };
                 }).filter(Boolean);
-                try { await DB.upsertAthletes(rows); UI.toast('Impor Berhasil'); await DB.fetchAll(); UI.renderAthleteList(); } catch (e) { UI.toast(e.message, 'error'); }
+
+                if (rows.length === 0) {
+                    return UI.toast('Tidak ada baris valid. Cek format & nama wilayah.', 'error');
+                }
+
+                try {
+                    await DB.upsertAthletes(rows);
+                    let msg = `${rows.length} atlet diimpor/diperbarui`;
+                    if (skipped.length > 0) msg += ` (${skipped.length} dilewati)`;
+                    UI.toast(msg);
+
+                    if (skipped.length > 0) {
+                        Swal.fire({
+                            title: 'Beberapa Baris Dilewati',
+                            html: '<div class="text-left text-xs">' + skipped.slice(0, 10).map(s => `• ${UI.escape(s)}`).join('<br>') +
+                                  (skipped.length > 10 ? `<br>... dan ${skipped.length - 10} lainnya` : '') + '</div>',
+                            icon: 'warning'
+                        });
+                    }
+
+                    State.excelBuffer = null;
+                    document.getElementById('btn-process-excel').classList.add('hidden');
+                    document.getElementById('file-name-display').textContent = '';
+                    await DB.fetchAll();
+                    UI.renderAthleteList();
+                } catch (e) { UI.toast('Gagal import: ' + e.message, 'error'); }
             },
 
+            // ═══ HASIL (offline-safe via SyncQueue + RPC conditional upsert) ═══
+            // Alur baru:
+            //   1. Validasi & masukkan ke SyncQueue (localStorage)
+            //   2. Optimistic UI update (anggap berhasil)
+            //   3. Trigger flush queue → kirim ke Supabase via RPC
+            //   4. Server menerima jika client_ts > existing, tolak jika lebih lama
             async handleSaveBulkResult(e) {
-                e.preventDefault(); const gender = document.getElementById('inp-gender').value; const style = document.getElementById('inp-style').value; const rows = [];
+                e.preventDefault();
+                const gender = document.getElementById('inp-gender').value;
+                const style = document.getElementById('inp-style').value;
+                const rows = [];
+
                 document.querySelectorAll('.bulk-row').forEach(tr => {
-                    const id = parseInt(tr.dataset.athleteId); const ath = State.athletes.find(a => a.id === id); if (!ath) return;
-                    const mm = parseInt(tr.querySelector('.inp-mm').value || 0); const ss = parseInt(tr.querySelector('.inp-ss').value || 0); const ms = parseInt(tr.querySelector('.inp-ms').value || 0);
-                    if (mm + ss + ms === 0) return; rows.push({ athlete_id: ath.id, name: ath.name, school: ath.school, region: ath.region, gender, style, mm, ss, ms });
+                    const athleteId = parseInt(tr.dataset.athleteId);
+                    const ath = State.athletes.find(a => a.id === athleteId);
+                    if (!ath) return;
+                    const mm = parseInt(tr.querySelector('.inp-mm').value || 0);
+                    const ss = parseInt(tr.querySelector('.inp-ss').value || 0);
+                    const ms = parseInt(tr.querySelector('.inp-ms').value || 0);
+                    if (mm + ss + ms === 0) return; // skip yang kosong
+                    if (ss > 59 || ms > 99) return; // validasi
+                    rows.push({
+                        athlete_id: ath.id,
+                        name: ath.name, school: ath.school, region: ath.region,
+                        gender, style, mm, ss, ms
+                    });
                 });
-                if (rows.length === 0) return UI.toast('Kosong', 'warning'); rows.forEach(r => SyncQueue.enqueue(r)); UI.toast('Masuk antrian');
-                await SyncQueue.flush(); await DB.fetchAll(); UI.initInputTable(); UI.renderPublicResults();
+
+                if (rows.length === 0) return UI.toast('Tidak ada waktu untuk disimpan', 'warning');
+
+                // 1. Masukkan ke queue (semua atomic, di localStorage dulu)
+                rows.forEach(r => SyncQueue.enqueue(r));
+                UI.toast(`${rows.length} hasil masuk antrian sinkron`, 'success');
+
+                // 2. Flush queue ke server (async, tidak block UI)
+                await SyncQueue.flush();
+
+                // 3. Refresh tampilan
+                await DB.fetchAll();
+                UI.initInputTable();
+                UI.renderPublicResults();
             },
 
-            async deleteResult(id) { if (!await UI.confirm('Hapus?')) return; try { await DB.deleteResult(id); UI.toast('Dihapus'); await DB.fetchAll(); UI.renderManageData(); UI.renderPublicResults(); } catch (e) { UI.toast(e.message, 'error'); } },
+            async deleteResult(id) {
+                if (!await UI.confirm('Hapus hasil?', 'Tindakan ini tidak bisa dibatalkan.', 'Hapus')) return;
+                try {
+                    await DB.deleteResult(id);
+                    UI.toast('Hasil dihapus');
+                    await DB.fetchAll();
+                    UI.renderManageData();
+                    UI.renderPublicResults();
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+            },
 
+            // ═══ PETUGAS MANAGEMENT ═══
             async savePetugas() {
-                const username = document.getElementById('pet-username').value.trim(); const nama = document.getElementById('pet-nama').value.trim(); const pin = document.getElementById('pet-pin').value.trim(); const role = document.getElementById('pet-role').value;
-                try { await DB.savePetugas({ username, nama, pin, role, is_active: true }); UI.toast('Dibuat'); await DB.fetchAll(); UI.renderPetugasList(); } catch (e) { UI.toast(e.message, 'error'); }
+                if (State.petugas.filter(p => p.is_active).length >= 10) {
+                    return UI.toast('Maksimal 10 akun aktif. Nonaktifkan akun lain dulu.', 'warning');
+                }
+                const username = document.getElementById('pet-username').value.trim().toLowerCase();
+                const nama = document.getElementById('pet-nama').value.trim();
+                const pin = document.getElementById('pet-pin').value.trim();
+                const role = document.getElementById('pet-role').value;
+                if (!username || !nama || !pin) return UI.toast('Lengkapi semua kolom', 'error');
+                if (!/^[a-z0-9_]{3,}$/.test(username)) return UI.toast('Username: huruf kecil/angka/underscore, min 3 karakter', 'error');
+                if (!/^\d{4,6}$/.test(pin)) return UI.toast('PIN harus 4-6 digit angka', 'error');
+
+                try {
+                    await DB.savePetugas({ username, nama, pin, role, is_active: true });
+                    UI.toast('Akun petugas dibuat');
+                    ['pet-username','pet-nama','pet-pin'].forEach(id => document.getElementById(id).value = '');
+                    await DB.fetchAll();
+                    UI.renderPetugasList();
+                } catch (e) {
+                    UI.toast('Gagal: ' + (e.message.includes('duplicate') ? 'Username sudah dipakai' : e.message), 'error');
+                }
             },
 
-            async togglePetugas(id, isActive) { try { await DB.togglePetugas(id, isActive); UI.toast('Disimpan'); await DB.fetchAll(); } catch (e) { UI.toast(e.message, 'error'); } },
-            async deletePetugas(id) { if (!await UI.confirm('Hapus petugas?')) return; try { await DB.deletePetugas(id); UI.toast('Dihapus'); await DB.fetchAll(); UI.renderPetugasList(); } catch (e) { UI.toast(e.message, 'error'); } },
+            async togglePetugas(id, isActive) {
+                try {
+                    await DB.togglePetugas(id, isActive);
+                    UI.toast(isActive ? 'Akun diaktifkan' : 'Akun dinonaktifkan');
+                    await DB.fetchAll();
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+            },
 
+            async deletePetugas(id) {
+                if (!await UI.confirm('Hapus akun petugas?', 'Akun akan hilang permanen.', 'Hapus')) return;
+                try {
+                    await DB.deletePetugas(id);
+                    UI.toast('Akun dihapus');
+                    await DB.fetchAll();
+                    UI.renderPetugasList();
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
+            },
+
+            // ═══ PENGATURAN ═══
             async saveAllSettings() {
                 const activeStyles = Array.from(document.querySelectorAll('.style-toggle:checked')).map(cb => cb.value);
                 const updates = {
-                    APP_TITLE: document.getElementById('conf-title').value, APP_SUBTITLE: document.getElementById('conf-subtitle').value, RUNNING_TEXT: document.getElementById('conf-running').value,
-                    SHOW_ACCUMULATION: document.getElementById('conf-show-acc').checked ? 'ON' : 'OFF', SHOW_ALL_RESULTS: document.getElementById('conf-show-all').checked ? 'ON' : 'OFF', STYLES_ACTIVE: activeStyles.join(',')
+                    APP_TITLE: document.getElementById('conf-title').value,
+                    APP_SUBTITLE: document.getElementById('conf-subtitle').value,
+                    RUNNING_TEXT: document.getElementById('conf-running').value,
+                    SHOW_PODIUM: document.getElementById('conf-show-podium').checked ? 'ON' : 'OFF',
+                    SHOW_ACCUMULATION: document.getElementById('conf-show-acc').checked ? 'ON' : 'OFF',
+                    SHOW_ALL_RESULTS: document.getElementById('conf-show-all').checked ? 'ON' : 'OFF',
+                    STYLES_ACTIVE: activeStyles.join(',')
                 };
-                try { await DB.updateConfig(updates); Object.assign(State.config, updates); UI.toast('Disimpan'); UI.populatePublicFilters(); UI.renderPublicResults(); } catch (e) { UI.toast(e.message, 'error'); }
+                try {
+                    await DB.updateConfig(updates);
+                    Object.assign(State.config, updates);
+                    UI.toast('Pengaturan disimpan');
+                    UI.populatePublicFilters();
+                    UI.renderPublicResults();
+                } catch (e) { UI.toast('Gagal: ' + e.message, 'error'); }
             },
 
+            // ═══ EXPORT ═══
             exportToExcel() {
-                const rows = State.results.map(r => ({ 'Nama': r.name, 'Sekolah': r.school, 'Wilayah': r.region, 'Kategori': r.gender, 'Nomor': r.style, 'Waktu': UI.formatTime(r.mm, r.ss, r.ms) }));
-                const ws = XLSX.utils.json_to_sheet(rows); const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Hasil'); XLSX.writeFile(wb, 'Hasil_O2SN.xlsx');
+                if (State.results.length === 0) return UI.toast('Tidak ada data untuk diekspor', 'warning');
+                const rows = State.results.map(r => ({
+                    'Nama Atlet': r.name,
+                    'Asal Sekolah': r.school,
+                    'Asal Wilayah': r.region,
+                    'Kategori': r.gender,
+                    'Nomor Lomba': r.style,
+                    'Menit': r.mm,
+                    'Detik': r.ss,
+                    'Ratusan': r.ms,
+                    'Waktu': UI.formatTime(r.mm, r.ss, r.ms),
+                    'Input oleh': r.input_by || '',
+                    'Diperbarui': new Date(r.updated_at).toLocaleString('id-ID')
+                }));
+                const ws = XLSX.utils.json_to_sheet(rows);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Hasil');
+                const filename = `Hasil_Renang_O2SN_${new Date().toISOString().slice(0,10)}.xlsx`;
+                XLSX.writeFile(wb, filename);
+                UI.toast('File Excel didownload');
             },
 
             async viewAuditLog() {
                 UI.showLoader(true);
                 try {
-                    const { data } = await State.supabase.from('audit_log').select('*').order('created_at', { ascending: false }).limit(50);
-                    const rows = (data || []).map(l => `<tr><td>${new Date(l.created_at).toLocaleString('id-ID')}</td><td>${l.action}</td><td>${UI.escape(l.petugas)}</td><td>${JSON.stringify(l.payload || {})}</td></tr>`).join('');
-                    Swal.fire({ title: 'Log Perubahan', html: `<div class="overflow-x-auto max-h-[350px]"><table class="data-table text-xs"><thead><tr><th>Waktu</th><th>Aksi</th><th>User</th><th>Detail</th></tr></thead><tbody>${rows}</tbody></table></div>`, width: 750 });
-                } catch (e) { UI.toast(e.message, 'error'); } finally { UI.showLoader(false); }
+                    const { data, error } = await State.supabase
+                        .from('audit_log')
+                        .select('*')
+                        .order('created_at', { ascending: false })
+                        .limit(200);
+                    if (error) throw error;
+
+                    const rows = (data || []).map(log => {
+                        const p = log.payload || {};
+                        const ath = State.athletes.find(a => a.id === p.athlete_id);
+                        const athName = ath ? ath.name : `ID:${p.athlete_id || '?'}`;
+                        const time = log.created_at ? new Date(log.created_at).toLocaleString('id-ID') : '—';
+                        const actionLabel = {
+                            'insert': '<span class="text-green-700 bg-green-50 px-2 py-0.5 rounded text-[10px] font-semibold">BARU</span>',
+                            'update': '<span class="text-blue-700 bg-blue-50 px-2 py-0.5 rounded text-[10px] font-semibold">UBAH</span>',
+                            'reject_stale': '<span class="text-red-700 bg-red-50 px-2 py-0.5 rounded text-[10px] font-semibold">TOLAK</span>',
+                            'upsert': '<span class="text-gray-700 bg-gray-100 px-2 py-0.5 rounded text-[10px] font-semibold">SIMPAN</span>'
+                        }[log.action] || log.action;
+
+                        const detail = p.style ?
+                            `${UI.escape(p.style)} · ${UI.escape(p.gender || '')} · ${p.mm}:${String(p.ss).padStart(2,'0')}.${String(p.ms).padStart(2,'0')}` : '';
+
+                        return `<tr>
+                            <td class="text-xs">${time}</td>
+                            <td>${actionLabel}</td>
+                            <td class="text-xs font-semibold">${UI.escape(log.petugas || '—')}</td>
+                            <td>${UI.escape(athName)}</td>
+                            <td class="text-xs text-ink-muted">${detail}</td>
+                        </tr>`;
+                    }).join('');
+
+                    Swal.fire({
+                        title: 'Riwayat Perubahan (200 terakhir)',
+                        html: `
+                            <p class="text-sm text-ink-muted mb-3 text-left">Setiap input, ubah, dan penolakan tercatat di sini. Berguna untuk verifikasi jika ada protes hasil.</p>
+                            <div class="overflow-x-auto max-h-[500px]">
+                                <table class="data-table text-sm">
+                                    <thead class="sticky top-0 bg-white">
+                                        <tr><th>Waktu</th><th>Aksi</th><th>Petugas</th><th>Atlet</th><th>Detail</th></tr>
+                                    </thead>
+                                    <tbody>${rows || '<tr><td colspan="5" class="text-center py-6 text-ink-muted">Belum ada aktivitas</td></tr>'}</tbody>
+                                </table>
+                            </div>
+                        `,
+                        width: 900,
+                        confirmButtonText: 'Tutup',
+                        confirmButtonColor: '#0369A1'
+                    });
+                } catch (e) {
+                    UI.toast('Gagal memuat audit log: ' + e.message, 'error');
+                } finally {
+                    UI.showLoader(false);
+                }
             }
         };
 
+        // ─────────────────────────────────────────────────────────────
+        // INIT
+        // ─────────────────────────────────────────────────────────────
         window.addEventListener('DOMContentLoaded', () => AppLogic.init());
     </script>
 </body>
